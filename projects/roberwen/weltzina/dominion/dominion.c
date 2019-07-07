@@ -653,7 +653,7 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
   int currentPlayer = whoseTurn(state);
   int nextPlayer = currentPlayer + 1;
 
-  int tributeRevealedCards[2] = {-1, -1};
+  //int tributeRevealedCards[2] = {-1, -1}; refactored out to playTribute
   int temphand[MAX_HAND];// moved above the if statement
   int drawntreasure=0;
   int cardDrawn;
@@ -991,7 +991,8 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
 }
 
 int playMine(int choice1, int choice2, int handPos, int currentPlayer, struct gameState *state) {
-  j = state->hand[currentPlayer][choice1];  //store card we will trash
+  int j = state->hand[currentPlayer][choice1];  //store card we will trash
+  int i;
 
   if (state->hand[currentPlayer][choice1] < copper || state->hand[currentPlayer][choice1] > gold)
   {
@@ -1027,6 +1028,9 @@ int playMine(int choice1, int choice2, int handPos, int currentPlayer, struct ga
 
 // Separate tribute card effect call from case
 int playTribute(int currentPlayer, int nextPlayer, struct gameState *state) {
+  int tributeRevealedCards[2] = {-1, -1};
+  int i;
+
   if ((state->discardCount[nextPlayer] + state->deckCount[nextPlayer]) <= 1){
     if (state->deckCount[nextPlayer] > 0){
       tributeRevealedCards[0] = state->deck[nextPlayer][state->deckCount[nextPlayer]-1];
@@ -1086,7 +1090,8 @@ int playTribute(int currentPlayer, int nextPlayer, struct gameState *state) {
 
 //case Ambassador's card effect call
 int playAmbassador(int choice1, int choice2, int handPos, int currentPlayer, struct gameState *state) {
-  j = 0;		//used to check if player has enough cards to discard
+  int j = 0;		//used to check if player has enough cards to discard
+  int i;
 
   if (choice2 < 2 || choice2 > 0) //was (choice2 > 2 || choice2 < 0). False user error***************** bug
   {
@@ -1145,6 +1150,9 @@ int playAmbassador(int choice1, int choice2, int handPos, int currentPlayer, str
 
 //Case Minion's card effect call
 int playMinion(int choice1, int choice2, struct gameState *state, int currentPlayer, int handPos) {
+  int i;
+  int j;
+  
   //+1 action
   state->numActions++;
 
