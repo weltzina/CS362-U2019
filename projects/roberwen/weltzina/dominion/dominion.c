@@ -1180,6 +1180,7 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
 int playbaron(int choice1, struct gameState *state, int currentPlayer) {
   state->numBuys++;//Increase buys by 1!
   if (choice1 > 0){//Boolean true or going to discard an estate
+    printf("choice 1 acknowledged");
     int p = 0;//Iterator for hand!
     int card_not_discarded = 1;//Flag for discard set!
     while(card_not_discarded){
