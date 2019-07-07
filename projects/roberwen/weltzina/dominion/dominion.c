@@ -849,9 +849,9 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
       //discard played card from hand
       discardCard(handPos, currentPlayer, state, 0);
       return 0;
-		
+
     case baron:
-      return baron(choice1, state, currentPlayer);
+      return playbaron(choice1, state, currentPlayer);
 
     case great_hall:
       //+1 Card
@@ -1176,7 +1176,7 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
 }
 
 //Case baron's card effect call
-int baron(int choice1, struct gameState *state, int currentPlayer) {
+int playbaron(int choice1, struct gameState *state, int currentPlayer) {
   state->numBuys++;//Increase buys by 1!
   if (choice1 > 0){//Boolean true or going to discard an estate
     int p = 0;//Iterator for hand!
