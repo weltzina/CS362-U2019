@@ -51,9 +51,9 @@ int main() {
     playBaron(1, G, 0);
 
     #if (NOISY_TEST == 1)
-      printf("G.numBuys = %d, expected = %d\n", G->numBuys, G->numBuys + 1);
+      printf("G.numBuys = %d, expected = %d\n", G.numBuys, 2);
     #endif
-      assert(G.numBuys == G->numBuys + 1);
+      assert(G.numBuys == 2);
 
       printf("G.numActions = %d, expected = %d\n", G.numActions, 0);
       assert(G.numActions == 0);
@@ -61,10 +61,10 @@ int main() {
       printf("G.coins = %d, expected = %d\n", G.coins, 13);
       assert(G.coins == 13);
 
-      printf("G.supplyCount[estate] = %d, expected = 10\n", G.supplyCount[estate]);
+      printf("G.supplyCount[estate] = %d, expected = %d\n", G.supplyCount[estate], 10);
       assert(G.supplyCount[estate] == 10);
 
-      printf("G.discardCount = %d, expected = 1\n", G.discardCount);
+      printf("G.discardCount = %d, expected = %d\n", G.discardCount, 1);
       assert(G.discardCount == 1);
 
     return 0;
