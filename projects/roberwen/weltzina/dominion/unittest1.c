@@ -42,8 +42,8 @@ int main() {
     G.supplyCount[estate] = 10;
     G.discardCount[0] = 0;
 
-    G.hand[0] = 15;
-    G.hand[1] = 1;
+    G.hand[0][0] = 15;
+    G.hand[0][1] = 1;
     G.handCount[0] = 1;
     G.coins = 0;
 
