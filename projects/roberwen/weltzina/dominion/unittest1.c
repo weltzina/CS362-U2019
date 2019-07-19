@@ -48,7 +48,7 @@ int main() {
     G.coins = 0;
 
     printf("TESTING playBaron():\n");
-    G.playBaron(1, G, 0);
+    playBaron(1, G, 0);
 
     #if (NOISY_TEST == 1)
       printf("G.numBuys = %d, expected = %d\n", G.numBuys, 2);
