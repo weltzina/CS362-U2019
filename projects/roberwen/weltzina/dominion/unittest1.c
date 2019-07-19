@@ -29,26 +29,16 @@ int main() {
   struct gameState G;
   int maxHandCount = 5;
 
+  initializeGame(2, k, 22, G);
 
-
-
-    G.outpostPlayed = 0;
-    G.phase = 0;
-    G.numActions = 1;
-    G.numBuys = 1;
-    G.playedCardCount = 0;
-    G.whoseTurn = 0;
-
-    G.supplyCount[estate] = 10;
-    G.discardCount[0] = 0;
-
-    G.hand[0][0] = 15;
-    G.hand[0][1] = 1;
-    G.handCount[0] = 1;
-    G.coins = 0;
+  G.hand[0][0] = 15;//Add card to the hand
+  G.hand[0][0] = 1;
+  G.hand[0][0] = 6;
+  G.hand[0][0] = 6;
+  G.hand[0][0] = 6;
 
     printf("TESTING playBaron():\n");
-     r = playBaron(1, G, 0);
+     r = playCard(0, 1, 0, 0, G);
 
     #if (NOISY_TEST == 1)
       printf("G.numBuys = %d, expected = %d\n", G.numBuys, 2);
