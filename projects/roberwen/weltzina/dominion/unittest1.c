@@ -24,7 +24,6 @@ int main() {
   int maxBonus = 10;
   int p, r, handCount;
   int bonus;
-  int it[500] = {15, 1, 6, 6, 6};
   int k[10] = {ambassador, minion, feast, gardens, mine
              , tribute, smithy, village, baron, great_hall};
   struct gameState G;
@@ -43,12 +42,12 @@ int main() {
     G.supplyCount[estate] = 10;
     G.discardCount[0] = 0;
 
-    G.hand[0] = it[500];
+    G.hand[0] = {15,1,6,6,6};
     G.handCount[0] = 4;
     G.coins = 9;
 
     printf("TESTING playBaron():\n");
-    playBaron(1, G, 0);
+    G.playBaron(1, G, 0);
 
     #if (NOISY_TEST == 1)
       printf("G.numBuys = %d, expected = %d\n", G.numBuys, 2);
