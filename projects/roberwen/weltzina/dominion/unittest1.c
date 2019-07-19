@@ -40,11 +40,10 @@ int main() {
     G.whoseTurn = 0;
 
     G.supplyCount[estate] = 10;
-    G.discardCount = 0;
-    G.discard;
+    G.discardCount[0] = 0;
 
-    G.hand = [15, 1, 6, 6, 6];
-    G.handCount = 4;
+    G.hand[0] = [15, 1, 6, 6, 6];
+    G.handCount[0] = 4;
     G.coins = 9;
 
     printf("TESTING playBaron():\n");
