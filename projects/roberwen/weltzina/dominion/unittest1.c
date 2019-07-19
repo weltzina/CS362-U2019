@@ -29,45 +29,45 @@ int main() {
                , tribute, smithy, village, baron, great_hall};
 
     struct gameState save;
-    struct gameState G;
+    //struct gameState G;
 
     int maxHandCount = 5;
 
 
-    G->outpostPlayed = 0;
-    G->phase = 0;
-    G->numActions[0] = 1;
-    G->numBuys[0] = 1;
-    G->playedCardCount = 0;
-    G->whoseTurn = 0;
+    save->outpostPlayed = 0;
+    save->phase = 0;
+    save->numActions[0] = 1;
+    save->numBuys[0] = 1;
+    save->playedCardCount = 0;
+    save->whoseTurn = 0;
 
-    G->supplyCount[estate] = 10;
-    G->discardCount[0] = 0;
-    G->discard[0];
+    save->supplyCount[estate] = 10;
+    save->discardCount[0] = 0;
+    save->discard[0];
 
-    G->hand[0] = [15, 1, 6, 6, 6];
-    G->handCount[0] = 4;
+    save->hand[0] = [15, 1, 6, 6, 6];
+    save->handCount[0] = 4;
     //G->coins = 9;
 
     printf("TESTING playBaron():\n");
-    playBaron(1, G, 0);
+    playBaron(1, save, 0);
 
     #if (NOISY_TEST == 1)
-      printf("G.numBuys = %d, expected = %d\n", G->numBuys, G->numBuys + 1);
+      printf("save.numBuys = %d, expected = %d\n", save->numBuys, save->numBuys + 1);
     #endif
-      assert(G.numBuys == G->numBuys + 1);
+      assert(save.numBuys == save->numBuys + 1);
 
-      printf("G.numActions = %d, expected = %d\n", G.numActions, save.numActions - 1);
-      assert(G.numActions == save.numActions - 1);
+      printf("save.numActions = %d, expected = %d\n", save.numActions, 0);
+      assert(save.numActions == 0);
 
-      printf("G.coins = %d, expected = %d\n", G.coins, 13);
-      assert(G.coins == 13);
+      printf("save.coins = %d, expected = %d\n", save.coins, 13);
+      assert(save.coins == 13);
 
-      printf("G.supplyCount[estate] = %d, expected = 10\n", G.supplyCount[estate]);
-      assert(G.supplyCount[estate] == 10);
+      printf("save.supplyCount[estate] = %d, expected = 10\n", save.supplyCount[estate]);
+      assert(save.supplyCount[estate] == 10);
 
-      printf("G.discardCount = %d, expected = 1\n", G.discardCount);
-      assert(G.discardCount == 1);
+      printf("save.discardCount = %d, expected = 1\n", save.discardCount);
+      assert(save.discardCount == 1);
 
     return 0;
 }
