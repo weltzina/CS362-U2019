@@ -24,7 +24,7 @@ int main() {
   int maxBonus = 10;
   int p, r, handCount;
   int bonus;
-  int it[5];
+  int it[500];
   int k[10] = {ambassador, minion, feast, gardens, mine
              , tribute, smithy, village, baron, great_hall};
   struct gameState G;
