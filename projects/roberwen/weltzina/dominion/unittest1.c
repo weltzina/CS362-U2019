@@ -29,7 +29,7 @@ int main() {
                , tribute, smithy, village, baron, great_hall};
 
     struct gameState save;
-    struct gameState G = save;
+    struct gameState G;
 
     int maxHandCount = 5;
 
