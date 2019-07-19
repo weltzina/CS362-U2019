@@ -24,8 +24,8 @@ int main() {
   int maxBonus = 10;
   int p, r, handCount;
   int bonus;
-  int k[10] = {a, council_room, feast, gardens, mine
-             , remodel, smithy, village, baron, great_hall};
+  int k[10] = {ambassador, minion, feast, gardens, mine
+             , tribute, smithy, village, baron, great_hall};
   struct gameState G;
   int maxHandCount = 5;
 
@@ -34,17 +34,17 @@ int main() {
 
     G.outpostPlayed = 0;
     G.phase = 0;
-    G.numActions[0] = 1;
-    G.numBuys[0] = 1;
+    G.numActions = 1;
+    G.numBuys = 1;
     G.playedCardCount = 0;
     G.whoseTurn = 0;
 
     G.supplyCount[estate] = 10;
-    G.discardCount[0] = 0;
-    G.discard[0];
+    G.discardCount = 0;
+    G.discard;
 
-    G.hand[0] = [15, 1, 6, 6, 6];
-    G.handCount[0] = 4;
+    G.hand = [15, 1, 6, 6, 6];
+    G.handCount = 4;
     G.coins = 9;
 
     printf("TESTING playBaron():\n");
