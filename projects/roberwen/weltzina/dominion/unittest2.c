@@ -66,7 +66,7 @@ int main() {
 
 	printf("----------------- Testing Card: %s ----------------\n", TESTCARD);
 
-	// ----------- TEST 1: choice1 = 1 = +2 cards --------------
+
 	printf("TEST 1: choice1 = 0 = gain +1 buy && estate card... Baron @ 0 && estate @ 4\n");
 
 	// copy the game state to a test case
@@ -93,7 +93,6 @@ int main() {
   printf("\n");
 
 
-  // ----------- TEST 1: choice1 = 1 = +2 cards --------------
   printf("TEST 2: choice1 = 1 = gain +1 buy && discard estate && +4 coins..... Baron @ 0 && estate @ 4\n");
 
   // copy the game state to a test case
@@ -127,8 +126,8 @@ int main() {
   G.hand[thisPlayer][0] = estate;
   G.hand[thisPlayer][3] = copper;
 
-  // ----------- TEST 1: choice1 = 1 = +2 cards --------------
-  printf("TEST 1: choice1 = 0 = gain +1 buy && estate card... Baron @ 4 && estate @ 0\n");
+
+  printf("TEST 3: choice1 = 0 = gain +1 buy && estate card... Baron @ 4 && estate @ 0\n");
 
   // copy the game state to a test case
   memcpy(&testG, &G, sizeof(struct gameState));
@@ -136,6 +135,8 @@ int main() {
   cardEffect(baron, choice1, choice2, choice3, &testG, handpos, &bonus);
 
   gainedCards = 1;
+  discarded = 1;
+  xtraCoins = 0;
 
   printf("hand count = %d, expected = %d\n", testG.handCount[thisPlayer], G.handCount[thisPlayer] + newCards - discarded);
   assertTrue(testG.handCount[thisPlayer], G.handCount[thisPlayer] + newCards - discarded);
@@ -155,11 +156,14 @@ int main() {
 
 
   // ----------- TEST 1: choice1 = 1 = +2 cards --------------
-  printf("TEST 2: choice1 = 1 = gain +1 buy && discard estate && +4 coins..... Baron @ 4 && estate @ 0\n");
+  printf("TEST 4: choice1 = 1 = gain +1 buy && discard estate && +4 coins..... Baron @ 4 && estate @ 0\n");
 
   // copy the game state to a test case
   memcpy(&testG, &G, sizeof(struct gameState));
   choice1 = 1;
+  printf("TEST FAILED. RUNAWAY PROGRAM.\n");
+  printf("\n");
+  /*
   cardEffect(baron, choice1, choice2, choice3, &testG, handpos, &bonus);
 
   gainedCards = 0;
@@ -181,7 +185,69 @@ int main() {
   printf("estate supply = %d, expected = %d\n", testG.supplyCount[estate], G.supplyCount[estate] - gainedCards);
   assertTrue(testG.supplyCount[estate], G.supplyCount[estate] - gainedCards);
   printf("\n");
+  */
 
+
+  G.hand[thisPlayer][4] = baron;
+  G.hand[thisPlayer][2] = copper;
+  G.hand[thisPlayer][1] = duchy;
+  G.hand[thisPlayer][0] = copper;
+  G.hand[thisPlayer][3] = copper;
+
+
+  printf("TEST 5: choice1 = 0 = gain +1 buy && estate card... Baron @ 4 && estate @ null\n");
+
+  // copy the game state to a test case
+  memcpy(&testG, &G, sizeof(struct gameState));
+  choice1 = 0;
+  cardEffect(baron, choice1, choice2, choice3, &testG, handpos, &bonus);
+
+  gainedCards = 1;
+  xtraCoins = 4;
+  discarded = 1;
+
+  printf("hand count = %d, expected = %d\n", testG.handCount[thisPlayer], G.handCount[thisPlayer] + newCards - discarded);
+  assertTrue(testG.handCount[thisPlayer], G.handCount[thisPlayer] + newCards - discarded);
+  printf("deck count = %d, expected = %d\n", testG.deckCount[thisPlayer], G.deckCount[thisPlayer] - newCards);
+  assertTrue(testG.deckCount[thisPlayer], G.deckCount[thisPlayer] - newCards + shuffledCards);
+  printf("discard count = %d, expected = %d\n", testG.discardCount[thisPlayer], G.discardCount[thisPlayer] + gainedCards + discarded - shuffledCards);
+  assertTrue(testG.discardCount[thisPlayer], G.discardCount[thisPlayer] + gainedCards + discarded - shuffledCards);
+  printf("coins = %d, expected = %d\n", testG.coins, G.coins + xtraCoins);
+  assertTrue(testG.coins, G.coins + xtraCoins);
+  printf("buy count = %d, expected = %d\n", testG.numBuys, G.numBuys + buyincrease);
+  assertTrue(testG.numBuys, G.numBuys + buyincrease);
+  printf("action count = %d, expected = %d\n", testG.numActions, G.numActions - actionsPlayed);
+  assertTrue(testG.numActions, G.numActions - actionsPlayed);
+  printf("estate supply = %d, expected = %d\n", testG.supplyCount[estate], G.supplyCount[estate] - gainedCards);
+  assertTrue(testG.supplyCount[estate], G.supplyCount[estate] - gainedCards);
+  printf("\n");
+
+  printf("TEST 6: choice1 = 1 = gain +1 buy && discard estate && +4 coins... Baron @ 4 && estate @ null\n");
+
+  // copy the game state to a test case
+  memcpy(&testG, &G, sizeof(struct gameState));
+  choice1 = 1;
+  cardEffect(baron, choice1, choice2, choice3, &testG, handpos, &bonus);
+
+  gainedCards = 1;
+  xtraCoins = 4;
+  discarded = 1;
+
+  printf("hand count = %d, expected = %d\n", testG.handCount[thisPlayer], G.handCount[thisPlayer] + newCards - discarded);
+  assertTrue(testG.handCount[thisPlayer], G.handCount[thisPlayer] + newCards - discarded);
+  printf("deck count = %d, expected = %d\n", testG.deckCount[thisPlayer], G.deckCount[thisPlayer] - newCards);
+  assertTrue(testG.deckCount[thisPlayer], G.deckCount[thisPlayer] - newCards + shuffledCards);
+  printf("discard count = %d, expected = %d\n", testG.discardCount[thisPlayer], G.discardCount[thisPlayer] + gainedCards + discarded - shuffledCards);
+  assertTrue(testG.discardCount[thisPlayer], G.discardCount[thisPlayer] + gainedCards + discarded - shuffledCards);
+  printf("coins = %d, expected = %d\n", testG.coins, G.coins + xtraCoins);
+  assertTrue(testG.coins, G.coins + xtraCoins);
+  printf("buy count = %d, expected = %d\n", testG.numBuys, G.numBuys + buyincrease);
+  assertTrue(testG.numBuys, G.numBuys + buyincrease);
+  printf("action count = %d, expected = %d\n", testG.numActions, G.numActions - actionsPlayed);
+  assertTrue(testG.numActions, G.numActions - actionsPlayed);
+  printf("estate supply = %d, expected = %d\n", testG.supplyCount[estate], G.supplyCount[estate] - gainedCards);
+  assertTrue(testG.supplyCount[estate], G.supplyCount[estate] - gainedCards);
+  printf("\n");
 
   /*
 	// ----------- TEST 2: choice1 = 2 = +2 coins --------------
