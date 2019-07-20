@@ -7,12 +7,16 @@
  * -----------------------------------------------------------------------
  */
 
-#include "dominion.h"
-#include "dominion_helpers.h"
-#include <string.h>
-#include <stdio.h>
-#include <assert.h>
-#include "rngs.h"
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <assert.h>
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <string.h>
+ #include <math.h>
+ #include "dominion.h"
+ #include "interface.h"
+ #include "rngs.h"
 
 // set NOISY_TEST to 0 to remove printfs from output
 #define NOISY_TEST 1
@@ -29,7 +33,7 @@ int main() {
   struct gameState G;
   int maxHandCount = 5;
 
-  initializeGame(2, k, 22, G);
+  initializeGame(2, k, 22, game);
 
   G.hand[0][0] = 15;//Add card to the hand
   G.hand[0][0] = 1;
