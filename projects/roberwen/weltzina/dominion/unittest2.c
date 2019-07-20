@@ -227,6 +227,9 @@ int main() {
   // copy the game state to a test case
   memcpy(&testG, &G, sizeof(struct gameState));
   choice1 = 1;
+  printf("TEST FAILED. RUNAWAY PROGRAM.\n");
+  printf("\n");
+  /*
   cardEffect(baron, choice1, choice2, choice3, &testG, handpos, &bonus);
 
   gainedCards = 1;
@@ -248,6 +251,7 @@ int main() {
   printf("estate supply = %d, expected = %d\n", testG.supplyCount[estate], G.supplyCount[estate] - gainedCards);
   assertTrue(testG.supplyCount[estate], G.supplyCount[estate] - gainedCards);
   printf("\n");
+  */
 
   /*
 	// ----------- TEST 2: choice1 = 2 = +2 coins --------------
