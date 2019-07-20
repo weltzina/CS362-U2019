@@ -23,6 +23,7 @@ int main() {
   int gainedCards = 0;
   int buyincrease = 1;
   int actionsPlayed = 1;
+  int actionincrease = 0;
 
   int i, j, m;
   int handpos = 0, choice1 = 0, choice2 = 0, choice3 = 0, bonus = 0;
@@ -56,7 +57,7 @@ int main() {
   	cardEffect(minion, choice1, choice2, choice3, &testG, handpos, &bonus);
 
     discarded = 0;
-    newcards = 0;
+    newCards = 0;
     shuffledCards = 0;
     gainedCards = 1;
     xtraCoins = 0;
@@ -90,7 +91,7 @@ int main() {
   	cardEffect(minion, choice1, choice2, choice3, &testG, handpos, &bonus);
 
     discarded = 5;
-    newcards = 4;
+    newCards = 4;
     shuffledCards = 0;
     gainedCards = 0;
     xtraCoins = 0;
@@ -98,10 +99,10 @@ int main() {
     actionincrease = 1;
     actionsPlayed = 1;
 
-  	printf("hand count = %d, expected = %d\n", testG.handCount[thisPlayer], G.handCount[thisPlayer] - discarded + newcards);
-  	assertTrue(testG.handCount[thisPlayer], G.handCount[thisPlayer] - discarded + newcards);
-  	printf("deck count = %d, expected = %d\n", testG.deckCount[thisPlayer], G.deckCount[thisPlayer] - newcards + shuffledCards);
-  	assertTrue(testG.deckCount[thisPlayer], G.deckCount[thisPlayer] - newcards + shuffledCards);
+  	printf("hand count = %d, expected = %d\n", testG.handCount[thisPlayer], G.handCount[thisPlayer] - discarded + newCards);
+  	assertTrue(testG.handCount[thisPlayer], G.handCount[thisPlayer] - discarded + newCards);
+  	printf("deck count = %d, expected = %d\n", testG.deckCount[thisPlayer], G.deckCount[thisPlayer] - newCards + shuffledCards);
+  	assertTrue(testG.deckCount[thisPlayer], G.deckCount[thisPlayer] - newCards + shuffledCards);
     printf("discard count = %d, expected = %d\n", testG.discardCount[thisPlayer], G.discardCount[thisPlayer] + discarded - shuffledCards);
     assertTrue(testG.discardCount[thisPlayer], G.discardCount[thisPlayer] + discarded - shuffledCards);
   	printf("coins = %d, expected = %d\n", testG.coins, G.coins + xtraCoins);
@@ -111,10 +112,10 @@ int main() {
     printf("action count = %d, expected = %d\n", testG.numActions, G.numActions + actionincrease - actionsPlayed);
     assertTrue(testG.numActions, G.numActions + actionincrease - actionsPlayed);
     printf("Opponent state test--------------------------------\n");
-    printf("hand count = %d, expected = %d\n", testG.handCount[thisPlayer+1], newcards);
-    assertTrue(testG.handCount[thisPlayer+1], newcards);
-    printf("deck count = %d, expected = %d\n", testG.deckCount[thisPlayer+1], G.deckCount[thisPlayer+1] - newcards);
-  	assertTrue(testG.deckCount[thisPlayer], G.deckCount[thisPlayer] - newcards);
+    printf("hand count = %d, expected = %d\n", testG.handCount[thisPlayer+1], newCards);
+    assertTrue(testG.handCount[thisPlayer+1], newCards);
+    printf("deck count = %d, expected = %d\n", testG.deckCount[thisPlayer+1], G.deckCount[thisPlayer+1] - newCards);
+  	assertTrue(testG.deckCount[thisPlayer], G.deckCount[thisPlayer] - newCards);
     printf("discard count = %d, expected = %d\n", testG.discardCount[thisPlayer], G.discardCount[thisPlayer] + discarded);
     assertTrue(testG.discardCount[thisPlayer], G.discardCount[thisPlayer] + discarded);
     printf("\n");
