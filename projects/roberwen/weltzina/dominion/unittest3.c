@@ -49,7 +49,7 @@ int main() {
 
 
     for(i=-1; i <= 5; i++){
-      for(j=-1; j <= 4){
+      for(j=-1; j <= 4; j++){
 
         printf("TEST %d,%d: choice1 = %d && choice2 = %d.... ambassador @ 0\n", i, j, i, j);
 
