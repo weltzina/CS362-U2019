@@ -54,7 +54,6 @@ int main() {
   	memcpy(&testG, &G, sizeof(struct gameState));
   	choice1 = 0;
     choice2 = 0;
-    printf("%d",testG.handCount[thisPlayer]);
   	cardEffect(minion, choice1, choice2, choice3, &testG, handpos, &bonus);
 
     discarded = 0;
@@ -78,6 +77,14 @@ int main() {
     assertTrue(testG.numBuys, G.numBuys);
     printf("action count = %d, expected = %d\n", testG.numActions, G.numActions);
     assertTrue(testG.numActions, G.numActions);
+    printf("\n");
+    printf("Opponent state test--------------------------------\n");
+    printf("hand count = %d, expected = %d\n", testG.handCount[thisPlayer+1], G.handCount[thisPlayer+1]);
+    assertTrue(testG.handCount[thisPlayer+1], G.handCount[thisPlayer+1]);
+    printf("deck count = %d, expected = %d\n", testG.deckCount[thisPlayer+1], G.deckCount[thisPlayer+1]);
+  	assertTrue(testG.deckCount[thisPlayer+1], G.deckCount[thisPlayer+1]);
+    printf("discard count = %d, expected = %d\n", testG.discardCount[thisPlayer+1], G.discardCount[thisPlayer+1] + discarded);
+    assertTrue(testG.discardCount[thisPlayer+1], G.discardCount[thisPlayer+1] + discarded);
     printf("\n");
 
 
@@ -114,9 +121,9 @@ int main() {
     printf("hand count = %d, expected = %d\n", testG.handCount[thisPlayer+1], newCards);
     assertTrue(testG.handCount[thisPlayer+1], newCards);
     printf("deck count = %d, expected = %d\n", testG.deckCount[thisPlayer+1], G.deckCount[thisPlayer+1] - newCards);
-  	assertTrue(testG.deckCount[thisPlayer], G.deckCount[thisPlayer] - newCards);
-    printf("discard count = %d, expected = %d\n", testG.discardCount[thisPlayer], G.discardCount[thisPlayer] + discarded);
-    assertTrue(testG.discardCount[thisPlayer], G.discardCount[thisPlayer] + discarded);
+  	assertTrue(testG.deckCount[thisPlayer+1], G.deckCount[thisPlayer+1] - newCards);
+    printf("discard count = %d, expected = %d\n", testG.discardCount[thisPlayer+1], G.discardCount[thisPlayer+1] + discarded);
+    assertTrue(testG.discardCount[thisPlayer+1], G.discardCount[thisPlayer+1] + discarded);
     printf("\n");
 
 
