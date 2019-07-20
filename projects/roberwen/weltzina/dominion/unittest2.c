@@ -54,6 +54,7 @@ int main() {
   for(i = -1; i <= 3; i++){
     G.supplyCount[estate] = i;
 
+
     G.hand[thisPlayer][0] = baron;
     G.hand[thisPlayer][1] = copper;
     G.hand[thisPlayer][2] = duchy;
@@ -61,6 +62,7 @@ int main() {
     G.hand[thisPlayer][3] = copper;
 
   	printf("----------------- Testing Card: %s ----------------\n", TESTCARD);
+    printf("Has %d estates\n", i);
 
 
   	printf("TEST 1: choice1 = 0 = gain +1 buy && estate card... Baron @ 0 && estate @ 4\n");
