@@ -81,7 +81,7 @@ int main() {
   printf("action count = %d, expected = %d\n", testG.numActions, G.numActions - actionsPlayed);
   assertTrue(testG.numActions, G.numActions - actionsPlayed);
   printf("estate supply = %d, expected = %d\n", testG.supplyCount[estate], G.supplyCount[estate] - gainedCards);
-  assertTrue(testG.supplyCount[estate], G.supplyCount[estate] - gainedCards);
+  assertTrue(testG.supplyCount[estate], G.supplyCount[estate] + gainedCards);
   /*
 	// ----------- TEST 2: choice1 = 2 = +2 coins --------------
 	printf("TEST 2: choice1 = 2 = +2 coins\n");
