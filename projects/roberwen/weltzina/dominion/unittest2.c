@@ -70,9 +70,9 @@ int main() {
 	printf("hand count = %d, expected = %d\n", testG.handCount[thisPlayer], G.handCount[thisPlayer] + newCards - discarded);
 	printf("deck count = %d, expected = %d\n", testG.deckCount[thisPlayer], G.deckCount[thisPlayer] - newCards + shuffledCards);
 	printf("coins = %d, expected = %d\n", testG.coins, G.coins + xtraCoins);
-	assertTrue(testG.handCount[thisPlayer] == G.handCount[thisPlayer] + newCards - discarded);
-	assertTrue(testG.deckCount[thisPlayer] == G.deckCount[thisPlayer] - newCards + shuffledCards);
-	assertTrue(testG.coins == G.coins + xtraCoins);
+	assertTrue(testG.handCount[thisPlayer], G.handCount[thisPlayer] + newCards - discarded);
+	assertTrue(testG.deckCount[thisPlayer], G.deckCount[thisPlayer] - newCards + shuffledCards);
+	assertTrue(testG.coins, G.coins + xtraCoins);
   /*
 	// ----------- TEST 2: choice1 = 2 = +2 coins --------------
 	printf("TEST 2: choice1 = 2 = +2 coins\n");
