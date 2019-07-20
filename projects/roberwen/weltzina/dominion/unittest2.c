@@ -54,6 +54,7 @@ int main() {
   	memcpy(&testG, &G, sizeof(struct gameState));
   	choice1 = 0;
     choice2 = 0;
+    printf("%d",testG.handCount[thisPlayer]);
   	cardEffect(minion, choice1, choice2, choice3, &testG, handpos, &bonus);
 
     discarded = 0;
@@ -77,8 +78,6 @@ int main() {
     assertTrue(testG.numBuys, G.numBuys);
     printf("action count = %d, expected = %d\n", testG.numActions, G.numActions);
     assertTrue(testG.numActions, G.numActions);
-    printf("estate supply = %d, expected = %d\n", testG.supplyCount[estate], G.supplyCount[estate]);
-    assertTrue(testG.supplyCount[estate], G.supplyCount[estate]);
     printf("\n");
 
 
