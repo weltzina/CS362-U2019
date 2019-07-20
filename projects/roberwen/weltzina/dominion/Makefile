@@ -18,9 +18,11 @@ testDrawCard: testDrawCard.c dominion.o rngs.o
 badTestDrawCard: badTestDrawCard.c dominion.o rngs.o
 	gcc -o badTestDrawCard -g  badTestDrawCard.c dominion.o rngs.o $(CFLAGS)
 
-testPlayBaron: unittest2.c dominion.o rngs.o
+testPlayMinion: unittest2.c dominion.o rngs.o
 	gcc -o unittest2 -g  unittest2.c dominion.o rngs.o $(CFLAGS)
 
+testPlayBaron: unittest1.c dominion.o rngs.o
+	gcc -o unittest1 -g  unittest1.c dominion.o rngs.o $(CFLAGS)
 
 testBuyCard: testDrawCard.c dominion.o rngs.o
 	gcc -o testDrawCard -g  testDrawCard.c dominion.o rngs.o $(CFLAGS)
