@@ -22,7 +22,7 @@
 
 #define TESTCARD "baron"
 
-int assertTrue(int var1, int var2){
+void assertTrue(int var1, int var2){
   if(var1 == var2)
     printf("TRUE");
   else
