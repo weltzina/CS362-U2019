@@ -24,14 +24,14 @@
 
 void assertTrue(int var1, int var2){
   if(var1 == var2)
-    printf("TRUE");
+    printf("TRUE\n");
   else
-    printf("FALSE");
+    printf("FALSE\n");
 }
 
 int main() {
     int newCards = 0;
-    int discarded = 0;
+    int discarded = 1;
     int xtraCoins = 0;
     int shuffledCards = 0;
 
@@ -53,7 +53,6 @@ int main() {
   G.hand[thisPlayer][2] = duchy;
   G.hand[thisPlayer][3] = estate;
   G.hand[thisPlayer][4] = copper;
-  G.hand[thisPlayer][5] = copper;
 
 	printf("----------------- Testing Card: %s ----------------\n", TESTCARD);
 
@@ -66,13 +65,22 @@ int main() {
 	cardEffect(baron, choice1, choice2, choice3, &testG, handpos, &bonus);
 
 	int buyincrease = 1;
-	int estateincrease = 1;
+  discarded = 1;
+  int gainedCards = 1;
+  int actionsPlayed = 1;
 	printf("hand count = %d, expected = %d\n", testG.handCount[thisPlayer], G.handCount[thisPlayer] + newCards - discarded);
-	printf("deck count = %d, expected = %d\n", testG.deckCount[thisPlayer], G.deckCount[thisPlayer] - newCards + shuffledCards);
-	printf("coins = %d, expected = %d\n", testG.coins, G.coins + xtraCoins);
 	assertTrue(testG.handCount[thisPlayer], G.handCount[thisPlayer] + newCards - discarded);
+	printf("deck count = %d, expected = %d\n", testG.deckCount[thisPlayer], G.deckCount[thisPlayer] - newCards);
 	assertTrue(testG.deckCount[thisPlayer], G.deckCount[thisPlayer] - newCards + shuffledCards);
+  printf("discard count = %d, expected = %d\n", testG.discardCount[thisPlayer], G.discardCount[thisPlayer] + gainedCards + discarded - shuffled);
+  assertTrue(testG.discardCount[thisPlayer], G.discardCount[thisPlayer] + gainedCards + discarded - shuffled);
+	printf("coins = %d, expected = %d\n", testG.coins, G.coins + xtraCoins);
 	assertTrue(testG.coins, G.coins + xtraCoins);
+  printf("buy count = %d, expected = %d\n", testG.numBuys[thisPlayer], G.numBuys[thisPlayer] + buyincrease);
+  assertTrue(testG.numBuys[thisPlayer], G.numBuys[thisPlayer] + buyincrease);
+  printf("action count = %d, expected = %d\n", testG.numActions[thisPlayer], G.numActions[thisPlayer] - actionsPlayed);
+  assertTrue(testG.numActions[thisPlayer], G.numActions[thisPlayer] - actionsPlayed);
+  printf("estate supply = %d, expected = %d\n", testG.supplyCount[1], G.supplyCount[1] - gainedCards);
   /*
 	// ----------- TEST 2: choice1 = 2 = +2 coins --------------
 	printf("TEST 2: choice1 = 2 = +2 coins\n");
