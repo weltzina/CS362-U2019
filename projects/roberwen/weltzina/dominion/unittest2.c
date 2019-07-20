@@ -72,14 +72,14 @@ int main() {
 	assertTrue(testG.handCount[thisPlayer], G.handCount[thisPlayer] + newCards - discarded);
 	printf("deck count = %d, expected = %d\n", testG.deckCount[thisPlayer], G.deckCount[thisPlayer] - newCards);
 	assertTrue(testG.deckCount[thisPlayer], G.deckCount[thisPlayer] - newCards + shuffledCards);
-  printf("discard count = %d, expected = %d\n", testG.discardCount[thisPlayer], G.discardCount[thisPlayer] + gainedCards + discarded - shuffled);
-  assertTrue(testG.discardCount[thisPlayer], G.discardCount[thisPlayer] + gainedCards + discarded - shuffled);
+  printf("discard count = %d, expected = %d\n", testG.discardCount[thisPlayer], G.discardCount[thisPlayer] + gainedCards + discarded - shuffledCards);
+  assertTrue(testG.discardCount[thisPlayer], G.discardCount[thisPlayer] + gainedCards + discarded - shuffledCards);
 	printf("coins = %d, expected = %d\n", testG.coins, G.coins + xtraCoins);
 	assertTrue(testG.coins, G.coins + xtraCoins);
-  printf("buy count = %d, expected = %d\n", testG.numBuys[thisPlayer], G.numBuys[thisPlayer] + buyincrease);
-  assertTrue(testG.numBuys[thisPlayer], G.numBuys[thisPlayer] + buyincrease);
-  printf("action count = %d, expected = %d\n", testG.numActions[thisPlayer], G.numActions[thisPlayer] - actionsPlayed);
-  assertTrue(testG.numActions[thisPlayer], G.numActions[thisPlayer] - actionsPlayed);
+  printf("buy count = %d, expected = %d\n", testG.numBuys, G.numBuys + buyincrease);
+  assertTrue(testG.numBuys, G.numBuys + buyincrease);
+  printf("action count = %d, expected = %d\n", testG.numActions, G.numActions - actionsPlayed);
+  assertTrue(testG.numActions, G.numActions - actionsPlayed);
   printf("estate supply = %d, expected = %d\n", testG.supplyCount[1], G.supplyCount[1] - gainedCards);
   /*
 	// ----------- TEST 2: choice1 = 2 = +2 coins --------------
