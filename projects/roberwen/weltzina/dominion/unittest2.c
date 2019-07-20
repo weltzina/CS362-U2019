@@ -30,23 +30,33 @@ void assertTrue(int var1, int var2){
 }
 
 int main() {
-    int newCards = 0;
-    int discarded = 1;
-    int xtraCoins = 0;
-    int shuffledCards = 0;
+  int newCards = 0;
+  int discarded = 1;
+  int xtraCoins = 0;
+  int shuffledCards = 0;
+  int gainedCards = 0;
+  int buyincrease = 1;
+  int actionsPlayed = 1;
 
-    int i, j, m;
-    int handpos = 0, choice1 = 0, choice2 = 0, choice3 = 0, bonus = 0;
-    int remove1, remove2;
-    int seed = 1000;
-    int numPlayers = 2;
-    int thisPlayer = 0;
+  int i, j, m;
+  int handpos = 0, choice1 = 0, choice2 = 0, choice3 = 0, bonus = 0;
+  int remove1, remove2;
+  int seed = 1000;
+  int numPlayers = 2;
+  int thisPlayer = 0;
+  int mixUp1;
+  int mixUp2;
+  int mixUp3;
+  int mixUp4;
+  int mixUp0;
 	struct gameState G, testG;
 	int k[10] = {ambassador, embargo, village, minion, mine, cutpurse,
 			baron, tribute, smithy, council_room};
 
 	// initialize a game state and player cards
 	initializeGame(numPlayers, k, seed, &G);
+
+
 
   G.hand[thisPlayer][0] = baron;
   G.hand[thisPlayer][1] = copper;
@@ -57,17 +67,15 @@ int main() {
 	printf("----------------- Testing Card: %s ----------------\n", TESTCARD);
 
 	// ----------- TEST 1: choice1 = 1 = +2 cards --------------
-	printf("TEST 1: choice1 = 0 = gain +1 buy && estate card\n");
+	printf("TEST 1: choice1 = 0 = gain +1 buy && estate card... Baron @ 0 && estate @ 3\n");
 
 	// copy the game state to a test case
 	memcpy(&testG, &G, sizeof(struct gameState));
 	choice1 = 0;
 	cardEffect(baron, choice1, choice2, choice3, &testG, handpos, &bonus);
 
-	int buyincrease = 1;
-  discarded = 1;
-  int gainedCards = 1;
-  int actionsPlayed = 1;
+  gainedCards = 1;
+
 	printf("hand count = %d, expected = %d\n", testG.handCount[thisPlayer], G.handCount[thisPlayer] + newCards - discarded);
 	assertTrue(testG.handCount[thisPlayer], G.handCount[thisPlayer] + newCards - discarded);
 	printf("deck count = %d, expected = %d\n", testG.deckCount[thisPlayer], G.deckCount[thisPlayer] - newCards);
@@ -81,7 +89,37 @@ int main() {
   printf("action count = %d, expected = %d\n", testG.numActions, G.numActions - actionsPlayed);
   assertTrue(testG.numActions, G.numActions - actionsPlayed);
   printf("estate supply = %d, expected = %d\n", testG.supplyCount[estate], G.supplyCount[estate] - gainedCards);
-  assertTrue(testG.supplyCount[estate], G.supplyCount[estate] + gainedCards);
+  assertTrue(testG.supplyCount[estate], G.supplyCount[estate] - gainedCards);
+
+
+  // ----------- TEST 1: choice1 = 1 = +2 cards --------------
+  printf("TEST 2: choice1 = 1 = gain +1 buy && discard estate && +4 coins..... Baron @ 0 && estate @ 3\n");
+
+  // copy the game state to a test case
+  memcpy(&testG, &G, sizeof(struct gameState));
+  choice1 = 1;
+  cardEffect(baron, choice1, choice2, choice3, &testG, handpos, &bonus);
+
+  gainedCards = 0;
+  discarded = 2;
+  xtraCoins = 4;
+
+  printf("hand count = %d, expected = %d\n", testG.handCount[thisPlayer], G.handCount[thisPlayer] + newCards - discarded);
+  assertTrue(testG.handCount[thisPlayer], G.handCount[thisPlayer] + newCards - discarded);
+  printf("deck count = %d, expected = %d\n", testG.deckCount[thisPlayer], G.deckCount[thisPlayer] - newCards);
+  assertTrue(testG.deckCount[thisPlayer], G.deckCount[thisPlayer] - newCards + shuffledCards);
+  printf("discard count = %d, expected = %d\n", testG.discardCount[thisPlayer], G.discardCount[thisPlayer] + gainedCards + discarded - shuffledCards);
+  assertTrue(testG.discardCount[thisPlayer], G.discardCount[thisPlayer] + gainedCards + discarded - shuffledCards);
+  printf("coins = %d, expected = %d\n", testG.coins, G.coins + xtraCoins);
+  assertTrue(testG.coins, G.coins + xtraCoins);
+  printf("buy count = %d, expected = %d\n", testG.numBuys, G.numBuys + buyincrease);
+  assertTrue(testG.numBuys, G.numBuys + buyincrease);
+  printf("action count = %d, expected = %d\n", testG.numActions, G.numActions - actionsPlayed);
+  assertTrue(testG.numActions, G.numActions - actionsPlayed);
+  printf("estate supply = %d, expected = %d\n", testG.supplyCount[estate], G.supplyCount[estate] - gainedCards);
+  assertTrue(testG.supplyCount[estate], G.supplyCount[estate] - gainedCards);
+
+
   /*
 	// ----------- TEST 2: choice1 = 2 = +2 coins --------------
 	printf("TEST 2: choice1 = 2 = +2 coins\n");
