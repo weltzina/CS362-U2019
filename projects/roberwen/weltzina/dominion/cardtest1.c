@@ -36,7 +36,7 @@ int main() {
 
   printf("TEST 1:\n");
 
-  numPlayers = 1;
+  numPlayers = 2;
 
   // initialize a game state and player cards
   initializeGame(numPlayers, k, seed, &G);
