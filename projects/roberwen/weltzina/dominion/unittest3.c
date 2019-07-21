@@ -88,8 +88,8 @@ int main() {
     assertTrue(testG.numBuys, G.numBuys + buyincrease);
     printf("action count = %d, expected = %d\n", testG.numActions, G.numActions - actionsPlayed + actionincrease);
     assertTrue(testG.numActions, G.numActions - actionsPlayed + actionincrease);
-    printf("supply count copper = %d, expected = %d\n", testG.supplyCount[copper], G.supplyCount[copper] + returnedCards - gainedCards);
-    assertTrue(testG.supplyCount[copper], G.supplyCount[copper] + returnedCards - gainedCards);
+    printf("supply count copper = %d, expected = %d\n", testG.supplyCount[copper], G.supplyCount[copper] + returnCards - gainedCards);
+    assertTrue(testG.supplyCount[copper], G.supplyCount[copper] + returnCards - gainedCards);
     printf("\n");
     printf("Opponent state test--------------------------------\n");
     printf("hand count = %d, expected = %d\n", testG.handCount[thisPlayer+1], G.handCount[thisPlayer+1]);
@@ -130,8 +130,8 @@ int main() {
     assertTrue(testG.numBuys, G.numBuys + buyincrease);
     printf("action count = %d, expected = %d\n", testG.numActions, G.numActions - actionsPlayed + actionincrease);
     assertTrue(testG.numActions, G.numActions - actionsPlayed + actionincrease);
-    printf("supply count copper = %d, expected = %d\n", testG.supplyCount[copper], G.supplyCount[copper] + returnedCards - gainedCards);
-    assertTrue(testG.supplyCount[copper], G.supplyCount[copper] + returnedCards - gainedCards);
+    printf("supply count copper = %d, expected = %d\n", testG.supplyCount[copper], G.supplyCount[copper] + returnCards - gainedCards);
+    assertTrue(testG.supplyCount[copper], G.supplyCount[copper] + returnCards - gainedCards);
     printf("\n");
     printf("Opponent state test--------------------------------\n");
     printf("hand count = %d, expected = %d\n", testG.handCount[thisPlayer+1], G.handCount[thisPlayer+1]);
@@ -173,8 +173,8 @@ int main() {
     assertTrue(testG.numBuys, G.numBuys + buyincrease);
     printf("action count = %d, expected = %d\n", testG.numActions, G.numActions - actionsPlayed + actionincrease);
     assertTrue(testG.numActions, G.numActions - actionsPlayed + actionincrease);
-    printf("supply count copper = %d, expected = %d\n", testG.supplyCount[copper], G.supplyCount[copper] + returnedCards - gainedCards);
-    assertTrue(testG.supplyCount[copper], G.supplyCount[copper] + returnedCards - gainedCards);
+    printf("supply count copper = %d, expected = %d\n", testG.supplyCount[copper], G.supplyCount[copper] + returnCards - gainedCards);
+    assertTrue(testG.supplyCount[copper], G.supplyCount[copper] + returnCards - gainedCards);
     printf("\n");
     printf("Opponent state test--------------------------------\n");
     printf("hand count = %d, expected = %d\n", testG.handCount[thisPlayer+1], G.handCount[thisPlayer+1]);
@@ -216,8 +216,8 @@ int main() {
     assertTrue(testG.numBuys, G.numBuys + buyincrease);
     printf("action count = %d, expected = %d\n", testG.numActions, G.numActions - actionsPlayed + actionincrease);
     assertTrue(testG.numActions, G.numActions - actionsPlayed + actionincrease);
-    printf("supply count copper = %d, expected = %d\n", testG.supplyCount[copper], G.supplyCount[copper] + returnedCards - gainedCards);
-    assertTrue(testG.supplyCount[copper], G.supplyCount[copper] + returnedCards - gainedCards);
+    printf("supply count copper = %d, expected = %d\n", testG.supplyCount[copper], G.supplyCount[copper] + returnCards - gainedCards);
+    assertTrue(testG.supplyCount[copper], G.supplyCount[copper] + returnCards - gainedCards);
     printf("\n");
     printf("Opponent state test--------------------------------\n");
     printf("hand count = %d, expected = %d\n", testG.handCount[thisPlayer+1], G.handCount[thisPlayer+1]);
@@ -259,8 +259,8 @@ int main() {
     assertTrue(testG.numBuys, G.numBuys + buyincrease);
     printf("action count = %d, expected = %d\n", testG.numActions, G.numActions - actionsPlayed + actionincrease);
     assertTrue(testG.numActions, G.numActions - actionsPlayed + actionincrease);
-    printf("supply count copper = %d, expected = %d\n", testG.supplyCount[copper], G.supplyCount[copper] + returnedCards - gainedCards);
-    assertTrue(testG.supplyCount[copper], G.supplyCount[copper] + returnedCards - gainedCards);
+    printf("supply count copper = %d, expected = %d\n", testG.supplyCount[copper], G.supplyCount[copper] + returnCards - gainedCards);
+    assertTrue(testG.supplyCount[copper], G.supplyCount[copper] + returnCards - gainedCards);
     printf("\n");
     printf("Opponent state test--------------------------------\n");
     printf("hand count = %d, expected = %d\n", testG.handCount[thisPlayer+1], G.handCount[thisPlayer]);
@@ -305,8 +305,8 @@ int main() {
     assertTrue(testG.numBuys, G.numBuys + buyincrease);
     printf("action count = %d, expected = %d\n", testG.numActions, G.numActions - actionsPlayed + actionincrease);
     assertTrue(testG.numActions, G.numActions - actionsPlayed + actionincrease);
-    printf("supply count copper = %d, expected = %d\n", testG.supplyCount[copper], G.supplyCount[copper] + returnedCards - gainedCards);
-    assertTrue(testG.supplyCount[copper], G.supplyCount[copper] + returnedCards - gainedCards);
+    printf("supply count copper = %d, expected = %d\n", testG.supplyCount[copper], G.supplyCount[copper] + returnCards - gainedCards);
+    assertTrue(testG.supplyCount[copper], G.supplyCount[copper] + returnCards - gainedCards);
     printf("\n");
     printf("Opponent state test--------------------------------\n");
     printf("hand count = %d, expected = %d\n", testG.handCount[thisPlayer+1], G.handCount[thisPlayer+1]);
@@ -348,8 +348,8 @@ int main() {
     assertTrue(testG.numBuys, G.numBuys + buyincrease);
     printf("action count = %d, expected = %d\n", testG.numActions, G.numActions - actionsPlayed + actionincrease);
     assertTrue(testG.numActions, G.numActions - actionsPlayed + actionincrease);
-    printf("supply count copper = %d, expected = %d\n", testG.supplyCount[copper], G.supplyCount[copper] + returnedCards - gainedCards);
-    assertTrue(testG.supplyCount[copper], G.supplyCount[copper] + returnedCards - gainedCards);
+    printf("supply count copper = %d, expected = %d\n", testG.supplyCount[copper], G.supplyCount[copper] + returnCards - gainedCards);
+    assertTrue(testG.supplyCount[copper], G.supplyCount[copper] + returnCards - gainedCards);
     printf("\n");
     printf("Opponent state test--------------------------------\n");
     printf("hand count = %d, expected = %d\n", testG.handCount[thisPlayer+1], G.handCount[thisPlayer+1]);
