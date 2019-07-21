@@ -94,7 +94,7 @@ int main() {
     assertTrue(testG.deckCount[thisPlayer+1], G.deckCount[thisPlayer]);
     printf("discard count = %d, expected = %d\n", testG.discardCount[thisPlayer+1], G.discardCount[thisPlayer] + OppDiscard);
     assertTrue(testG.discardCount[thisPlayer+1], G.discardCount[thisPlayer] + OppDiscard);
-    prinf("\n");
+    printf("\n");
 
 
 
