@@ -27,6 +27,12 @@ testPlayBaron: unittest1.c dominion.o rngs.o
 testPlayAmbassador: unittest3.c dominion.o rngs.o
 	gcc -o unittest3 -g  unittest3.c dominion.o rngs.o $(CFLAGS)
 
+testPlayTribute: unittest4.c dominion.o rngs.o
+	gcc -o unittest4 -g  unittest4.c dominion.o rngs.o $(CFLAGS)
+
+testPlayMine: unittest5.c dominion.o rngs.o
+	gcc -o unittest5 -g  unittest5.c dominion.o rngs.o $(CFLAGS)
+
 testBuyCard: testDrawCard.c dominion.o rngs.o
 	gcc -o testDrawCard -g  testDrawCard.c dominion.o rngs.o $(CFLAGS)
 

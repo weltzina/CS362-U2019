@@ -55,7 +55,7 @@ int main() {
     memcpy(&testG, &G, sizeof(struct gameState));
     choice1 = 0;
     choice2 = 0;
-    cardEffect(minion, choice1, choice2, choice3, &testG, handpos, &bonus);
+    cardEffect(ambassador, choice1, choice2, choice3, &testG, handpos, &bonus);
 
     discarded = 0;
     newCards = 0;
@@ -95,7 +95,7 @@ int main() {
     memcpy(&testG, &G, sizeof(struct gameState));
     choice1 = 0;
     choice2 = 1;
-    cardEffect(minion, choice1, choice2, choice3, &testG, handpos, &bonus);
+    cardEffect(ambassador, choice1, choice2, choice3, &testG, handpos, &bonus);
 
     discarded = 0;
     newCards = 0;
@@ -136,7 +136,7 @@ int main() {
     memcpy(&testG, &G, sizeof(struct gameState));
     choice1 = 3;
     choice2 = 0;
-    cardEffect(minion, choice1, choice2, choice3, &testG, handpos, &bonus);
+    cardEffect(ambassador, choice1, choice2, choice3, &testG, handpos, &bonus);
 
     discarded = 0;
     newCards = 0;
@@ -177,7 +177,7 @@ int main() {
     memcpy(&testG, &G, sizeof(struct gameState));
     choice1 = 3;
     choice2 = 1;
-    cardEffect(minion, choice1, choice2, choice3, &testG, handpos, &bonus);
+    cardEffect(ambassador, choice1, choice2, choice3, &testG, handpos, &bonus);
 
     discarded = 1;
     newCards = 0;
@@ -218,7 +218,7 @@ int main() {
     memcpy(&testG, &G, sizeof(struct gameState));
     choice1 = 3;
     choice2 = 2;
-    cardEffect(minion, choice1, choice2, choice3, &testG, handpos, &bonus);
+    cardEffect(ambassador, choice1, choice2, choice3, &testG, handpos, &bonus);
 
     discarded = 1;
     newCards = 0;
@@ -262,7 +262,7 @@ int main() {
     memcpy(&testG, &G, sizeof(struct gameState));
     choice1 = 3;
     choice2 = 2;
-    cardEffect(minion, choice1, choice2, choice3, &testG, handpos, &bonus);
+    cardEffect(ambassador, choice1, choice2, choice3, &testG, handpos, &bonus);
 
     discarded = 1;
     newCards = 0;
@@ -303,7 +303,7 @@ int main() {
     memcpy(&testG, &G, sizeof(struct gameState));
     choice1 = 3;
     choice2 = 4;
-    cardEffect(minion, choice1, choice2, choice3, &testG, handpos, &bonus);
+    cardEffect(ambassador, choice1, choice2, choice3, &testG, handpos, &bonus);
 
     discarded = 1;
     newCards = 0;
