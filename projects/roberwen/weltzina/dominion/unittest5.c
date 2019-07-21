@@ -43,7 +43,7 @@ int main() {
 
 
     G.hand[thisPlayer][0] = mine;
-    G.hand[thisPlayer][1] = silver;
+    G.hand[thisPlayer][1] = ambassador;
     G.hand[thisPlayer][2] = copper;
     G.hand[thisPlayer][4] = estate;
     G.hand[thisPlayer][3] = tribute;
@@ -51,19 +51,19 @@ int main() {
   	printf("----------------- Testing Card: %s ----------------\n", TESTCARD);
 
 
-    printf("TEST 1: copper @ 2, gold..... tribute @ 0\n");
+    printf("TEST 1: copper @ 2, silver..... tribute @ 0\n");
 
     // copy the game state to a test case
     memcpy(&testG, &G, sizeof(struct gameState));
     choice1 = 2;
-    choice2 = 7;
+    choice2 = 5;
     cardEffect(mine, choice1, choice2, choice3, &testG, handpos, &bonus);
 
     discarded = 1;
     newCards = 0;
     shuffledCards = 0;
     gainedCards = 1;
-    xtraCoins = 2;
+    xtraCoins = 1;
     buyincrease = 0;
     actionincrease = 0;
     actionsPlayed = 1;
