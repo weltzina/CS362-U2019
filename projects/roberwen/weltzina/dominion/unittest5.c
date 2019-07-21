@@ -62,8 +62,6 @@ int main() {
     choice2 = 5;
     cardEffect(mine, choice1, choice2, choice3, &testG, handpos, &bonus);
 
-    printf("%d\n", G.hand[thisPlayer][2]);
-
     discarded = 1;
     newCards = 0;
     shuffledCards = 0;
@@ -111,7 +109,7 @@ int main() {
     discarded = 0;
     newCards = 0;
     shuffledCards = 0;
-    gainedCards = 1;
+    gainedCards = 0;
     xtraCoins = 0;
     buyincrease = 0;
     actionincrease = 0;
@@ -199,17 +197,17 @@ int main() {
     choice2 = 6;
     cardEffect(mine, choice1, choice2, choice3, &testG, handpos, &bonus);
 
-    discarded = 0;
+    discarded = 1;
     newCards = 0;
     shuffledCards = 0;
-    gainedCards = 0;
-    xtraCoins = 0;
+    gainedCards = 1;
+    xtraCoins = 1;
     buyincrease = 0;
     actionincrease = 0;
-    actionsPlayed = 0;
+    actionsPlayed = 1;
     returnCards = 0;
     OppDiscard = 0;
-    trashed = 0;
+    trashed = 1;
 
     printf("hand count = %d, expected = %d\n", testG.handCount[thisPlayer], G.handCount[thisPlayer] - discarded - trashed + gainedCards);
     assertTrue(testG.handCount[thisPlayer], G.handCount[thisPlayer] - discarded - trashed + gainedCards);
