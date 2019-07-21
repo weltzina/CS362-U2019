@@ -63,7 +63,6 @@ int main() {
     cardEffect(mine, choice1, choice2, choice3, &testG, handpos, &bonus);
 
     printf("%d\n", G.hand[thisPlayer][2]);
-    printf("%s\n", G.hand[thisPlayer][2]);
 
     discarded = 1;
     newCards = 0;
