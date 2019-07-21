@@ -22,9 +22,7 @@ int main() {
   int remove1, remove2;
   int seed = 1000;
   int numPlayers = 2;
-  int returnCards = 0;
   int thisPlayer = 0;
-  int OppDiscard = 0;
 	struct gameState G, testG;
 	int k[10] = {ambassador, embargo, village, minion, mine, cutpurse,
 			baron, tribute, smithy, council_room};
@@ -38,11 +36,13 @@ int main() {
 
   numPlayers = 1;
 
-  // initialize a game state and player cards
-  initializeGame(numPlayers, k, seed, &G);
+  memcpy(&testG, &G, sizeof(struct gameState));
 
-  printf("number of players = %d, expected = null\n", G.numPlayers);
-  assertTrue(G.numPlayers, 0);
+  // initialize a game state and player cards
+  initializeGame(numPlayers, k, seed, &testG);
+
+  printf("number of players = %d, expected = %d\n", testG.numPlayers, G.numPlayers);
+  assertTrue(testG.numPlayers, 0);
   printf("\n");
 
 }
