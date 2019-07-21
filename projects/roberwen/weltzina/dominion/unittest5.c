@@ -62,6 +62,8 @@ int main() {
     choice2 = 5;
     cardEffect(mine, choice1, choice2, choice3, &testG, handpos, &bonus);
 
+    printf("%d\n", G.hand[thisPlayer][choice2]);
+
     discarded = 1;
     newCards = 0;
     shuffledCards = 0;
