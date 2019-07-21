@@ -43,7 +43,7 @@ int main() {
 
 
     G.hand[thisPlayer][0] = mine;
-    G.hand[thisPlayer][1] = copper;
+    G.hand[thisPlayer][1] = silver;
     G.hand[thisPlayer][2] = copper;
     G.hand[thisPlayer][4] = estate;
     G.hand[thisPlayer][3] = tribute;
