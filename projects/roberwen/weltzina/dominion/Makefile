@@ -33,6 +33,15 @@ testPlayTribute: unittest4.c dominion.o rngs.o
 testPlayMine: unittest5.c dominion.o rngs.o
 	gcc -o unittest5 -g  unittest5.c dominion.o rngs.o $(CFLAGS)
 
+tests.out: unittest1.c unittest2.c unittest3.c unittest4.c unittest5.c dominion.c rngs.c
+
+  			echo "Result for running Dominion tests:" > tests.out
+        echo "unittest1.c:" >> tests.out
+      	gcc -o unittest1 dominion.c rngs.c unittest1.c $(CFLAGS)
+        ./unittest1 >> tests.out
+        gcov dominion.c >> tests.out
+
+
 testBuyCard: testDrawCard.c dominion.o rngs.o
 	gcc -o testDrawCard -g  testDrawCard.c dominion.o rngs.o $(CFLAGS)
 

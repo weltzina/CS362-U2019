@@ -48,13 +48,22 @@ int main() {
     G.hand[thisPlayer][4] = estate;
     G.hand[thisPlayer][3] = tribute;
 
+    G.hand[thisPlayer+1][0] = G.deck[thisPlayer+1][9];
+    G.hand[thisPlayer+1][1] = G.deck[thisPlayer+1][8];
+    G.hand[thisPlayer+1][2] = G.deck[thisPlayer+1][7];
+    G.hand[thisPlayer+1][3] = G.deck[thisPlayer+1][6];
+    G.hand[thisPlayer+1][4] = G.deck[thisPlayer+1][5];
+    G.deckCount[thisPlayer+1] = 5;
+    G.handCount[thisPlayer+1] = 5;
+    G.discardCount[thisPlayer+1] = 0;
+
     G.coins = 1;
 
 
   	printf("----------------- Testing Card: %s ----------------\n", TESTCARD);
 
 
-    printf("TEST 1: copper @ 2, silver..... tribute @ 0\n");
+    printf("TEST 1: copper @ 2, silver..... mine @ 0\n");
 
     // copy the game state to a test case
     memcpy(&testG, &G, sizeof(struct gameState));
@@ -88,17 +97,17 @@ int main() {
     assertTrue(testG.numActions, G.numActions - actionsPlayed + actionincrease);
     printf("\n");
     printf("Opponent state test--------------------------------\n");
-    printf("hand count = %d, expected = %d\n", testG.handCount[thisPlayer+1], G.handCount[thisPlayer] - OppDiscard);
-    assertTrue(testG.handCount[thisPlayer+1], G.handCount[thisPlayer] - OppDiscard);
-    printf("deck count = %d, expected = %d\n", testG.deckCount[thisPlayer+1], G.deckCount[thisPlayer]);
-    assertTrue(testG.deckCount[thisPlayer+1], G.deckCount[thisPlayer]);
-    printf("discard count = %d, expected = %d\n", testG.discardCount[thisPlayer+1], G.discardCount[thisPlayer] + OppDiscard);
-    assertTrue(testG.discardCount[thisPlayer+1], G.discardCount[thisPlayer] + OppDiscard);
+    printf("hand count = %d, expected = %d\n", testG.handCount[thisPlayer+1], G.handCount[thisPlayer+1]);
+    assertTrue(testG.handCount[thisPlayer+1], G.handCount[thisPlayer+1]);
+    printf("deck count = %d, expected = %d\n", testG.deckCount[thisPlayer+1], G.deckCount[thisPlayer+1]);
+    assertTrue(testG.deckCount[thisPlayer+1], G.deckCount[thisPlayer+1]);
+    printf("discard count = %d, expected = %d\n", testG.discardCount[thisPlayer+1], G.discardCount[thisPlayer+1] + OppDiscard);
+    assertTrue(testG.discardCount[thisPlayer+1], G.discardCount[thisPlayer+1] + OppDiscard);
     printf("\n");
 
 
 
-    printf("TEST 2: copper @ 2, gold..... tribute @ 0\n");
+    printf("TEST 2: copper @ 2, gold..... mine @ 0\n");
 
     // copy the game state to a test case
     memcpy(&testG, &G, sizeof(struct gameState));
@@ -132,17 +141,17 @@ int main() {
     assertTrue(testG.numActions, G.numActions - actionsPlayed + actionincrease);
     printf("\n");
     printf("Opponent state test--------------------------------\n");
-    printf("hand count = %d, expected = %d\n", testG.handCount[thisPlayer+1], G.handCount[thisPlayer] - OppDiscard);
-    assertTrue(testG.handCount[thisPlayer+1], G.handCount[thisPlayer] - OppDiscard);
-    printf("deck count = %d, expected = %d\n", testG.deckCount[thisPlayer+1], G.deckCount[thisPlayer]);
-    assertTrue(testG.deckCount[thisPlayer+1], G.deckCount[thisPlayer]);
-    printf("discard count = %d, expected = %d\n", testG.discardCount[thisPlayer+1], G.discardCount[thisPlayer] + OppDiscard);
-    assertTrue(testG.discardCount[thisPlayer+1], G.discardCount[thisPlayer] + OppDiscard);
+    printf("hand count = %d, expected = %d\n", testG.handCount[thisPlayer+1], G.handCount[thisPlayer+1] - OppDiscard);
+    assertTrue(testG.handCount[thisPlayer+1], G.handCount[thisPlayer+1] - OppDiscard);
+    printf("deck count = %d, expected = %d\n", testG.deckCount[thisPlayer+1], G.deckCount[thisPlayer+1]);
+    assertTrue(testG.deckCount[thisPlayer+1], G.deckCount[thisPlayer+1]);
+    printf("discard count = %d, expected = %d\n", testG.discardCount[thisPlayer+1], G.discardCount[thisPlayer+1] + OppDiscard);
+    assertTrue(testG.discardCount[thisPlayer+1], G.discardCount[thisPlayer+1] + OppDiscard);
     printf("\n");
 
 
 
-    printf("TEST 3: copper @ 2, copper..... tribute @ 0\n");
+    printf("TEST 3: copper @ 2, copper..... mine @ 0\n");
 
     // copy the game state to a test case
     memcpy(&testG, &G, sizeof(struct gameState));
@@ -176,17 +185,17 @@ int main() {
     assertTrue(testG.numActions, G.numActions - actionsPlayed + actionincrease);
     printf("\n");
     printf("Opponent state test--------------------------------\n");
-    printf("hand count = %d, expected = %d\n", testG.handCount[thisPlayer+1], G.handCount[thisPlayer] - OppDiscard);
-    assertTrue(testG.handCount[thisPlayer+1], G.handCount[thisPlayer] - OppDiscard);
-    printf("deck count = %d, expected = %d\n", testG.deckCount[thisPlayer+1], G.deckCount[thisPlayer]);
-    assertTrue(testG.deckCount[thisPlayer+1], G.deckCount[thisPlayer]);
-    printf("discard count = %d, expected = %d\n", testG.discardCount[thisPlayer+1], G.discardCount[thisPlayer] + OppDiscard);
-    assertTrue(testG.discardCount[thisPlayer+1], G.discardCount[thisPlayer] + OppDiscard);
+    printf("hand count = %d, expected = %d\n", testG.handCount[thisPlayer+1], G.handCount[thisPlayer+1] - OppDiscard);
+    assertTrue(testG.handCount[thisPlayer+1], G.handCount[thisPlayer+1] - OppDiscard);
+    printf("deck count = %d, expected = %d\n", testG.deckCount[thisPlayer+1], G.deckCount[thisPlayer+1]);
+    assertTrue(testG.deckCount[thisPlayer+1], G.deckCount[thisPlayer+1]);
+    printf("discard count = %d, expected = %d\n", testG.discardCount[thisPlayer+1], G.discardCount[thisPlayer+1] + OppDiscard);
+    assertTrue(testG.discardCount[thisPlayer+1], G.discardCount[thisPlayer+1] + OppDiscard);
     printf("\n");
 
 
 
-    printf("TEST 4: silver @ 2, gold..... tribute @ 0\n");
+    printf("TEST 4: silver @ 2, gold..... mine @ 0\n");
 
 
     G.hand[thisPlayer][2] = silver;
@@ -224,12 +233,12 @@ int main() {
     assertTrue(testG.numActions, G.numActions - actionsPlayed + actionincrease);
     printf("\n");
     printf("Opponent state test--------------------------------\n");
-    printf("hand count = %d, expected = %d\n", testG.handCount[thisPlayer+1], G.handCount[thisPlayer] - OppDiscard);
-    assertTrue(testG.handCount[thisPlayer+1], G.handCount[thisPlayer] - OppDiscard);
-    printf("deck count = %d, expected = %d\n", testG.deckCount[thisPlayer+1], G.deckCount[thisPlayer]);
-    assertTrue(testG.deckCount[thisPlayer+1], G.deckCount[thisPlayer]);
-    printf("discard count = %d, expected = %d\n", testG.discardCount[thisPlayer+1], G.discardCount[thisPlayer] + OppDiscard);
-    assertTrue(testG.discardCount[thisPlayer+1], G.discardCount[thisPlayer] + OppDiscard);
-    printf("\n");
+    printf("hand count = %d, expected = %d\n", testG.handCount[thisPlayer+1], G.handCount[thisPlayer+1] - OppDiscard);
+    assertTrue(testG.handCount[thisPlayer+1], G.handCount[thisPlayer+1] - OppDiscard);
+    printf("deck count = %d, expected = %d\n", testG.deckCount[thisPlayer+1], G.deckCount[thisPlayer+1]);
+    assertTrue(testG.deckCount[thisPlayer+1], G.deckCount[thisPlayer+1]);
+    printf("discard count = %d, expected = %d\n", testG.discardCount[thisPlayer+1], G.discardCount[thisPlayer+1] + OppDiscard);
+    assertTrue(testG.discardCount[thisPlayer+1], G.discardCount[thisPlayer+1] + OppDiscard);
+    printf("\n >>>>> SUCCESS: Testing complete %s <<<<<\n\n", TESTCARD);
 
 }

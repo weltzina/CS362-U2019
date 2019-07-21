@@ -1,17 +1,3 @@
-/*
- * cardtest4.c
- *
-
- */
-
-/*
- * Include the following lines in your makefile:
- *
- * cardtest4: cardtest4.c dominion.o rngs.o
- *      gcc -o cardtest1 -g  cardtest4.c dominion.o rngs.o $(CFLAGS)
- */
-
-
 #include "dominion.h"
 #include "dominion_helpers.h"
 #include <string.h>
@@ -57,6 +43,15 @@ int main() {
     G.hand[thisPlayer][2] = duchy;
     G.hand[thisPlayer][4] = estate;
     G.hand[thisPlayer][3] = copper;
+
+    G.hand[thisPlayer+1][0] = G.deck[thisPlayer+1][9];
+    G.hand[thisPlayer+1][1] = G.deck[thisPlayer+1][8];
+    G.hand[thisPlayer+1][2] = G.deck[thisPlayer+1][7];
+    G.hand[thisPlayer+1][3] = G.deck[thisPlayer+1][6];
+    G.hand[thisPlayer+1][4] = G.deck[thisPlayer+1][5];
+    G.deckCount[thisPlayer+1] = 5;
+    G.handCount[thisPlayer+1] = 5;
+    G.discardCount[thisPlayer+1] = 0;
 
   	printf("----------------- Testing Card: %s ----------------\n", TESTCARD);
 
