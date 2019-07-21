@@ -48,6 +48,8 @@ int main() {
     G.hand[thisPlayer][4] = estate;
     G.hand[thisPlayer][3] = tribute;
 
+    G.coins = 1;
+
   	printf("----------------- Testing Card: %s ----------------\n", TESTCARD);
 
 
