@@ -63,6 +63,8 @@ int main() {
 
   	printf("TEST 1: choice1 = 0 = gain +1 buy && estate card... Baron @ 0 && estate @ 4\n");
 
+    printf("%d\n", G.handCount[thisPlayer]);
+
   	// copy the game state to a test case
   	memcpy(&testG, &G, sizeof(struct gameState));
   	choice1 = 0;

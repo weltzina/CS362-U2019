@@ -190,6 +190,7 @@ int main() {
 
 
     G.hand[thisPlayer][2] = silver;
+    G.coins = 2;
 
     // copy the game state to a test case
     memcpy(&testG, &G, sizeof(struct gameState));
