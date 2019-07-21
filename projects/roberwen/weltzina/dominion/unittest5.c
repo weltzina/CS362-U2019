@@ -46,7 +46,7 @@ int main() {
     G.hand[thisPlayer][1] = copper;
     G.hand[thisPlayer][2] = copper;
     G.hand[thisPlayer][4] = estate;
-    G.hand[thisPlayer][3] = copper;
+    G.hand[thisPlayer][3] = tribute;
 
   	printf("----------------- Testing Card: %s ----------------\n", TESTCARD);
 
