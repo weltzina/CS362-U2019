@@ -17,12 +17,12 @@ void assertTrue(int var1, int var2){
 
 int main() {
   int newCards = 0;
-  int discarded = 1;
+  int discarded = 0;
   int xtraCoins = 0;
   int shuffledCards = 0;
   int gainedCards = 0;
   int buyincrease = 1;
-  int actionsPlayed = 1;
+  int actionsPlayed = 0;
   int actionincrease = 0;
 
   int i, j, m;
@@ -70,14 +70,14 @@ int main() {
     choice2 = 0;
     cardEffect(tribute, choice1, choice2, choice3, &testG, handpos, &bonus);
 
-    discarded = 1;
+    discarded = 0;
     newCards = 0;
     shuffledCards = 0;
     gainedCards = 0;
     xtraCoins = 0;
     buyincrease = 0;
     actionincrease = 4;
-    actionsPlayed = 1;
+    actionsPlayed = 0;
     returnCards = 0;
     OppDiscard = 2;
 
@@ -118,14 +118,14 @@ int main() {
     choice2 = 0;
     cardEffect(tribute, choice1, choice2, choice3, &testG, handpos, &bonus);
 
-    discarded = 1;
+    discarded = 0;
     newCards = 0;
     shuffledCards = 0;
     gainedCards = 0;
     xtraCoins = 0;
     buyincrease = 0;
     actionincrease = 2;
-    actionsPlayed = 1;
+    actionsPlayed = 0;
     returnCards = 0;
     OppDiscard = 2;
 
@@ -166,14 +166,14 @@ int main() {
     choice2 = 0;
     cardEffect(tribute, choice1, choice2, choice3, &testG, handpos, &bonus);
 
-    discarded = 1;
+    discarded = 0;
     newCards = 0;
     shuffledCards = 0;
     gainedCards = 0;
     xtraCoins = 2;
     buyincrease = 0;
     actionincrease = 2;
-    actionsPlayed = 1;
+    actionsPlayed = 0;
     returnCards = 0;
     OppDiscard = 2;
 
@@ -214,14 +214,14 @@ int main() {
     choice2 = 0;
     cardEffect(tribute, choice1, choice2, choice3, &testG, handpos, &bonus);
 
-    discarded = 1;
+    discarded = 0;
     newCards = 0;
     shuffledCards = 0;
     gainedCards = 0;
     xtraCoins = 4;
     buyincrease = 0;
     actionincrease = 0;
-    actionsPlayed = 1;
+    actionsPlayed = 0;
     returnCards = 0;
     OppDiscard = 2;
 
@@ -262,14 +262,14 @@ int main() {
     choice2 = 0;
     cardEffect(tribute, choice1, choice2, choice3, &testG, handpos, &bonus);
 
-    discarded = 1;
+    discarded = 0;
     newCards = 0;
     shuffledCards = 0;
     gainedCards = 0;
     xtraCoins = 2;
     buyincrease = 0;
     actionincrease = 0;
-    actionsPlayed = 1;
+    actionsPlayed = 0;
     returnCards = 0;
     OppDiscard = 2;
 
@@ -309,14 +309,14 @@ int main() {
     choice2 = 0;
     cardEffect(tribute, choice1, choice2, choice3, &testG, handpos, &bonus);
 
-    discarded = 1;
+    discarded = 0;
     newCards = 2;
     shuffledCards = 0;
     gainedCards = 0;
     xtraCoins = 0;
     buyincrease = 0;
     actionincrease = 0;
-    actionsPlayed = 1;
+    actionsPlayed = 0;
     returnCards = 0;
     OppDiscard = 2;
 
@@ -357,14 +357,14 @@ int main() {
     choice2 = 0;
     cardEffect(tribute, choice1, choice2, choice3, &testG, handpos, &bonus);
 
-    discarded = 1;
+    discarded = 0;
     newCards = 2;
     shuffledCards = 0;
     gainedCards = 0;
     xtraCoins = 0;
     buyincrease = 0;
     actionincrease = 0;
-    actionsPlayed = 1;
+    actionsPlayed = 0;
     returnCards = 0;
     OppDiscard = 2;
 
