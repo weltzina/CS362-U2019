@@ -27,6 +27,7 @@ testPlayBaron: unittest1.c dominion.o rngs.o
 testPlayAmbassador: unittest3.c dominion.o rngs.o
 	gcc -o unittest3 -g  unittest3.c dominion.o rngs.o $(CFLAGS)
 
+
 testPlayTribute: unittest4.c dominion.o rngs.o
 	gcc -o unittest4 -g  unittest4.c dominion.o rngs.o $(CFLAGS)
 
@@ -35,6 +36,18 @@ testPlayMine: unittest5.c dominion.o rngs.o
 
 testInit: cardtest1.c dominion.o rngs.o
 	gcc -o cardtest1 -g cardtest1.c dominion.o rngs.o $(CFLAGS)
+
+testShuffle: cardtest2.c dominion.o rngs.o
+	gcc -o cardtest2 -g cardtest2.c dominion.o rngs.o $(CFLAGS)
+
+testEndTurn: cardtest3.c dominion.o rngs.o
+	gcc -o cardtest3 -g cardtest3.c dominion.o rngs.o $(CFLAGS)
+
+testGetWinners: cardtest4.c dominion.o rngs.o
+	gcc -o cardtest4 -g cardtest4.c dominion.o rngs.o $(CFLAGS)
+
+testDrawCards: cardtest5.c dominion.o rngs.o
+	gcc -o cardtest5 -g cardtest5.c dominion.o rngs.o $(CFLAGS)
 
 tests.out: unittest1.c unittest2.c unittest3.c unittest4.c unittest5.c dominion.c rngs.c
 
