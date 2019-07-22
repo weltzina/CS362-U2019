@@ -32,7 +32,7 @@ int main() {
 
 
       // initialize a game state and player cards
-      initializeGame(numPlayers, k, seed, &testG);
+      initializeGame(numPlayers, k, seed, &G);
 
   printf("----------------- Testing Function: %s ----------------\n", TESTCARD);
 
@@ -41,7 +41,7 @@ int main() {
 
   memcpy(&testG, &G, sizeof(struct gameState));
 
-  getWinners(players, &testG);
+  getWinners(&players, &testG);
 
   printf("%d\n",players[2]);
 /*
