@@ -43,7 +43,7 @@ int main() {
 
   getWinners(players, &testG);
 
-  printf("%d\n",players[0]);
+  printf("%d\n",players[2]);
 /*
   printf("highest score = %d, expected = %d\n", testG.deckCount[thisPlayer], 5);
   assertTrue(testG.deckCount[thisPlayer], 5);
