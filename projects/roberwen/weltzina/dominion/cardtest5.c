@@ -61,8 +61,8 @@ int main() {
 
   drawCard(thisPlayer, &testG);
 
-  printf("card 6 = %d, expected = %d\n", testG.hand[thisPlayer][testG.handCount[thisPlayer]-1], 0);
-  assertTrue(testG.hand[thisPlayer][testG.handCount[thisPlayer]-1], 0);
+  printf("card 6 = %d, expected = %d\n", testG.hand[thisPlayer][5], 0);
+  assertTrue(testG.hand[thisPlayer][5], 0);
   printf("hand count = %d, expected = %d\n", testG.handCount[thisPlayer], G.handCount[thisPlayer] + newCards);
   assertTrue(testG.handCount[thisPlayer], G.handCount[thisPlayer] + newCards);
   printf("deck count = %d, expected = %d\n", testG.deckCount[thisPlayer], G.deckCount[thisPlayer] - newCards);
