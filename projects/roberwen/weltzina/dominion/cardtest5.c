@@ -27,6 +27,7 @@ int main() {
 	int k[10] = {ambassador, embargo, village, minion, mine, cutpurse,
 			baron, tribute, smithy, gardens};
 
+  int newCards = 1;
 
       // initialize a game state and player cards
       initializeGame(numPlayers, k, seed, &G);
@@ -42,6 +43,10 @@ int main() {
 
   printf("card 6 = %d, expected = %d\n", testG.hand[thisPlayer][testG.handCount[thisPlayer]-1], G.deck[thisPlayer][G.deckCount[thisPlayer]-1]);
   assertTrue(testG.hand[thisPlayer][testG.handCount[thisPlayer]-1], G.deck[thisPlayer][G.deckCount[thisPlayer]-1]);
+  printf("hand count = %d, expected = %d\n", testG.handCount[thisPlayer], G.handCount[thisPlayer] + newCards);
+  assertTrue(testG.handCount[thisPlayer], G.handCount[thisPlayer] + newCards);
+  printf("deck count = %d, expected = %d\n", testG.deckCount[thisPlayer], G.deckCount[thisPlayer] - newCards);
+  assertTrue(testG.deckCount[thisPlayer], G.deckCount[thisPlayer] - newCards);
   printf("\n");
 
 
@@ -50,12 +55,18 @@ int main() {
   G.discardCount[thisPlayer] = 0;
   G.deckCount[thisPlayer] = 0;
 
+  newCards = 0;
+
   memcpy(&testG, &G, sizeof(struct gameState));
 
   drawCard(thisPlayer, &testG);
 
-  printf("card 6 = %d, expected = %d\n", testG.hand[thisPlayer][testG.handCount[thisPlayer]-1], null);
-  assertTrue(testG.hand[thisPlayer][testG.handCount[thisPlayer]-1], null);
+  printf("card 6 = %d, expected = %d\n", testG.hand[thisPlayer][testG.handCount[thisPlayer]-1], 0);
+  assertTrue(testG.hand[thisPlayer][testG.handCount[thisPlayer]-1], 0);
+  printf("hand count = %d, expected = %d\n", testG.handCount[thisPlayer], G.handCount[thisPlayer] + newCards);
+  assertTrue(testG.handCount[thisPlayer], G.handCount[thisPlayer] + newCards);
+  printf("deck count = %d, expected = %d\n", testG.deckCount[thisPlayer], G.deckCount[thisPlayer] - newCards);
+  assertTrue(testG.deckCount[thisPlayer], G.deckCount[thisPlayer] - newCards);
   printf("\n");
 
 }
