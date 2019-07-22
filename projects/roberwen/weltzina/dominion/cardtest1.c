@@ -71,7 +71,27 @@ int main() {
   initializeGame(numPlayers, k, seed, &testG);
 
   printf("number of players = %d, expected = %d\n", testG.numPlayers, G.numPlayers);
-  assertTrue(testG.numPlayers, G.numPlayers);
+  assertTrue(testG.numPlayers, G.numPlayers + numPlayers);
+  printf("\n");
+
+
+  printf("TEST 4:\n");
+
+  numPlayers = 2;
+  k[2] = village;
+
+  memcpy(&testG, &G, sizeof(struct gameState));
+
+  // initialize a game state and player cards
+  initializeGame(numPlayers, k, seed, &testG);
+
+  printf("number of players = %d, expected = %d\n", testG.numPlayers, G.numPlayers);
+  assertTrue(testG.numPlayers, G.numPlayers + numPlayers);
+  printf("Supply count victory = %d, expected = %d\n", testG.supplyCount[estate], victoryCards);
+  printf("supply count regular = %d, expected = %d\n",  testG.supplyCount[tribute], regularCards);
+  printf("supply count copper = %d, expected = %d\n", testG.supplyCount[copper], copperCards);
+  printf("supply count silver = %d, expected = %d\n",  testG.supplyCount[silver], silverCards);
+  printf("supply count gold = %d, expected = %d\n", testG.supplyCount[gold], goldCards);
   printf("\n");
 
 }
