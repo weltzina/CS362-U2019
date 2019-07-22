@@ -29,7 +29,7 @@ int main() {
 
   int players[MAX_PLAYERS];
 
-
+  int winner;
 
       // initialize a game state and player cards
       initializeGame(numPlayers, k, seed, &G);
@@ -43,23 +43,60 @@ int main() {
 
   getWinners(players, &testG);
 
-  printf("%d\n%d\n%d\n",players[0],players[1],players[2]);
-  
-/*
-  printf("highest score = %d, expected = %d\n", testG.deckCount[thisPlayer], 5);
-  assertTrue(testG.deckCount[thisPlayer], 5);
-  printf("discardCount = %d, expected = %d\n", testG.discardCount[thisPlayer], 5);
-  assertTrue(testG.discardCount[thisPlayer], 5);
-  printf("whose turn = %d, expected = %d\n", testG.whoseTurn, G.whoseTurn+1);
-  assertTrue(testG.whoseTurn, G.whoseTurn+1);
-  printf("Opponent-----------------------\n");
-  printf("deck count = %d, expected = %d\n", testG.deckCount[thisPlayer+1], G.deckCount[thisPlayer]);
-  assertTrue(testG.deckCount[thisPlayer+1], G.deckCount[thisPlayer]);
-  printf("hand count = %d, expected = %d\n", testG.handCount[thisPlayer+1], G.handCount[thisPlayer]);
-  assertTrue(testG.handCount[thisPlayer+1], G.handCount[thisPlayer]);
-  printf("discard count = %d, expected = %d\n", testG.discardCount[thisPlayer+1], G.discardCount[thisPlayer]);
-  assertTrue(testG.discardCount[thisPlayer+1], G.discardCount[thisPlayer]);
+  for(i = 0; i < MAX_PLAYERS; i++){
+    if(players[i] > 0)
+      winner = i;
+  }
+  int expected = 1;
+
+  printf("winner = %d, expected = %d\n", winner, expected);
+  assertTrue(winner, expected);
   printf("\n");
-*/
+
+
+
+  printf("TEST 2:\n");
+
+  G.deck[thisPlayer][0] = gold;
+  G.deck[thisPlayer+1][0] = estate;
+
+  memcpy(&testG, &G, sizeof(struct gameState));
+
+  getWinners(players, &testG);
+
+  for(i = 0; i < MAX_PLAYERS; i++){
+    if(players[i] > 0)
+      winner = i;
+  }
+  int expected = 1;
+
+  printf("winner = %d, expected = %d\n", winner, expected);
+  assertTrue(winner, expected);
+  printf("\n");
+
+
+  printf("TEST 3:\n");
+
+  G.deck[thisPlayer+1][0] = province;
+  G.deck[thisPlayer+1][1] = province;
+  G.deck[thisPlayer+1][2] = province;
+  G.deck[thisPlayer+1][3] = province;
+  G.deck[thisPlayer+1][4] = province;
+  G.deck[thisPlayer+1][5] = province;
+  G.deckCount[thisPlayer+1] = 6;
+
+  memcpy(&testG, &G, sizeof(struct gameState));
+
+  getWinners(players, &testG);
+
+  for(i = 0; i < MAX_PLAYERS; i++){
+    if(players[i] > 0)
+      winner = i;
+  }
+  int expected = 1;
+
+  printf("winner = %d, expected = %d\n", winner, expected);
+  assertTrue(winner, expected);
+  printf("\n");
 
 }
