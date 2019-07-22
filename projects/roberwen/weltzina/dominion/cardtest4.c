@@ -39,7 +39,7 @@ int main() {
 
   memcpy(&testG, &G, sizeof(struct gameState));
 
-  getWinners(players[MAX_PLAYERS],&testG);
+  getWinners(&testG);
 
   printf("%d\n",players[1]);
 /*
