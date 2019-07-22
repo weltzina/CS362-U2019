@@ -27,6 +27,12 @@ int main() {
 	int k[10] = {ambassador, embargo, village, minion, mine, cutpurse,
 			baron, tribute, smithy, council_room};
 
+  int goldCards = 30;
+  int silverCards = 40;
+  int copperCards = 46;
+  int regularCards = 10;
+  int victoryCards = 8;
+
 
 
   printf("----------------- Testing Function: %s ----------------\n", TESTCARD);
