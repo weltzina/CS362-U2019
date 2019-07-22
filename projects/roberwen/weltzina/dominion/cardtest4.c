@@ -27,6 +27,8 @@ int main() {
 	int k[10] = {ambassador, embargo, village, minion, mine, cutpurse,
 			baron, tribute, smithy, gardens};
 
+  int players[MAX_PLAYERS];
+
 
 
       // initialize a game state and player cards
@@ -39,7 +41,7 @@ int main() {
 
   memcpy(&testG, &G, sizeof(struct gameState));
 
-  getWinners(&testG);
+  getWinners(players, &testG);
 
   printf("%d\n",players[1]);
 /*
