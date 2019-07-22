@@ -30,6 +30,7 @@ int main() {
   int players[MAX_PLAYERS];
 
   int winner;
+  int expected;
 
       // initialize a game state and player cards
       initializeGame(numPlayers, k, seed, &G);
@@ -47,7 +48,7 @@ int main() {
     if(players[i] > 0)
       winner = i;
   }
-  int expected = 1;
+  expected = 1;
 
   printf("winner = %d, expected = %d\n", winner, expected);
   assertTrue(winner, expected);
@@ -68,7 +69,7 @@ int main() {
     if(players[i] > 0)
       winner = i;
   }
-  int expected = 1;
+  expected = 1;
 
   printf("winner = %d, expected = %d\n", winner, expected);
   assertTrue(winner, expected);
@@ -93,7 +94,7 @@ int main() {
     if(players[i] > 0)
       winner = i;
   }
-  int expected = 1;
+  expected = 1;
 
   printf("winner = %d, expected = %d\n", winner, expected);
   assertTrue(winner, expected);
