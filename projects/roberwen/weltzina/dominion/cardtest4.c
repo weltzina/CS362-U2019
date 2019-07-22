@@ -41,7 +41,7 @@ int main() {
 
   memcpy(&testG, &G, sizeof(struct gameState));
 
-  getWinners(&players, &testG);
+  getWinners(players, &testG);
 
   printf("%d\n%d\n%d\n",players[0],players[1],players[2]);
   printf("%d\n",highScore);
