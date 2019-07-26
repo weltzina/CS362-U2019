@@ -19,13 +19,14 @@ int main(){
 
   SelectStream(2);
   PutSeed(3);
+  initializeGame(&G);
 
   for(int n = 0; n < 2; n++){
-    for(int i = 0; i < sizeof(struct gameState); i++){
-      ((char*)&G)[i] = floor(Random() * 128);
-    }
+  //  for(int i = 0; i < sizeof(struct gameState); i++){
+  //    ((char*)&G)[i] = floor(Random() * 128);
+  //  }
     G.numPlayers = floor(Random() * 3)+2;
-    G.whoseTurn = floor(Random() * playerCount);
+    G.whoseTurn = floor(Random() * G.numPlayers);
     for(int j = 0; j < playerCount; j++){
       G.deckCount[j] = floor(Random() * MAX_DECK)+1;
       G.discardCount[j] = floor(Random() * MAX_DECK)+1;
@@ -50,7 +51,7 @@ int checkPlayBaron(int choice1, struct gameState *state, int currentPlayer){
 
   r = playbaron(choice1, &state, currentPlayer);
 
-  pre.numBuys++;
+//  pre.numBuys++;
 
 /*  if(choice1 > 0){
       for(int i = 0; i < pre.handCount[currentPlayer]; i++){
