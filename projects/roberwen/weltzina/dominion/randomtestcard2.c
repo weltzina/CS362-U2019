@@ -63,9 +63,9 @@ int checkPlayMinion(int choice1, int choice2, struct gameState *state, int curre
     printf("coins = %d, expected %d\n", state->coins, pre.coins);
     for(int q = 0; q < pre.numPlayers; q++){
       if(players[q] == 1){
-        printf("player %d discard = %d, expected %d\n", state->discardCount[q], pre.discardCount[q]);
-        printf("player %d deck = %d, expected %d\n", state->deckCount[q], pre.deckCount[q]);
-        printf("player %d hand = %d, expected %d\n\n\n\n", state->handCount[q], pre.handCount[q]);
+        printf("player %d discard = %d, expected %d\n", q, state->discardCount[q], pre.discardCount[q]);
+        printf("player %d deck = %d, expected %d\n", q, state->deckCount[q], pre.deckCount[q]);
+        printf("player %d hand = %d, expected %d\n\n\n\n", q, state->handCount[q], pre.handCount[q]);
       }
     }
   }
