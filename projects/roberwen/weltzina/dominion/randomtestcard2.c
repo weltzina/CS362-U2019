@@ -107,7 +107,7 @@ int main(){
         G.hand[j][f] = floor(Random() * treasure_map * 1.2)-2;
       }
     }
-    checkPlayMinion(floor(Random() * 4)-1, floor(Random() * 4)-1, &G, G.whoseTurn, floor(Random() *G.handCount[G.whoseTurn] * 1.2)-2);
+    checkPlayMinion(floor(Random() * 4)-1, floor(Random() * 4)-1, &G, G.whoseTurn, floor(Random() *G.handCount[G.whoseTurn]));
   }
 
 return 0;
