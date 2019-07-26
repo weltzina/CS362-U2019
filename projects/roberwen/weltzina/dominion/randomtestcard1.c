@@ -56,7 +56,7 @@ int checkPlayBaron(int choice1, struct gameState *state, int currentPlayer){
       printf("Estate SupplyCount = %d, expected %d\n", state.supplyCount[estate], pre.supplyCount[estate]);
       printf("DiscardCount = %d, expected %d\n", state.discardCount[state.whoseTurn], pre.discardCount[currentPlayer]);
       printf("Coins = %d, expected %d\n", state.coins, pre.coins);
-      printf("Buys = %d, expected %d\n", state.buys, pre.buys);
+      printf("Buys = %d, expected %d\n", state.numBuys, pre.numBuys);
 
       /*
       int numPlayers; //number of players
