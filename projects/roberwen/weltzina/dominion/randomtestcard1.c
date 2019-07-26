@@ -7,6 +7,17 @@
 #include <math.h>
 
 
+int assertTrue(int var1, int var2){
+  if(var1 != var2){
+    printf("FALSE---------------------------------------------------------\n");
+    return 0;
+  }else{
+    return 1;
+  }
+}
+
+
+
 int checkPlayBaron(int choice1, struct gameState *state, int currentPlayer){
   struct gameState pre;
   memcpy(&pre, state, sizeof(struct gameState));
@@ -15,12 +26,10 @@ int checkPlayBaron(int choice1, struct gameState *state, int currentPlayer){
   int card_not_discarded = 1;
 
   pre.numBuys++;
-  printf("%d\n", pre.numBuys);
 
   r = playbaron(choice1, state, currentPlayer);
-  printf("%d\n", state->numBuys);
 
-/*  if(choice1 > 0){
+  if(choice1 > 0){
       for(int i = 0; i < pre.handCount[currentPlayer]; i++){
         if(pre.hand[currentPlayer][i] == estate){
           card_not_discarded = 0;
@@ -41,11 +50,18 @@ int checkPlayBaron(int choice1, struct gameState *state, int currentPlayer){
       pre.supplyCount[estate]--;
     }
   }
-*/
-  assert(r==0);
 
-  assert(memcmp(&pre, state, sizeof(struct gameState)) == 0);
 
+  if(!assertTrue(memcmp(&pre, state, sizeof(struct gameState)), 0) || r != 0){
+      printf("Estate SupplyCount = %d, expected %d\n");
+      printf("DiscardCount = %d, expected %d\n");
+      printf("Coins = %d, expected %d\n");
+      printf("Buys = %d, expected %d\n");
+      printf("state\n");
+      printf(state);
+      printf("expected\n");
+      printf(pre);
+  }
   return 0;
 
 }
@@ -63,7 +79,7 @@ int main(){
   SelectStream(2);
   PutSeed(3);
 
-  for(int n = 0; n < 2000; n++){
+  for(int n = 0; n < 10; n++){
     for(int i = 0; i < sizeof(struct gameState); i++){
       ((char*)&G)[i] = floor(Random() * 128);
     }
