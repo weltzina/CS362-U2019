@@ -22,10 +22,10 @@ int assertTrue(int var1, int var2){
 int checkPlayMinion(int choice1, int choice2, struct gameState *state, int currentPlayer, int handPos){
   struct gameState pre;
   memcpy(&pre, state, sizeof(struct gameState));
-/*
+
   int players[pre.numPlayers];
   int r;
-
+/*
   if(choice1){
     pre.coins += 2;
   }else if(choice2){
