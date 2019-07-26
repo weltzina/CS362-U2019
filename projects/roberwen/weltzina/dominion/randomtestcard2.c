@@ -93,7 +93,7 @@ int main(){
     for(int i = 0; i < sizeof(struct gameState); i++){
       ((char*)&G)[i] = floor(Random() * 256);
     }
-    for(int t = 0; t <= treasure_map; t++){
+    /*for(int t = 0; t <= treasure_map; t++){
       G.supplyCount[t] = floor(Random() * (treasure_map+2))-1;
     }
     G.numPlayers = floor(Random() * (MAX_PLAYERS-1))+2;
@@ -115,7 +115,7 @@ int main(){
     }
     for(int q = 0; q < G.playedCardCount; q++){
       G.playedCards[q] = floor(Random() * (treasure_map + 2))-1;
-    }
+    }*/
     checkPlayMinion(floor(Random() * 4)-1, floor(Random() * 4)-1, &G, G.whoseTurn, floor(Random() *G.handCount[G.whoseTurn]));
   }
 
