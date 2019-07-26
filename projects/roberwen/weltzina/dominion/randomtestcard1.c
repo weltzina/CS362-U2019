@@ -1,4 +1,7 @@
-
+#include "dominion.h"
+#include "rngs.h"
+#include <stdio.h>
+#include <stdlib.h>
 
 
 
