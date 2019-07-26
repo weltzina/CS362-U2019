@@ -7,7 +7,7 @@ int main(){
   int currentPlayer;
   int choice1;
 
-  struct gameState G;
+  struct gameState &G;
 
   SelectStream(2);
   PutSeed(3);
