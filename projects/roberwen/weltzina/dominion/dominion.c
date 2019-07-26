@@ -1152,7 +1152,7 @@ int playAmbassador(int choice1, int choice2, int handPos, int currentPlayer, str
 int playMinion(int choice1, int choice2, struct gameState *state, int currentPlayer, int handPos) {
   int i;
   int j;
-
+/*
   //+1 action
   state->numActions++;
 
@@ -1199,7 +1199,7 @@ int playMinion(int choice1, int choice2, struct gameState *state, int currentPla
         }
       }
     }
-  }
+  }*/
   return 0;
 }
 
