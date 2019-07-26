@@ -1157,8 +1157,8 @@ int playMinion(int choice1, int choice2, struct gameState *state, int currentPla
   state->numActions++;
 
   //discard card from hand
-  discardCard(handPos, currentPlayer, state, 0);
-
+  //discardCard(handPos, currentPlayer, state, 0);
+/*
   if (choice1)		//+2 coins
   {
     state->coins = state->coins + 2;
@@ -1197,7 +1197,7 @@ int playMinion(int choice1, int choice2, struct gameState *state, int currentPla
         }
       }
     }
-  }
+  }*/
   return 0;
 }
 
