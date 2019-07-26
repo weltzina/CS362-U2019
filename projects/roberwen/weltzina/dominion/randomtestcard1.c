@@ -50,7 +50,7 @@ int checkPlayBaron(int choice1, struct gameState *state, int currentPlayer){
 
   r = playbaron(choice1, &state, currentPlayer);
 
-  pre.numBuys++;
+  //pre.numBuys++;
 
 /*  if(choice1 > 0){
       for(int i = 0; i < pre.handCount[currentPlayer]; i++){
