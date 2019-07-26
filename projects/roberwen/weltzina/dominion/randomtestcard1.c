@@ -24,7 +24,7 @@ int main(){
       ((char*)&G)[i] = floor(Random() * 256);
     }
     currentPlayer = floor(Random() * 4);
-    r = checkPlayBaron(floor(Random()*2), &G, whoseTurn(G));
+    r = checkPlayBaron(floor(Random()*2), &G, G.whoseTurn;
   }
 
 return 0;
