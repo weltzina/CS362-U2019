@@ -89,13 +89,13 @@ int main(){
   SelectStream(2);
   PutSeed(3);
 
-  for(int n = 0; n < 200; n++){
+  for(int n = 0; n < 2000; n++){
     for(int i = 0; i < sizeof(struct gameState); i++){
       ((char*)&G)[i] = floor(Random() * 256);
     }
     G.numPlayers = floor(Random() * (MAX_PLAYERS-1))+2;
     G.whoseTurn = floor(Random() * G.numPlayers);
-    G.playedCardCount = floor(Random() * MAX_DECK * 1.2)-2;
+    G.playedCardCount = floor(Random() * MAX_DECK);
     for(int j = 0; j < G.numPlayers; j++){
       G.deckCount[j] = floor(Random() * MAX_DECK *1.2)-2;
       G.discardCount[j] = floor(Random() * MAX_DECK *1.2)-2;
