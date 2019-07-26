@@ -87,7 +87,7 @@ int main(){
 
   for(int n = 0; n < 2000; n++){
     for(int i = 0; i < sizeof(struct gameState); i++){
-      ((char*)&G)[i] = floor(Random() * 256);
+      ((char*)&G)[i] = floor(Random() * 128);
     }
   /*  G.numPlayers = floor(Random() * MAX_PLAYERS * 2.2) - MAX_PLAYERS;
     G.whoseTurn = floor(Random() * G.numPlayers * 2.2) - G.numPlayers;
