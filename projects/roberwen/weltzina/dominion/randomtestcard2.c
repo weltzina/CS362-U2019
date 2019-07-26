@@ -56,7 +56,7 @@ int checkPlayMinion(int choice1, int choice2, struct gameState *state, int curre
   }
   pre.numActions++;
 
-  playMinion(choice1, choice2, state, currentPlayer, handPos);
+  r = playMinion(choice1, choice2, state, currentPlayer, handPos);
 
   if(!assertTrue(memcmp(&pre, state, sizeof(struct gameState)), 0)){
     printf("DiscardCount = %d, expected %d\n", state->discardCount[currentPlayer], pre.discardCount[currentPlayer]);
@@ -109,7 +109,8 @@ int main(){
         G.hand[j][f] = floor(Random() * treasure_map * 1.2)-2;
       }
     }
-    checkPlayMinion(floor(Random() * 4)-1, floor(Random() * 4)-1, &G, G.whoseTurn, floor(Random() *G.handCount[G.whoseTurn]));
+    checkPlayMinion(1, 1, &G, G.whoseTurn, floor(Random() *G.handCount[G.whoseTurn]));
+    //checkPlayMinion(floor(Random() * 4)-1, floor(Random() * 4)-1, &G, G.whoseTurn, floor(Random() *G.handCount[G.whoseTurn]));
   }
 
 return 0;
