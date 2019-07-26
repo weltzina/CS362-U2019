@@ -1152,7 +1152,7 @@ int playAmbassador(int choice1, int choice2, int handPos, int currentPlayer, str
 int playMinion(int choice1, int choice2, struct gameState *state, int currentPlayer, int handPos) {
   int i;
   int j;
-  
+
   //+1 action
   state->numActions++;
 
@@ -1206,7 +1206,7 @@ int playMinion(int choice1, int choice2, struct gameState *state, int currentPla
 //Case baron's card effect call
 int playbaron(int choice1, struct gameState *state, int currentPlayer) {
   state->numBuys++;//Increase buys by 1!
-  if (choice1 > 0){//Boolean true or going to discard an estate
+/*  if (choice1 > 0){//Boolean true or going to discard an estate
     int p = 1;//Iterator for hand! Was 0. Skips first card***************************************************************** Bug
     int card_not_discarded = 1;//Flag for discard set!
     while(card_not_discarded){
@@ -1248,7 +1248,7 @@ int playbaron(int choice1, struct gameState *state, int currentPlayer) {
         isGameOver(state);
       }
     }
-  }
+  }*/
   return 0;
 }
 
