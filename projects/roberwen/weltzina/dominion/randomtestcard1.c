@@ -51,7 +51,7 @@ int checkPlayBaron(int choice1, struct gameState *state, int currentPlayer){
   pre.numBuys++;
   printf("%d\n", pre.numBuys);
 
-  r = playbaron(choice1, &state, currentPlayer);
+  playbaron(choice1, &state, currentPlayer);
   printf("%d\n", state->numBuys)
 
 /*  if(choice1 > 0){
