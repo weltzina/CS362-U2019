@@ -53,6 +53,7 @@ int checkPlayMinion(int choice1, int choice2, struct gameState *state, int curre
   }else{
     pre.coins += 2;
   }
+  pre.numActions++;
 
   r = playMinion(choice1, choice2, state, currentPlayer, handPos);
 
@@ -107,7 +108,7 @@ int main(){
         G.hand[j][f] = floor(Random() * treasure_map * 1.2)-2;
       }
     }
-    checkPlayMinion(floor(Random() * 4)-1, floor(Random() * 4)-1, G, G.whoseTurn, floor(Random() *G.handCount[G.whoseTurn]));
+    checkPlayMinion(floor(Random() * 4)-1, floor(Random() * 4)-1, &G, G.whoseTurn, floor(Random() *G.handCount[G.whoseTurn]));
   }
 
 return 0;
