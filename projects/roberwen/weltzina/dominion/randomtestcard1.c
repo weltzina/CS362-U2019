@@ -69,7 +69,7 @@ int checkPlayBaron(int choice1, struct gameState *state, int currentPlayer){
 */
   assert(r==0);
 
-  assert(memcpy(&pre, state, sizeof(struct gameState)) == 0);
+  assert(memcmp(&pre, state, sizeof(struct gameState)) == 0);
 
   return 0;
 
