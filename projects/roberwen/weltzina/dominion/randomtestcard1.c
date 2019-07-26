@@ -14,10 +14,10 @@ int checkPlayBaron(int choice1, struct gameState *state, int currentPlayer){
   int r;
   int card_not_discarded = 1;
 
-  pre.numBuys++;
+  //pre.numBuys++;
   printf("%d\n", pre.numBuys);
 
-  playbaron(choice1, &state, currentPlayer);
+  r = playbaron(choice1, &state, currentPlayer);
   printf("%d\n", state->numBuys);
 
 /*  if(choice1 > 0){
