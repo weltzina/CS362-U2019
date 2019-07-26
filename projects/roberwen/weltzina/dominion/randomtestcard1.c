@@ -22,7 +22,7 @@ int main(){
 
   for(int n = 0; n < 2; n++){
     for(int i = 0; i < sizeof(struct gameState); i++){
-      ((char*)G)[i] = floor(Random() * 256);
+      ((char*)&G)[i] = floor(Random() * 256);
     }
     G.numPlayers = floor(Random() * 3)+2;
     G.whoseTurn = floor(Random() * G.numPlayers);
@@ -31,7 +31,7 @@ int main(){
       G.discardCount[j] = floor(Random() * MAX_DECK)+1;
       G.handCount[j] = floor(Random() * MAX_HAND)+1;
     }
-    r = checkPlayBaron(floor(Random()*2), G, G.whoseTurn);
+    checkPlayBaron(floor(Random()*2), &G, G.whoseTurn);
   }
 
 return 0;
@@ -49,9 +49,10 @@ int checkPlayBaron(int choice1, struct gameState *state, int currentPlayer){
   int card_not_discarded = 1;
 
   pre.numBuys++;
+  printf("%d\n", pre.numBuys);
 
   r = playbaron(choice1, &state, currentPlayer);
-
+  printf("%d\n", state.numBuys)
 
 /*  if(choice1 > 0){
       for(int i = 0; i < pre.handCount[currentPlayer]; i++){
