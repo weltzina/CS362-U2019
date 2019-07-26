@@ -39,7 +39,6 @@ randomtestresults: randomtestcard1.c dominion.c rngs.c
 	echo "Result for running Random Dominion tests:" > unittestresults.out
 	echo "randomtestcard1.c:" >> unittestresults.out
 	gcc -o randomtestcard1 dominion.c rngs.c randomtestcard1.c $(CFLAGS)
-	./randomtestcard1 >> unittestresults.out
 	gcov dominion.c -f -b >> unittestresults.out
 
 
