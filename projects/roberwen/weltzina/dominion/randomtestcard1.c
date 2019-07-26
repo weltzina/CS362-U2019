@@ -52,7 +52,7 @@ int checkPlayBaron(int choice1, struct gameState *state, int currentPlayer){
   printf("%d\n", pre.numBuys);
 
   r = playbaron(choice1, &state, currentPlayer);
-  printf("%d\n", state.numBuys)
+  printf("%d\n", state->numBuys)
 
 /*  if(choice1 > 0){
       for(int i = 0; i < pre.handCount[currentPlayer]; i++){
