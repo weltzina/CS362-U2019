@@ -24,6 +24,7 @@ int checkPlayMinion(int choice1, int choice2, struct gameState *state, int curre
   memcpy(&pre, state, sizeof(struct gameState));
 
   int players[pre.numPlayers];
+  int r;
 
   if(choice1){
     pre.coins += 2;
@@ -34,7 +35,7 @@ int checkPlayMinion(int choice1, int choice2, struct gameState *state, int curre
       pre.handCount[pre.whoseTurn]--;
     }
     for(int j = 0; j < 4; j++){
-      drawCard(pre.whoseTurn, pre);
+      drawCard(pre.whoseTurn, &pre);
     }
     for(int f = 0; f < pre.numPlayers; f++){
       if(pre.handCount[f] > 4){
