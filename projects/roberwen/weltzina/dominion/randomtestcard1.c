@@ -89,7 +89,7 @@ int main(){
     for(int i = 0; i < sizeof(struct gameState); i++){
       ((char*)&G)[i] = floor(Random() * 256);
     }
-    G.numPlayers = floor(Random() * MAX_PLAYERS * 2.2) - MAX_PLAYERS;
+  /*  G.numPlayers = floor(Random() * MAX_PLAYERS * 2.2) - MAX_PLAYERS;
     G.whoseTurn = floor(Random() * G.numPlayers * 2.2) - G.numPlayers;
     for(int j = 0; j < G.numPlayers; j++){
       G.deckCount[j] = floor(Random() * MAX_DECK * 3) - MAX_DECK;
@@ -104,7 +104,7 @@ int main(){
       for(int f = 0; f < G.handCount[j]; f++){
         G.hand[j][f] = floor(Random() * treasure_map * 2.2) - treasure_map;
       }
-    }
+    }*/
     checkPlayBaron(floor(Random()*2), &G, G.whoseTurn);
   }
 
