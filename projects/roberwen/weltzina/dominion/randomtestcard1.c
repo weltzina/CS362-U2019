@@ -48,9 +48,10 @@ int checkPlayBaron(int choice1, struct gameState *state, int currentPlayer){
   int r;
   int card_not_discarded = 1;
 
+  pre.numBuys++;
+
   r = playbaron(choice1, &state, currentPlayer);
 
-  pre.numBuys++;
 
 /*  if(choice1 > 0){
       for(int i = 0; i < pre.handCount[currentPlayer]; i++){
