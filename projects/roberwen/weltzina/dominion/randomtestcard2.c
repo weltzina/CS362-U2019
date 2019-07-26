@@ -56,7 +56,7 @@ int checkPlayMinion(int choice1, int choice2, struct gameState *state, int curre
   }
   pre.numActions++;
 
-  r = playMinion(choice1, choice2, &state, currentPlayer, handPos);
+  r = playMinion(choice1, choice2, state, currentPlayer, handPos);
 
   if(!assertTrue(memcmp(&pre, state, sizeof(struct gameState)), 0) || r != 0){
     printf("DiscardCount = %d, expected %d\n", state->discardCount[currentPlayer], pre.discardCount[currentPlayer]);
@@ -91,7 +91,7 @@ int main(){
 
   for(int n = 0; n < 200; n++){
     for(int i = 0; i < sizeof(struct gameState); i++){
-      ((char*)&G)[i] = floor(Random() * 256);
+      ((char*)&G)[i] = floor(Random() * 128);
     }
     G.numPlayers = floor(Random() * (MAX_PLAYERS-1))+2;
     G.whoseTurn = floor(Random() * G.numPlayers);
