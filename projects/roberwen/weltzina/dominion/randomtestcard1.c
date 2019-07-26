@@ -13,6 +13,7 @@ int main(){
   int currentPlayer;
   int choice1;
   int r;
+  int playerCount;
 
   struct gameState G;
 
@@ -23,7 +24,13 @@ int main(){
     for(int i = 0; i < sizeof(struct gameState); i++){
       ((char*)&G)[i] = floor(Random() * 256);
     }
-    currentPlayer = floor(Random() * 4);
+    playerCount = floor(Random() * MAX_PLAYERS);
+    currentPlayer = floor(Random() * playerCount);
+    for(int j = 0; j < playerCount; j++){
+      G.deckCount[j] = floor(Random() * MAX_DECK);
+      G.discard[j] = floor(Random() * MAX_DECK);
+      G.handCount[j] = floor(Random() * MAX_HAND);
+    }
     r = checkPlayBaron(floor(Random()*2), &G, G.whoseTurn);
   }
 
