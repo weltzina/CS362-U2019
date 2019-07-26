@@ -93,13 +93,16 @@ int main(){
     for(int i = 0; i < sizeof(struct gameState); i++){
       ((char*)&G)[i] = floor(Random() * 256);
     }
+    for(int t = 0; t <= treasure_map; t++){
+      G.supplyCount[t] = floor(Random() * (treasure_map+2))-1;
+    }
     G.numPlayers = floor(Random() * (MAX_PLAYERS-1))+2;
     G.whoseTurn = floor(Random() * G.numPlayers);
     G.playedCardCount = floor(Random() * MAX_DECK);
     for(int j = 0; j < G.numPlayers; j++){
-      G.deckCount[j] = floor(Random() * MAX_DECK *1.2)-2;
-      G.discardCount[j] = floor(Random() * MAX_DECK *1.2)-2;
-      G.handCount[j] = floor(Random() * MAX_HAND *1.2)-2;
+      G.deckCount[j] = floor(Random() * MAX_DECK *1.2)-1;
+      G.discardCount[j] = floor(Random() * MAX_DECK *1.2)-1;
+      G.handCount[j] = floor(Random() * MAX_HAND *1.2)-1;
       for(int f = 0; f < G.deckCount[j]; f++){
         G.deck[j][f] = floor(Random() * (treasure_map + 2))-1;
       }
