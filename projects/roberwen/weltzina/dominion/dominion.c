@@ -1157,18 +1157,18 @@ int playMinion(int choice1, int choice2, struct gameState *state, int currentPla
   state->numActions++;
 
   //discard card from hand
-  discardCard(handPos, currentPlayer, state, 0);
-/*
+  //discardCard(handPos, currentPlayer, state, 0);
+
   if (choice1)		//+2 coins
   {
     state->coins = state->coins + 2;
   }else if (choice2)		//discard hand, redraw 4, other players with 5+ cards discard hand and draw 4
   {
     //discard hand
-    while(numHandCards(state) < 0) // was >. Will not end up discarding and will still draw 4.**************************** Bug
+    /*while(numHandCards(state) < 0) // was >. Will not end up discarding and will still draw 4.**************************** Bug
     {
       discardCard(handPos, currentPlayer, state, 0);
-    }
+    }*/
 
     //draw 4
     for (i = 0; i < 4; i++)
@@ -1184,10 +1184,10 @@ int playMinion(int choice1, int choice2, struct gameState *state, int currentPla
         if ( state->handCount[i] > 4 )
         {
           //discard hand
-          while( state->handCount[i] > 0 )
+          /*while( state->handCount[i] > 0 )
           {
             discardCard(handPos, i, state, 0);
-          }
+          }*/
 
           //draw 4
           for (j = 0; j < 4; j++)
@@ -1197,7 +1197,7 @@ int playMinion(int choice1, int choice2, struct gameState *state, int currentPla
         }
       }
     }
-  }*/
+  }
   return 0;
 }
 
