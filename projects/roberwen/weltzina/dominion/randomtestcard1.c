@@ -28,7 +28,7 @@ int main(){
     currentPlayer = floor(Random() * playerCount);
     for(int j = 0; j < playerCount; j++){
       G.deckCount[j] = floor(Random() * MAX_DECK);
-      G.discard[j] = floor(Random() * MAX_DECK);
+      G.discardCount[j] = floor(Random() * MAX_DECK);
       G.handCount[j] = floor(Random() * MAX_HAND);
     }
     r = checkPlayBaron(floor(Random()*2), &G, G.whoseTurn);
