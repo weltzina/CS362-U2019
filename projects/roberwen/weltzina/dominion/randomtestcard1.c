@@ -89,22 +89,22 @@ int main(){
     for(int i = 0; i < sizeof(struct gameState); i++){
       ((char*)&G)[i] = floor(Random() * 128);
     }
-  /*  G.numPlayers = floor(Random() * MAX_PLAYERS * 2.2) - MAX_PLAYERS;
-    G.whoseTurn = floor(Random() * G.numPlayers * 2.2) - G.numPlayers;
+    G.numPlayers = floor(Random() * MAX_PLAYERS * 1.2);
+    G.whoseTurn = floor(Random() * G.numPlayers * 1.2);
     for(int j = 0; j < G.numPlayers; j++){
-      G.deckCount[j] = floor(Random() * MAX_DECK * 3) - MAX_DECK;
-      G.discardCount[j] = floor(Random() * MAX_DECK * 3) - MAX_DECK;
-      G.handCount[j] = floor(Random() * MAX_HAND * 3) - MAX_HAND;
+      G.deckCount[j] = floor(Random() * MAX_DECK * 1.2);
+      G.discardCount[j] = floor(Random() * MAX_DECK * 1.2);
+      G.handCount[j] = floor(Random() * MAX_HAND * 1.2);
       for(int f = 0; f < G.deckCount[j]; f++){
-        G.deck[j][f] = floor(Random() * (treasure_map) * 2.2) - treasure_map;
+        G.deck[j][f] = floor(Random() * (treasure_map) * 1.2);
       }
       for(int f = 0; f < G.discardCount[j]; f++){
-        G.discard[j][f] = floor(Random() * treasure_map * 2.2) - treasure_map;
+        G.discard[j][f] = floor(Random() * treasure_map * 1.2);
       }
       for(int f = 0; f < G.handCount[j]; f++){
-        G.hand[j][f] = floor(Random() * treasure_map * 2.2) - treasure_map;
+        G.hand[j][f] = floor(Random() * treasure_map * 1.2);
       }
-    }*/
+    }
     checkPlayBaron(floor(Random()*4)-1, &G, G.whoseTurn);
   }
 
