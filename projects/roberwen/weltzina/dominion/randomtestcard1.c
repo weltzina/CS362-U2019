@@ -105,7 +105,7 @@ int main(){
         G.hand[j][f] = floor(Random() * treasure_map * 2.2) - treasure_map;
       }
     }*/
-    checkPlayBaron(floor(Random()*2), &G, G.whoseTurn);
+    checkPlayBaron(floor(Random()*4)-1, &G, G.whoseTurn);
   }
 
 return 0;
