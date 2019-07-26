@@ -69,7 +69,7 @@ int main(){
     }
     G.numPlayers = floor(Random() * 3)+2;
     G.whoseTurn = floor(Random() * G.numPlayers);
-    for(int j = 0; j < playerCount; j++){
+    for(int j = 0; j < G.numPlayers; j++){
       G.deckCount[j] = floor(Random() * MAX_DECK)+1;
       G.discardCount[j] = floor(Random() * MAX_DECK)+1;
       G.handCount[j] = floor(Random() * MAX_HAND)+1;
