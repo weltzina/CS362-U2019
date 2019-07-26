@@ -44,7 +44,7 @@ int checkPlayBaron(int choice1, struct gameState *state, int currentPlayer){
 
   pre.numBuys++;
 
-  if(choice1 > 0){
+/*  if(choice1 > 0){
       for(int i = 0; i < pre.handCount[currentPlayer]; i++){
         if(pre.hand[currentPlayer][i] == estate){
           card_not_discarded = 0;
@@ -65,7 +65,7 @@ int checkPlayBaron(int choice1, struct gameState *state, int currentPlayer){
       pre.supplyCount[estate]--;
     }
   }
-
+*/
   assert(r==0);
 
   assert(memcpy(&pre, state, sizeof(struct gameState)) == 0);
