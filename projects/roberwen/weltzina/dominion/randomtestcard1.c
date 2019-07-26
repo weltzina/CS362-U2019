@@ -9,9 +9,10 @@
 
 int assertTrue(int var1, int var2){
   if(var1 != var2){
-    printf("FALSE---------------------------------------------------------\n");
+    printf("FALSE--------------------------------------------------------------\n");
     return 0;
   }else{
+    printf("TRUE---------------------------------------------------------------\n");
     return 1;
   }
 }
@@ -57,26 +58,6 @@ int checkPlayBaron(int choice1, struct gameState *state, int currentPlayer){
       printf("DiscardCount = %d, expected %d\n", state->discardCount[state->whoseTurn], pre.discardCount[currentPlayer]);
       printf("Coins = %d, expected %d\n", state->coins, pre.coins);
       printf("Buys = %d, expected %d\n", state->numBuys, pre.numBuys);
-
-      /*
-      int numPlayers; //number of players
-      int supplyCount[treasure_map+1];  //this is the amount of a specific type of card given a specific number.
-      int embargoTokens[treasure_map+1];
-      int outpostPlayed;
-      int outpostTurn;
-      int whoseTurn;
-      int phase;
-      int numActions; /* Starts at 1 each turn */
-      //int coins; /* Use as you see fit! */
-      //int numBuys; /* Starts at 1 each turn */
-      /*int hand[MAX_PLAYERS][MAX_HAND];
-      int handCount[MAX_PLAYERS];
-      int deck[MAX_PLAYERS][MAX_DECK];
-      int deckCount[MAX_PLAYERS];
-      int discard[MAX_PLAYERS][MAX_DECK];
-      int discardCount[MAX_PLAYERS];
-      int playedCards[MAX_DECK];
-      int playedCardCount;*/
   }
   return 0;
 
@@ -95,7 +76,7 @@ int main(){
   SelectStream(2);
   PutSeed(3);
 
-  for(int n = 0; n < 10; n++){
+  for(int n = 0; n < ; n++){
     for(int i = 0; i < sizeof(struct gameState); i++){
       ((char*)&G)[i] = floor(Random() * 128);
     }
