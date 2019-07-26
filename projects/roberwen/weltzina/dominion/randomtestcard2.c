@@ -99,6 +99,7 @@ int main(){
       G.deckCount[j] = floor(Random() * MAX_DECK *1.2)-2;
       G.discardCount[j] = floor(Random() * MAX_DECK *1.2)-2;
       G.handCount[j] = floor(Random() * MAX_HAND *1.2)-2;
+      G.playedCardCount[j] = floor(Random() * MAX_HAND * 1.2)-2;
       for(int f = 0; f < G.deckCount[j]; f++){
         G.deck[j][f] = floor(Random() * treasure_map * 1.2)-2;
       }
@@ -107,6 +108,9 @@ int main(){
       }
       for(int f = 0; f < G.handCount[j]; f++){
         G.hand[j][f] = floor(Random() * treasure_map * 1.2)-2;
+      }
+      for(int f = 0; f < G.playedCardCount[j]; f++){
+        G.playedCards[j][f] = floor(Random() * treasure_map * 1.2)-2;
       }
     }
     checkPlayMinion(floor(Random() * 4)-1, floor(Random() * 4)-1, &G, G.whoseTurn, floor(Random() *G.handCount[G.whoseTurn]));
