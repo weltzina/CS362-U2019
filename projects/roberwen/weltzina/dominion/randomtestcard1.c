@@ -34,7 +34,6 @@ int checkPlayBaron(int choice1, struct gameState *state, int currentPlayer){
             infinite = 0;
           }
           card_not_discarded = 0;
-          pre.coins +=4;
         }
       }
       if(card_not_discarded){
@@ -43,6 +42,8 @@ int checkPlayBaron(int choice1, struct gameState *state, int currentPlayer){
           pre.discardCount[currentPlayer]++;
           pre.supplyCount[estate]--;
         }
+      }else{
+        pre.coins +=4;
       }
   }else{
     if(pre.supplyCount[estate] > 0){
