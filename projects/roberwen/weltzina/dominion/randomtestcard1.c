@@ -41,7 +41,7 @@ int checkPlayBaron(int choice1, struct gameState *state, int currentPlayer){
   int r;
   int card_not_discarded = 1;
 
-  r = playBaron(choice1, &state, currentPlayer);
+  r = playbaron(choice1, &state, currentPlayer);
 
   pre.numBuys++;
 
