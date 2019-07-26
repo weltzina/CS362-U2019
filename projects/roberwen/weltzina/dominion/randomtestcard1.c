@@ -22,7 +22,7 @@ int main(){
 
   for(int n = 0; n < 2; n++){
     for(int i = 0; i < sizeof(struct gameState); i++){
-      ((char*)&G)[i] = floor(Random() * 256);
+      ((char*)&G)[i] = floor(Random() * 128);
     }
     G.numPlayers = floor(Random() * 3)+2;
     G.whoseTurn = floor(Random() * playerCount);
@@ -31,7 +31,7 @@ int main(){
       G.discardCount[j] = floor(Random() * MAX_DECK)+1;
       G.handCount[j] = floor(Random() * MAX_HAND)+1;
     }
-    r = checkPlayBaron(floor(Random()*2), &G, G.whoseTurn);
+    r = checkPlayBaron(floor(Random()*2), G, G.whoseTurn);
   }
 
 return 0;
