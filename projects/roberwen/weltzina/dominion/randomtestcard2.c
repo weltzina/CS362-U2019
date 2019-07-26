@@ -25,7 +25,7 @@ int checkPlayMinion(int choice1, int choice2, struct gameState *state, int curre
 
   int players[pre.numPlayers];
   int r;
-/*
+
   if(choice1){
     pre.coins += 2;
   }else if(choice2){
@@ -54,7 +54,7 @@ int checkPlayMinion(int choice1, int choice2, struct gameState *state, int curre
     pre.coins += 2;
   }
   pre.numActions++;
-*/
+
   r = playMinion(choice1, choice2, state, currentPlayer, handPos);
 
   if(!assertTrue(memcmp(&pre, state, sizeof(struct gameState)), 0) || r != 0){
