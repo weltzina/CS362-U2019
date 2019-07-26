@@ -54,7 +54,7 @@ int checkPlayBaron(int choice1, struct gameState *state, int currentPlayer){
     infinite = 0;
   }
   pre.numBuys++;
-
+//if infinite loop fixed comment out if condition, leaving what is inside. Comment out ALL of else
   if(!infinite){
     r = playbaron(choice1, state, currentPlayer);
 
@@ -65,7 +65,7 @@ int checkPlayBaron(int choice1, struct gameState *state, int currentPlayer){
         printf("Buys = %d, expected %d\n", state->numBuys, pre.numBuys);
     }
   }else{
-    printf("FALSE--------------------------------------------------------------\nInfinite Loop\n");
+    printf("FALSE--------------------------------------------------------------\nInfinite Loop----------------------------------------------------------------------------------\n");
   }
 
   return 0;
