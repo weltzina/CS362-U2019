@@ -11,6 +11,7 @@ int main(){
 
   int currentPlayer;
   int choice1;
+  int r;
 
   struct gameState G;
 
@@ -22,7 +23,7 @@ int main(){
       ((char*)&G)[i] = floor(Random() * 256);
     }
     currentPlayer = floor(Random() * 4);
-    checkPlayBaron(choice1, &G, currentPlayer);
+    r = checkPlayBaron(choice1, &G, currentPlayer);
   }
 
 
