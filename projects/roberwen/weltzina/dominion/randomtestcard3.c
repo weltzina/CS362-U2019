@@ -72,15 +72,11 @@ int checkPlayTribute(int currentPlayer, int nextPlayer, struct gameState *state)
     printf("Deck Count = %d, expected %d\n", state->deckCount[currentPlayer], pre.deckCount[currentPlayer]);
     printf("coins = %d, expected %d\n", state->coins, pre.coins);
     printf("actions = %d, expected %d\n", state->numActions, pre.numActions);
-    for(int q = 0; q < pre.numPlayers; q++){
-      if(players[q] == 1){
-        printf("player %d discard = %d, expected %d\n", q, state->discardCount[q], pre.discardCount[q]);
-        printf("player %d deck = %d, expected %d\n", q, state->deckCount[q], pre.deckCount[q]);
-        printf("player %d hand = %d, expected %d\n\n\n\n", q, state->handCount[q], pre.handCount[q]);
-      }
-    }
-  }
 
+    printf("player %d discard = %d, expected %d\n", q, state->discardCount[state->whoseTurn + 1], pre.discardCount[pre.whoseTurn +1]);
+    printf("player %d deck = %d, expected %d\n", q, state->deckCount[state->whoseTurn + 1], pre.deckCount[pre.whoseTurn +1]);
+    printf("player %d hand = %d, expected %d\n\n\n\n", q, state->handCount[state->whoseTurn + 1], pre.handCount[pre.whoseTurn +1]);
+  }
   return 0;
 
 }
@@ -99,9 +95,9 @@ int main(){
   PutSeed(3);
 
   for(int n = 0; n < 100; n++){
-    for(int i = 0; i < sizeof(struct gameState); i++){
-      ((char*)&G)[i] = floor(Random() * 64);
-    }
+    /*for(int i = 0; i < sizeof(struct gameState); i++){
+      ((char*)&G)[i] = floor(Random() * 256);
+    }*/
     for(int t = 0; t <= treasure_map; t++){
       G.supplyCount[t] = floor(Random() * (treasure_map+2))-1;
     }
