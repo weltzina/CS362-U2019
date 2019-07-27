@@ -86,26 +86,39 @@ int main(){
   SelectStream(2);
   PutSeed(3);
 
-  for(int n = 0; n < 200; n++){
-    for(int i = 0; i < sizeof(struct gameState); i++){
+  for(int n = 0; n < 3750; n++){
+    /*for(int i = 0; i < sizeof(struct gameState); i++){
       ((char*)&G)[i] = floor(Random() * 256);
+    }*/
+    for(int t = 0; t <= treasure_map; t++){
+      G.supplyCount[t] = floor(Random() * (treasure_map+2))-1;
     }
     G.numPlayers = floor(Random() * (MAX_PLAYERS-1))+2;
     G.whoseTurn = floor(Random() * G.numPlayers);
+    G.playedCardCount = floor(Random() * MAX_DECK);
     for(int j = 0; j < G.numPlayers; j++){
-      G.deckCount[j] = floor(Random() * MAX_DECK * 1.2)-2;
-      G.discardCount[j] = floor(Random() * MAX_DECK * 1.2)-2;
-      G.handCount[j] = floor(Random() * MAX_HAND * 1.2)-2;
+      G.deckCount[j] = floor(Random() * MAX_DECK *1.2)-1;
+      G.discardCount[j] = floor(Random() * MAX_DECK *1.2)-1;
+      G.handCount[j] = floor(Random() * MAX_HAND *1.2)-1;
       for(int f = 0; f < G.deckCount[j]; f++){
-        G.deck[j][f] = floor(Random() * treasure_map * 1.2)-2;
+        G.deck[j][f] = floor(Random() * (treasure_map + 2))-1;
       }
       for(int f = 0; f < G.discardCount[j]; f++){
-        G.discard[j][f] = floor(Random() * treasure_map * 1.2)-2;
+        G.discard[j][f] = floor(Random() * (treasure_map +2))-1;
       }
       for(int f = 0; f < G.handCount[j]; f++){
-        G.hand[j][f] = floor(Random() * treasure_map * 1.2)-2;
+        G.hand[j][f] = floor(Random() * (treasure_map +2))-1;
       }
     }
+    for(int q = 0; q < G.playedCardCount; q++){
+      G.playedCards[q] = floor(Random() * (treasure_map + 2))-1;
+    }
+    G.outpostPlayed = floor(Random() * 8) - 2;
+    G.outpostTurn = floor(Random() * 8) - 2;
+    G.phase = floor(Random() * 15) - 2;
+    G.numActions = floor(Random() * 6) - 2;
+    G.coins = floor(Random() * 55) - 4;
+    G.numBuys = floor(Random() * 12) - 2;
     checkPlayBaron(floor(Random()*4)-1, &G, G.whoseTurn);
   }
 

@@ -89,10 +89,10 @@ int main(){
   SelectStream(2);
   PutSeed(3);
 
-  for(int n = 0; n < 300; n++){
-    for(int i = 0; i < sizeof(struct gameState); i++){
+  for(int n = 0; n < 3750; n++){
+    /*for(int i = 0; i < sizeof(struct gameState); i++){
       ((char*)&G)[i] = floor(Random() * 256);
-    }
+    }*/
     for(int t = 0; t <= treasure_map; t++){
       G.supplyCount[t] = floor(Random() * (treasure_map+2))-1;
     }
@@ -116,6 +116,12 @@ int main(){
     for(int q = 0; q < G.playedCardCount; q++){
       G.playedCards[q] = floor(Random() * (treasure_map + 2))-1;
     }
+    G.outpostPlayed = floor(Random() * 8) - 2;
+    G.outpostTurn = floor(Random() * 8) - 2;
+    G.phase = floor(Random() * 15) - 2;
+    G.numActions = floor(Random() * 6) - 2;
+    G.coins = floor(Random() * 55) - 4;
+    G.numBuys = floor(Random() * 12) - 2;
     checkPlayMinion(floor(Random() * 4)-1, floor(Random() * 4)-1, &G, G.whoseTurn, floor(Random() *G.handCount[G.whoseTurn]));
   }
 
