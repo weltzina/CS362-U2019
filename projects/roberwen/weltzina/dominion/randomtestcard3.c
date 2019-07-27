@@ -67,7 +67,7 @@ int checkPlayTribute(int currentPlayer, int nextPlayer, struct gameState *state)
   r = playTribute(state->whoseTurn, state->whoseTurn+1, state);
 
   if(!assertTrue(memcmp(&pre, state, sizeof(struct gameState)), 0)){
-    printf("DiscardCount = %d, expected %d\n", state->discardCount[currentPlayer], pre.discardCount[currentPlayer]);
+    /*printf("DiscardCount = %d, expected %d\n", state->discardCount[currentPlayer], pre.discardCount[currentPlayer]);
     printf("Hand Count = %d, expected %d\n", state->handCount[currentPlayer], pre.handCount[currentPlayer]);
     printf("Deck Count = %d, expected %d\n", state->deckCount[currentPlayer], pre.deckCount[currentPlayer]);
     printf("coins = %d, expected %d\n", state->coins, pre.coins);
@@ -75,7 +75,7 @@ int checkPlayTribute(int currentPlayer, int nextPlayer, struct gameState *state)
 
     printf("Next player discard = %d, expected %d\n", state->discardCount[state->whoseTurn + 1], pre.discardCount[pre.whoseTurn +1]);
     printf("Next player deck = %d, expected %d\n", state->deckCount[state->whoseTurn + 1], pre.deckCount[pre.whoseTurn +1]);
-    printf("Next player hand = %d, expected %d\n\n\n\n", state->handCount[state->whoseTurn + 1], pre.handCount[pre.whoseTurn +1]);
+    printf("Next player hand = %d, expected %d\n\n\n\n", state->handCount[state->whoseTurn + 1], pre.handCount[pre.whoseTurn +1]);*/
   }
   return 0;
 
@@ -94,7 +94,7 @@ int main(){
   SelectStream(2);
   PutSeed(3);
 
-  for(int n = 0; n < 100; n++){
+  for(int n = 0; n < 20000; n++){
     /*for(int i = 0; i < sizeof(struct gameState); i++){
       ((char*)&G)[i] = floor(Random() * 256);
     }*/
