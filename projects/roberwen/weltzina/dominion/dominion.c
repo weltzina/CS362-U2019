@@ -1030,7 +1030,7 @@ int playMine(int choice1, int choice2, int handPos, int currentPlayer, struct ga
 int playTribute(int currentPlayer, int nextPlayer, struct gameState *state) {
   int tributeRevealedCards[2] = {-1, -1};
   int i;
-
+/*
   if ((state->discardCount[nextPlayer] + state->deckCount[nextPlayer]) <= 1){
     if (state->deckCount[nextPlayer] > 0){
       tributeRevealedCards[0] = state->deck[nextPlayer][state->deckCount[nextPlayer]-1];
@@ -1084,7 +1084,7 @@ int playTribute(int currentPlayer, int nextPlayer, struct gameState *state) {
     else{//Action Card
       state->numActions = state->numActions + 2;
     }
-  }
+  }*/
   return 0;
 }
 
