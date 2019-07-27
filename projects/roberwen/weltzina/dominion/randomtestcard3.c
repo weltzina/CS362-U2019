@@ -10,10 +10,10 @@
 
 int assertTrue(int var1, int var2){
   if(var1 != var2){
-    printf("FALSE--------------------------------------------------------------\n");
+    //printf("FALSE--------------------------------------------------------------\n");
     return 0;
   }else{
-    printf("TRUE---------------------------------------------------------------\n\n\n\n");
+    //printf("TRUE---------------------------------------------------------------\n\n\n\n");
     return 1;
   }
 }
@@ -94,7 +94,7 @@ int main(){
   SelectStream(2);
   PutSeed(3);
 
-  for(int n = 0; n < 2000; n++){
+  for(int n = 0; n < 5000; n++){
     /*for(int i = 0; i < sizeof(struct gameState); i++){
       ((char*)&G)[i] = floor(Random() * 256);
     }*/
@@ -121,6 +121,12 @@ int main(){
     for(int q = 0; q < G.playedCardCount; q++){
       G.playedCards[q] = floor(Random() * (treasure_map + 2))-1;
     }
+    G.outpostPlayed = floor(Random() * 8) - 2;
+    G.outpostTurn = floor(Random() * 8) - 2;
+    G.phase = floor(Random() * 15) - 2;
+    G.numActions = floor(Random() * 6) - 2;
+    G.coins = floor(Random() * 55) - 4;
+    G.numBuys = floor(Random() * 12) - 2;
     checkPlayTribute(G.whoseTurn, G.whoseTurn+1, &G);
   }
 
