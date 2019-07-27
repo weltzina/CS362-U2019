@@ -66,7 +66,7 @@ int checkPlayBaron(int choice1, struct gameState *state, int currentPlayer){
         printf("Buys = %d, expected %d\n", state->numBuys, pre.numBuys);
     }
   }else{
-    printf("FALSE--------------------------------------------------------------\nInfinite Loop----------------------------------------------------------------------------------\n");*/
+    printf("FALSE--------------------------------------------------------------\nInfinite Loop----------------------------------------------------------------------------------\n");
   }
 
   return 0;
