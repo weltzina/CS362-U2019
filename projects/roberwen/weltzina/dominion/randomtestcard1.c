@@ -10,10 +10,10 @@
 
 int assertTrue(int var1, int var2){
   if(var1 != var2){
-    /*printf("FALSE--------------------------------------------------------------\n");*/
+    printf("FALSE--------------------------------------------------------------\n");
     return 0;
   }else{
-    /*printf("TRUE---------------------------------------------------------------\n");*/
+    printf("TRUE---------------------------------------------------------------\n");
     return 1;
   }
 }
@@ -60,13 +60,13 @@ int checkPlayBaron(int choice1, struct gameState *state, int currentPlayer){
     r = playbaron(choice1, state, currentPlayer);
 
     if(!assertTrue(memcmp(&pre, state, sizeof(struct gameState)), 0) || r != 0){
-    /*    printf("Estate SupplyCount = %d, expected %d\n", state->supplyCount[estate], pre.supplyCount[estate]);
-    //    printf("DiscardCount = %d, expected %d\n", state->discardCount[state->whoseTurn], pre.discardCount[currentPlayer]);
-    //    printf("Coins = %d, expected %d\n", state->coins, pre.coins);
-    //    printf("Buys = %d, expected %d\n", state->numBuys, pre.numBuys);*/
+        printf("Estate SupplyCount = %d, expected %d\n", state->supplyCount[estate], pre.supplyCount[estate]);
+        printf("DiscardCount = %d, expected %d\n", state->discardCount[state->whoseTurn], pre.discardCount[currentPlayer]);
+        printf("Coins = %d, expected %d\n", state->coins, pre.coins);
+        printf("Buys = %d, expected %d\n", state->numBuys, pre.numBuys);
     }
   }else{
-  /*  printf("FALSE--------------------------------------------------------------\nInfinite Loop----------------------------------------------------------------------------------\n");*/
+    printf("FALSE--------------------------------------------------------------\nInfinite Loop----------------------------------------------------------------------------------\n");*/
   }
 
   return 0;
