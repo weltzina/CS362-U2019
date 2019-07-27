@@ -44,21 +44,21 @@ int checkPlayTribute(int currentPlayer, int nextPlayer, struct gameState *state)
     tributeRevealedCards[1] = -1;
   }
 
-  for (i = 0; i < 2; i ++){
+  for (int i = 0; i < 2; i ++){
     if (tributeRevealedCards[i] == copper || tributeRevealedCards[i] == silver || tributeRevealedCards[i] == gold){//Treasure cards
       pre.coins += 2;
     }
 
     else if (tributeRevealedCards[i] == estate || tributeRevealedCards[i] == duchy || tributeRevealedCards[i] == province || tributeRevealedCards[i] == gardens || tributeRevealedCards[i] == great_hall){//Victory Card Found
-      drawCard(currentPlayer, pre);
-      drawCard(currentPlayer, pre);
+      drawCard(currentPlayer, &pre);
+      drawCard(currentPlayer, &pre);
     }
     else if(tributeRevealedCards[i] >= curse || tributeRevealedCards[i] <= treasure_map){//Action Card
       pre.numActions = pre.numActions + 2;
     }
   }
 
-  r = playTribute(G.whoseTurn, G.whoseTurn+1, state);
+  r = playTribute(state.whoseTurn, state.whoseTurn+1, state);
 
   if(!assertTrue(memcmp(&pre, state, sizeof(struct gameState)), 0)){
     printf("DiscardCount = %d, expected %d\n", state->discardCount[currentPlayer], pre.discardCount[currentPlayer]);
