@@ -30,6 +30,12 @@ int checkPlayTribute(int currentPlayer, int nextPlayer, struct gameState *state)
 
   for(int i = 0; i < 2; i++){
     if(pre.deckCount[nextPlayer] <= 0){
+      for(int k = 0; k < pre.discardCount[nextPlayer]; k++){
+        pre.deck[nextPlayer][k] = pre.discard[nextPlayer][k];//Move to deck
+        pre.deckCount[nextPlayer]++;
+        pre.discard[nextPlayer][k] = -1;
+        pre.discardCount[nextPlayer]--;
+      }
       shuffle(nextPlayer, state);
     }
     if(pre.discardCount[nextPlayer] > 0){
