@@ -100,7 +100,7 @@ int main(){
 
   for(int n = 0; n < 100; n++){
     for(int i = 0; i < sizeof(struct gameState); i++){
-      ((char*)&G)[i] = floor(Random() * 256);
+      ((char*)&G)[i] = floor(Random() * 64);
     }
     for(int t = 0; t <= treasure_map; t++){
       G.supplyCount[t] = floor(Random() * (treasure_map+2))-1;
