@@ -35,6 +35,8 @@ runtests: testDrawCard
 	gcov dominion.c >> unittestresult.out
 	cat dominion.c.gcov >> unittestresult.out
 
+randomtestresults: 
+
 random1: randomtestcard1.c dominion.c rngs.c
 	echo "Result for running Random Dominion tests:" > unittestresults.out
 	echo "randomtestcard1.c:" >> unittestresults.out
