@@ -20,49 +20,52 @@ int assertTrue(int var1, int var2){
 
 
 
-int checkPlayMinion(int choice1, int choice2, struct gameState *state, int currentPlayer, int handPos){
+int checkPlayTribute(int currentPlayer, int nextPlayer, struct gameState *state){
   struct gameState pre;
   memcpy(&pre, state, sizeof(struct gameState));
 
   int players[pre.numPlayers];
   int r;
+  int tributeRevealedCards[2] = {-1,-1};
 
-  if(choice1){
-    pre.coins += 2;
-  }else if(choice2){
-    for(int i = 0; i < pre.handCount[pre.whoseTurn]; i++){
-      pre.discard[pre.whoseTurn][pre.discardCount[pre.whoseTurn]] = pre.hand[pre.whoseTurn][pre.handCount[pre.whoseTurn]];
-      pre.discardCount[pre.whoseTurn]++;
-      pre.handCount[pre.whoseTurn]--;
+  for(int i = 0; i < 2; i++){
+    if(pre.deckCount[nextPlayer] <= 0){
+      shuffle(nextPlayer, state);
     }
-    for(int j = 0; j < 4; j++){
-      drawCard(pre.whoseTurn, &pre);
+    if(pre.discardCount[nextPlayer] > 0){
+      pre.discard[nextPlayer][pre.discardCount[nextPlayer]] = pre.deck[nextPlayer][pre.deckCount[nextPlayer]-1];
+      tributeRevealedCards[i] = pre.deck[nextPlayer][pre.deckCount[nextPlayer]-1];
+      pre.discardCount[nextPlayer]++;
+      pre.deckCount[nextPlayer]--;
     }
-    for(int f = 0; f < pre.numPlayers; f++){
-      if(pre.handCount[f] > 4){
-        for(int k = 0; k < pre.handCount[f]; k++){
-          pre.discard[f][pre.discardCount[f]] = pre.hand[f][pre.handCount[f]];
-          pre.discardCount[f]++;
-          pre.handCount[f]--;
-          players[f] = 1;
-        }
-        for(int g = 0; g < 4; g++){
-          drawCard(f, &pre);
-        }
-      }
-    }
-  }else{
-    pre.coins += 2;
   }
-  pre.numActions++;
 
-  r = playMinion(choice1, choice2, state, currentPlayer, handPos);
+  if(tributeRevealedCards[0] == tributeRevealedCards[1]){
+    tributeRevealedCards[1] = -1;
+  }
+
+  for (i = 0; i < 2; i ++){
+    if (tributeRevealedCards[i] == copper || tributeRevealedCards[i] == silver || tributeRevealedCards[i] == gold){//Treasure cards
+      pre.coins += 2;
+    }
+
+    else if (tributeRevealedCards[i] == estate || tributeRevealedCards[i] == duchy || tributeRevealedCards[i] == province || tributeRevealedCards[i] == gardens || tributeRevealedCards[i] == great_hall){//Victory Card Found
+      drawCard(currentPlayer, pre);
+      drawCard(currentPlayer, pre);
+    }
+    else if(tributeRevealedCards[i] >= curse || tributeRevealedCards[i] <= treasure_map){//Action Card
+      pre.numActions = pre.numActions + 2;
+    }
+  }
+
+  r = playTribute(G.whoseTurn, G.whoseTurn+1, state);
 
   if(!assertTrue(memcmp(&pre, state, sizeof(struct gameState)), 0)){
     printf("DiscardCount = %d, expected %d\n", state->discardCount[currentPlayer], pre.discardCount[currentPlayer]);
     printf("Hand Count = %d, expected %d\n", state->handCount[currentPlayer], pre.handCount[currentPlayer]);
     printf("Deck Count = %d, expected %d\n", state->deckCount[currentPlayer], pre.deckCount[currentPlayer]);
     printf("coins = %d, expected %d\n", state->coins, pre.coins);
+    printf("actions = %d, expected %d\n", state->numActions, pre.numActions);
     for(int q = 0; q < pre.numPlayers; q++){
       if(players[q] == 1){
         printf("player %d discard = %d, expected %d\n", q, state->discardCount[q], pre.discardCount[q]);
@@ -116,7 +119,7 @@ int main(){
     for(int q = 0; q < G.playedCardCount; q++){
       G.playedCards[q] = floor(Random() * (treasure_map + 2))-1;
     }
-    checkPlayMinion(floor(Random() * 4)-1, floor(Random() * 4)-1, &G, G.whoseTurn, floor(Random() *G.handCount[G.whoseTurn]));
+    checkPlayTribute(G.whoseTurn, G.whoseTurn+1, state);
   }
 
 return 0;

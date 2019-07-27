@@ -49,6 +49,12 @@ random2: randomtestcard2.c dominion.c rngs.c
 	./randomtestcard2 >> unittestresults.out
 	gcov dominion.c -f -b >> unittestresults.out
 
+random3: randomtestcard3.c dominion.c rngs.c
+	echo "Result for running Random Dominion tests:" > unittestresults.out
+	echo "randomtestcard3.c:" >> unittestresults.out
+	gcc -o randomtestcard3 dominion.c rngs.c randomtestcard3.c $(CFLAGS)
+	./randomtestcard3 >> unittestresults.out
+	gcov dominion.c -f -b >> unittestresults.out
 
 player: player.c interface.o
 	gcc -o player player.c -g  dominion.o rngs.o interface.o $(CFLAGS)
