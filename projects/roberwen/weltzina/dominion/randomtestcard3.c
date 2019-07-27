@@ -73,9 +73,9 @@ int checkPlayTribute(int currentPlayer, int nextPlayer, struct gameState *state)
     printf("coins = %d, expected %d\n", state->coins, pre.coins);
     printf("actions = %d, expected %d\n", state->numActions, pre.numActions);
 
-    printf("player %d discard = %d, expected %d\n", q, state->discardCount[state->whoseTurn + 1], pre.discardCount[pre.whoseTurn +1]);
-    printf("player %d deck = %d, expected %d\n", q, state->deckCount[state->whoseTurn + 1], pre.deckCount[pre.whoseTurn +1]);
-    printf("player %d hand = %d, expected %d\n\n\n\n", q, state->handCount[state->whoseTurn + 1], pre.handCount[pre.whoseTurn +1]);
+    printf("Next player %d discard = %d, expected %d\n", state->discardCount[state->whoseTurn + 1], pre.discardCount[pre.whoseTurn +1]);
+    printf("Next player %d deck = %d, expected %d\n", state->deckCount[state->whoseTurn + 1], pre.deckCount[pre.whoseTurn +1]);
+    printf("Next player %d hand = %d, expected %d\n\n\n\n", state->handCount[state->whoseTurn + 1], pre.handCount[pre.whoseTurn +1]);
   }
   return 0;
 
