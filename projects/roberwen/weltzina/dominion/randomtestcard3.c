@@ -119,7 +119,7 @@ int main(){
     for(int q = 0; q < G.playedCardCount; q++){
       G.playedCards[q] = floor(Random() * (treasure_map + 2))-1;
     }
-    checkPlayTribute(G.whoseTurn, G.whoseTurn+1, state);
+    checkPlayTribute(G.whoseTurn, G.whoseTurn+1, G);
   }
 
 return 0;
