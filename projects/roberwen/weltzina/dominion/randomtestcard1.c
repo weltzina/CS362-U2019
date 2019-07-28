@@ -86,7 +86,7 @@ int main(){
   SelectStream(2);
   PutSeed(3);
 //150
-  for(int n = 0; n < 20000; n++){
+  for(int n = 0; n < 200000; n++){
     /*for(int i = 0; i < sizeof(struct gameState); i++){
       ((char*)&G)[i] = floor(Random() * 256);
     }*/
