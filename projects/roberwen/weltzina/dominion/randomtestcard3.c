@@ -1,3 +1,9 @@
+/*
+Author: Alec Weltzin
+Date: 7/28/2019
+Description: random test for playTribute functiom found in dominion.c
+*/
+
 #include "dominion.h"
 #include "dominion_helpers.h"
 #include "rngs.h"
@@ -7,7 +13,7 @@
 #include <math.h>
 #include <string.h>
 
-
+//My own version of assert function that doesn't cause test halt.
 int assertTrue(int var1, int var2){
   if(var1 != var2){
     printf("FALSE--------------------------------------------------------------\n");
@@ -19,7 +25,9 @@ int assertTrue(int var1, int var2){
 }
 
 
-
+/*
+function called by main random test function to take copy of random state, alter to expected results, and check against actual playTribute results.
+*/
 int checkPlayTribute(int currentPlayer, int nextPlayer, struct gameState *state){
   struct gameState pre;
   memcpy(&pre, state, sizeof(struct gameState));
@@ -81,7 +89,9 @@ int checkPlayTribute(int currentPlayer, int nextPlayer, struct gameState *state)
 
 }
 
-
+/*
+Main function that sets random gameState(within certain parameters) and checks the playTribute method of dominion.c for each random gamestate
+*/
 int main(){
 
   int currentPlayer;

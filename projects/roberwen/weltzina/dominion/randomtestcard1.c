@@ -1,3 +1,9 @@
+/*
+Author: Alec Weltzin
+Date: 7/28/2019
+Description: random test for playBaron functiom found in dominion.c 
+*/
+
 #include "dominion.h"
 #include "dominion_helpers.h"
 #include "rngs.h"
@@ -7,7 +13,9 @@
 #include <math.h>
 #include <string.h>
 
-
+/*
+my own assert statement that doesn't cause halt of entire test.
+*/
 int assertTrue(int var1, int var2){
   if(var1 != var2){
     printf("FALSE--------------------------------------------------------------\n");
@@ -19,7 +27,9 @@ int assertTrue(int var1, int var2){
 }
 
 
-
+/*
+The function that the main function calls to save a copy of gamestate, alter to expected results and check against the actual results of playBaron function
+*/
 int checkPlayBaron(int choice1, struct gameState *state, int currentPlayer){
   struct gameState pre;
   memcpy(&pre, state, sizeof(struct gameState));
@@ -28,6 +38,7 @@ int checkPlayBaron(int choice1, struct gameState *state, int currentPlayer){
   int card_not_discarded = 1;
   int infinite = 1;
 
+//Testers assumption of how playBaron should function. Assumes it does not effect discarding played baron card or reduces actions due to the play. Does not allow infinite loop as was current 7/28/2019
   if(choice1 > 0){
       for(int i = 0; i < pre.handCount[currentPlayer]; i++){
         if(pre.hand[currentPlayer][i] == estate){
@@ -59,21 +70,23 @@ int checkPlayBaron(int choice1, struct gameState *state, int currentPlayer){
   if(!infinite){
     r = playbaron(choice1, state, currentPlayer);
 
-  /*  if(!assertTrue(memcmp(&pre, state, sizeof(struct gameState)), 0) || r != 0){
+    if(!assertTrue(memcmp(&pre, state, sizeof(struct gameState)), 0) || r != 0){
         printf("Estate SupplyCount = %d, expected %d\n", state->supplyCount[estate], pre.supplyCount[estate]);
         printf("DiscardCount = %d, expected %d\n", state->discardCount[state->whoseTurn], pre.discardCount[currentPlayer]);
         printf("Coins = %d, expected %d\n", state->coins, pre.coins);
         printf("Buys = %d, expected %d\n", state->numBuys, pre.numBuys);
     }
   }else{
-    printf("FALSE--------------------------------------------------------------\nInfinite Loop----------------------------------------------------------------------------------\n");*/
+    printf("FALSE--------------------------------------------------------------\nInfinite Loop----------------------------------------------------------------------------------\n");
   }
 
   return 0;
 
 }
 
-
+/*
+Main function that sets random gameStae(within certain parameters) and checks the playBaron method of dominion.c for each random gamestate.
+*/
 int main(){
 
   int currentPlayer;
@@ -85,7 +98,7 @@ int main(){
 
   SelectStream(2);
   PutSeed(3);
-//150
+//Tests n times. sets random gamestate and calls checkPlayBaron
   for(int n = 0; n < 150; n++){
     /*for(int i = 0; i < sizeof(struct gameState); i++){
       ((char*)&G)[i] = floor(Random() * 256);

@@ -1,3 +1,9 @@
+/*
+Author: Alec Weltzin
+Date: 7/28/2019
+Description: random test for playMinion functiom found in dominion.c
+*/
+
 #include "dominion.h"
 #include "dominion_helpers.h"
 #include "rngs.h"
@@ -7,7 +13,7 @@
 #include <math.h>
 #include <string.h>
 
-
+//my own version of assert which doesn't halt test.
 int assertTrue(int var1, int var2){
   if(var1 != var2){
     printf("FALSE--------------------------------------------------------------\n");
@@ -19,7 +25,9 @@ int assertTrue(int var1, int var2){
 }
 
 
-
+/*
+function called by main random test function to take copy of random state, alter to expected results, and check against actual playMinion results.
+*/
 int checkPlayMinion(int choice1, int choice2, struct gameState *state, int currentPlayer, int handPos){
   struct gameState pre;
   memcpy(&pre, state, sizeof(struct gameState));
@@ -76,7 +84,9 @@ int checkPlayMinion(int choice1, int choice2, struct gameState *state, int curre
 
 }
 
-
+/*
+Main function that sets random gameStae(within certain parameters) and checks the playMinion method of dominion.c for each random gamestate
+*/
 int main(){
 
   int currentPlayer;
