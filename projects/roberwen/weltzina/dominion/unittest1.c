@@ -23,6 +23,7 @@ int main() {
   int gainedCards = 0;
   int buyincrease = 1;
   int actionsPlayed = 0;
+  int handPos;
 
   int i, j, m;
   int handpos = 0, choice1 = 0, choice2 = 0, choice3 = 0, bonus = 0;
