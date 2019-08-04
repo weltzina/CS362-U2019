@@ -232,8 +232,8 @@ int main() {
     playBaron(baron, choice1, 0, 0, &testG, handPos, &bonus, thisPlayer);
 
     gainedCards = 1;
-    xtraCoins = 4;
-    discarded = 1;
+    xtraCoins = 0;
+    discarded = 0;
 
     printf("hand count = %d, expected = %d\n", testG.handCount[thisPlayer], G.handCount[thisPlayer] + newCards - discarded);
     assertTrue(testG.handCount[thisPlayer], G.handCount[thisPlayer] + newCards - discarded);
