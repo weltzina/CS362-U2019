@@ -1,7 +1,7 @@
 /*
 Author: Alec Weltzin
 Date: 7/28/2019
-Description: random test for playMinion functiom found in dominion.c
+Description: random test for minionEffect functiom found in dominion.c
 */
 
 #include "dominion.h"
@@ -26,7 +26,7 @@ int assertTrue(int var1, int var2){
 
 
 /*
-function called by main random test function to take copy of random state, alter to expected results, and check against actual playMinion results.
+function called by main random test function to take copy of random state, alter to expected results, and check against actual minionEffect results.
 */
 int checkPlayMinion(int choice1, int choice2, struct gameState *state, int currentPlayer, int handPos){
   struct gameState pre;
@@ -64,7 +64,7 @@ int checkPlayMinion(int choice1, int choice2, struct gameState *state, int curre
   }
   pre.numActions++;
 
-  r = playMinion(choice1, choice2, state, currentPlayer, handPos);
+  r = minionEffect(choice1, choice2, state, currentPlayer, handPos);
 
   if(!assertTrue(memcmp(&pre, state, sizeof(struct gameState)), 0)){
     printf("DiscardCount = %d, expected %d\n", state->discardCount[currentPlayer], pre.discardCount[currentPlayer]);
@@ -85,7 +85,7 @@ int checkPlayMinion(int choice1, int choice2, struct gameState *state, int curre
 }
 
 /*
-Main function that sets random gameStae(within certain parameters) and checks the playMinion method of dominion.c for each random gamestate
+Main function that sets random gameStae(within certain parameters) and checks the minionEffect method of dominion.c for each random gamestate
 */
 int main(){
 

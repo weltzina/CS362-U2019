@@ -1,7 +1,7 @@
 /*
 Author: Alec Weltzin
 Date: 7/28/2019
-Description: random test for playBaron functiom found in dominion.c 
+Description: random test for baronEffect functiom found in dominion.c
 */
 
 #include "dominion.h"
@@ -28,7 +28,7 @@ int assertTrue(int var1, int var2){
 
 
 /*
-The function that the main function calls to save a copy of gamestate, alter to expected results and check against the actual results of playBaron function
+The function that the main function calls to save a copy of gamestate, alter to expected results and check against the actual results of baronEffect function
 */
 int checkPlayBaron(int choice1, struct gameState *state, int currentPlayer){
   struct gameState pre;
@@ -38,7 +38,7 @@ int checkPlayBaron(int choice1, struct gameState *state, int currentPlayer){
   int card_not_discarded = 1;
   int infinite = 1;
 
-//Testers assumption of how playBaron should function. Assumes it does not effect discarding played baron card or reduces actions due to the play. Does not allow infinite loop as was current 7/28/2019
+//Testers assumption of how baronEffect should function. Assumes it does not effect discarding played baron card or reduces actions due to the play. Does not allow infinite loop as was current 7/28/2019
   if(choice1 > 0){
       for(int i = 0; i < pre.handCount[currentPlayer]; i++){
         if(pre.hand[currentPlayer][i] == estate){
@@ -68,7 +68,7 @@ int checkPlayBaron(int choice1, struct gameState *state, int currentPlayer){
   pre.numBuys++;
 //if infinite loop fixed comment out if condition, leaving what is inside. Comment out ALL of else
   if(!infinite){
-    r = playbaron(choice1, state, currentPlayer);
+    r = baronEffect(choice1, state, currentPlayer);
 
     if(!assertTrue(memcmp(&pre, state, sizeof(struct gameState)), 0) || r != 0){
         printf("Estate SupplyCount = %d, expected %d\n", state->supplyCount[estate], pre.supplyCount[estate]);
@@ -85,7 +85,7 @@ int checkPlayBaron(int choice1, struct gameState *state, int currentPlayer){
 }
 
 /*
-Main function that sets random gameStae(within certain parameters) and checks the playBaron method of dominion.c for each random gamestate.
+Main function that sets random gameStae(within certain parameters) and checks the baronEffect method of dominion.c for each random gamestate.
 */
 int main(){
 

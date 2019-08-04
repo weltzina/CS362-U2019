@@ -1,7 +1,7 @@
 /*
 Author: Alec Weltzin
 Date: 7/28/2019
-Description: random test for playTribute functiom found in dominion.c
+Description: random test for tributeEffect functiom found in dominion.c
 */
 
 #include "dominion.h"
@@ -26,7 +26,7 @@ int assertTrue(int var1, int var2){
 
 
 /*
-function called by main random test function to take copy of random state, alter to expected results, and check against actual playTribute results.
+function called by main random test function to take copy of random state, alter to expected results, and check against actual tributeEffect results.
 */
 int checkPlayTribute(int currentPlayer, int nextPlayer, struct gameState *state){
   struct gameState pre;
@@ -72,7 +72,7 @@ int checkPlayTribute(int currentPlayer, int nextPlayer, struct gameState *state)
     }
   }
 
-  r = playTribute(state->whoseTurn, state->whoseTurn+1, state);
+  r = tributeEffect(state->whoseTurn, state->whoseTurn+1, state);
 
   if(!assertTrue(memcmp(&pre, state, sizeof(struct gameState)), 0)){
     printf("DiscardCount = %d, expected %d\n", state->discardCount[currentPlayer], pre.discardCount[currentPlayer]);
@@ -90,7 +90,7 @@ int checkPlayTribute(int currentPlayer, int nextPlayer, struct gameState *state)
 }
 
 /*
-Main function that sets random gameState(within certain parameters) and checks the playTribute method of dominion.c for each random gamestate
+Main function that sets random gameState(within certain parameters) and checks the tributeEffect method of dominion.c for each random gamestate
 */
 int main(){
 
