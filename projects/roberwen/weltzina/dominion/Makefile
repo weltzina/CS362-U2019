@@ -18,8 +18,6 @@ testDrawCard: testDrawCard.c dominion.o rngs.o
 badTestDrawCard: badTestDrawCard.c dominion.o rngs.o
 	gcc -o badTestDrawCard -g  badTestDrawCard.c dominion.o rngs.o $(CFLAGS)
 
-random: randomtestcard1.c dominion.o rngs.o
-	gcc -o random1 -g randomtestcard1.c dominion.o rngs.o $(CFLAGS)
 
 testBuyCard: testDrawCard.c dominion.o rngs.o
 	gcc -o testDrawCard -g  testDrawCard.c dominion.o rngs.o $(CFLAGS)
@@ -35,43 +33,6 @@ runtests: testDrawCard
 	gcov dominion.c >> unittestresult.out
 	cat dominion.c.gcov >> unittestresult.out
 
-randomtestresults: randomtestcard1.c randomtestcard2.c randomtestcard3.c dominion.c rngs.c
-	echo "Result for running random Dominion tests:" > randomtestresults.out
-	echo "randomtestcard1.c:" >> randomtestresults.out
-	gcc -o randomtestcard1 dominion.c rngs.c randomtestcard1.c $(CFLAGS)
-	./randomtestcard1 >> randomtestresults.out
-	gcov dominion.c -f -b >> randomtestresults.out
-
-	echo "randomtestcard2.c:" >> randomtestresults.out
-	gcc -o randomtestcard2 dominion.c rngs.c randomtestcard2.c $(CFLAGS)
-	./randomtestcard2 >> randomtestresults.out
-	gcov dominion.c -f -b >> randomtestresults.out
-
-	echo "randomtestcard3.c:" >> randomtestresults.out
-	gcc -o randomtestcard3 dominion.c rngs.c randomtestcard3.c $(CFLAGS)
-	./randomtestcard3 >> randomtestresults.out
-	gcov dominion.c -f -b >> randomtestresults.out
-
-random1: randomtestcard1.c dominion.c rngs.c
-	echo "Result for running Random Dominion tests:" > unittestresults.out
-	echo "randomtestcard1.c:" >> unittestresults.out
-	gcc -o randomtestcard1 dominion.c rngs.c randomtestcard1.c $(CFLAGS)
-	./randomtestcard1 >> unittestresults.out
-	gcov dominion.c -f -b >> unittestresults.out
-
-random2: randomtestcard2.c dominion.c rngs.c
-	echo "Result for running Random Dominion tests:" > unittestresults.out
-	echo "randomtestcard2.c:" >> unittestresults.out
-	gcc -o randomtestcard2 dominion.c rngs.c randomtestcard2.c $(CFLAGS)
-	./randomtestcard2 >> unittestresults.out
-	gcov dominion.c -f -b >> unittestresults.out
-
-random3: randomtestcard3.c dominion.c rngs.c
-	echo "Result for running Random Dominion tests:" > unittestresults.out
-	echo "randomtestcard3.c:" >> unittestresults.out
-	gcc -o randomtestcard3 dominion.c rngs.c randomtestcard3.c $(CFLAGS)
-	./randomtestcard3 >> unittestresults.out
-	gcov dominion.c -f -b >> unittestresults.out
 
 player: player.c interface.o
 	gcc -o player player.c -g  dominion.o rngs.o interface.o $(CFLAGS)
@@ -79,4 +40,4 @@ player: player.c interface.o
 all: playdom player
 
 clean:
-	rm -f *.o playdom.exe playdom player player.exe  *.gcov *.gcda *.gcno *.so *.out testDrawCard testDrawCard.exe
+	rm -f *.o playdom.exe playdom player player.exe  *.gcov *.gcda *.gcno *.so *.out testDrawCard testDrawCard.exe unittest1 unittest2 unittest3 unittest4 unittest5 cardtest1 cardtest2 cardtest3 cardtest4 cardtest5
