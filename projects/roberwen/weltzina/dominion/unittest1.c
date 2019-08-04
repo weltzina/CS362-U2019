@@ -63,7 +63,8 @@ int main() {
   	// copy the game state to a test case
   	memcpy(&testG, &G, sizeof(struct gameState));
   	choice1 = 0;
-  	baronEffect(choice1, testG, thisPlayer);
+
+    playBaron(baron, choice1, 0, 0, testG, handPos, &bonus, thisPlayer);
 
     gainedCards = 1;
 
@@ -89,7 +90,7 @@ int main() {
     // copy the game state to a test case
     memcpy(&testG, &G, sizeof(struct gameState));
     choice1 = 1;
-    baronEffect(choice1, testG, thisPlayer);
+    playBaron(choice1, testG, thisPlayer);
 
     gainedCards = 0;
     discarded = 1;
@@ -124,7 +125,7 @@ int main() {
     memcpy(&testG, &G, sizeof(struct gameState));
     handpos = 4;
     choice1 = 0;
-    baronEffect(choice1, testG, thisPlayer);
+    playBaron(baron, choice1, 0, 0, testG, handPos, &bonus, thisPlayer);
 
     gainedCards = 1;
     discarded = 0;
@@ -156,7 +157,7 @@ int main() {
     printf("TEST FAILED. RUNAWAY PROGRAM.\n");
     printf("\n");
 
-    baronEffect(choice1, testG, thisPlayer);
+    playBaron(baron, choice1, 0, 0, testG, handPos, &bonus, thisPlayer);
 
     gainedCards = 0;
     discarded = 2;
@@ -192,7 +193,7 @@ int main() {
     // copy the game state to a test case
     memcpy(&testG, &G, sizeof(struct gameState));
     choice1 = 0;
-    baronEffect(choice1, testG, thisPlayer);
+    playBaron(baron, choice1, 0, 0, testG, handPos, &bonus, thisPlayer);
 
     gainedCards = 1;
     xtraCoins = 0;
@@ -222,7 +223,7 @@ int main() {
     printf("TEST FAILED. RUNAWAY PROGRAM.\n");
     printf("\n");
 
-    baronEffect(choice1, testG, thisPlayer);
+    playBaron(baron, choice1, 0, 0, testG, handPos, &bonus, thisPlayer);
 
     gainedCards = 1;
     xtraCoins = 4;
@@ -243,7 +244,7 @@ int main() {
     printf("estate supply = %d, expected = %d\n", testG.supplyCount[estate], G.supplyCount[estate] - gainedCards);
     assertTrue(testG.supplyCount[estate], G.supplyCount[estate] - gainedCards);
     printf("\n");
-    
+
 
 
 	printf("\n >>>>> SUCCESS: Testing complete %s <<<<<\n\n", TESTCARD);

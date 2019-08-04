@@ -63,7 +63,8 @@ int main() {
   	memcpy(&testG, &G, sizeof(struct gameState));
   	choice1 = 0;
     choice2 = 0;
-  	cardEffect(minion, choice1, choice2, choice3, &testG, handpos, &bonus);
+
+    playMinion(minion, choice1, choice2, 0, testG, handPos, &bonus, thisPlayer);
 
     discarded = 0;
     newCards = 0;
@@ -103,7 +104,8 @@ int main() {
   	memcpy(&testG, &G, sizeof(struct gameState));
   	choice1 = 0;
     choice2 = 1;
-  	cardEffect(minion, choice1, choice2, choice3, &testG, handpos, &bonus);
+
+  	playMinion(minion, choice1, choice2, 0, testG, handPos, &bonus, thisPlayer);
 
     discarded = 5;
     newCards = 4;
@@ -142,7 +144,8 @@ int main() {
   	memcpy(&testG, &G, sizeof(struct gameState));
   	choice1 = 1;
     choice2 = 0;
-  	cardEffect(minion, choice1, choice2, choice3, &testG, handpos, &bonus);
+
+  	playMinion(minion, choice1, choice2, 0, testG, handPos, &bonus, thisPlayer);
 
     discarded = 0;
     newCards = 0;
@@ -181,7 +184,8 @@ int main() {
   	memcpy(&testG, &G, sizeof(struct gameState));
   	choice1 = 1;
     choice2 = 1;
-  	cardEffect(minion, choice1, choice2, choice3, &testG, handpos, &bonus);
+
+    playMinion(minion, choice1, choice2, 0, testG, handPos, &bonus, thisPlayer);
 
     discarded = 0;
     newCards = 0;

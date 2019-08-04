@@ -64,7 +64,8 @@ int main() {
     memcpy(&testG, &G, sizeof(struct gameState));
     choice1 = 0;
     choice2 = 0;
-    cardEffect(ambassador, choice1, choice2, choice3, &testG, handpos, &bonus);
+
+    playAmbassador(ambassador, choice1, choice2, 0, testG, handPos, &bonus, thisPlayer);
 
     discarded = 0;
     newCards = 0;
@@ -106,7 +107,8 @@ int main() {
     memcpy(&testG, &G, sizeof(struct gameState));
     choice1 = 0;
     choice2 = 1;
-    cardEffect(ambassador, choice1, choice2, choice3, &testG, handpos, &bonus);
+
+    playAmbassador(ambassador, choice1, choice2, 0, testG, handPos, &bonus, thisPlayer);
 
     discarded = 0;
     newCards = 0;
@@ -149,7 +151,8 @@ int main() {
     memcpy(&testG, &G, sizeof(struct gameState));
     choice1 = 3;
     choice2 = 0;
-    cardEffect(ambassador, choice1, choice2, choice3, &testG, handpos, &bonus);
+
+    playAmbassador(ambassador, choice1, choice2, 0, testG, handPos, &bonus, thisPlayer);
 
     discarded = 0;
     newCards = 0;
@@ -192,7 +195,8 @@ int main() {
     memcpy(&testG, &G, sizeof(struct gameState));
     choice1 = 3;
     choice2 = 1;
-    cardEffect(ambassador, choice1, choice2, choice3, &testG, handpos, &bonus);
+
+    playAmbassador(ambassador, choice1, choice2, 0, testG, handPos, &bonus, thisPlayer);
 
     discarded = 0;
     newCards = 0;
@@ -235,7 +239,8 @@ int main() {
     memcpy(&testG, &G, sizeof(struct gameState));
     choice1 = 3;
     choice2 = 2;
-    cardEffect(ambassador, choice1, choice2, choice3, &testG, handpos, &bonus);
+
+    playAmbassador(ambassador, choice1, choice2, 0, testG, handPos, &bonus, thisPlayer);
 
     discarded = 0;
     newCards = 0;
@@ -281,7 +286,8 @@ int main() {
     memcpy(&testG, &G, sizeof(struct gameState));
     choice1 = 3;
     choice2 = 2;
-    cardEffect(ambassador, choice1, choice2, choice3, &testG, handpos, &bonus);
+
+    playAmbassador(ambassador, choice1, choice2, 0, testG, handPos, &bonus, thisPlayer);
 
     discarded = 0;
     newCards = 0;
@@ -324,7 +330,8 @@ int main() {
     memcpy(&testG, &G, sizeof(struct gameState));
     choice1 = 3;
     choice2 = 4;
-    cardEffect(ambassador, choice1, choice2, choice3, &testG, handpos, &bonus);
+
+    playAmbassador(ambassador, choice1, choice2, 0, testG, handPos, &bonus, thisPlayer);
 
     discarded = 0;
     newCards = 0;

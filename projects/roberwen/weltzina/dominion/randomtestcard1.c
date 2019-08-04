@@ -67,8 +67,8 @@ int checkPlayBaron(int choice1, struct gameState *state, int currentPlayer){
   }
   pre.numBuys++;
 //if infinite loop fixed comment out if condition, leaving what is inside. Comment out ALL of else
-  if(!infinite){
-    r = baronEffect(choice1, state, currentPlayer);
+//  if(!infinite){
+    r = playBaron(baron, choice1, 0, 0, testG, handPos, &bonus, currentPlayer);
 
     if(!assertTrue(memcmp(&pre, state, sizeof(struct gameState)), 0) || r != 0){
         printf("Estate SupplyCount = %d, expected %d\n", state->supplyCount[estate], pre.supplyCount[estate]);
@@ -76,9 +76,9 @@ int checkPlayBaron(int choice1, struct gameState *state, int currentPlayer){
         printf("Coins = %d, expected %d\n", state->coins, pre.coins);
         printf("Buys = %d, expected %d\n", state->numBuys, pre.numBuys);
     }
-  }else{
+/*  }else{
     printf("FALSE--------------------------------------------------------------\nInfinite Loop----------------------------------------------------------------------------------\n");
-  }
+  }*/
 
   return 0;
 

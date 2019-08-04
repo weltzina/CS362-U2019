@@ -68,7 +68,8 @@ int main() {
     memcpy(&testG, &G, sizeof(struct gameState));
     choice1 = 0;
     choice2 = 0;
-    cardEffect(tribute, choice1, choice2, choice3, &testG, handpos, &bonus);
+
+        playTribute(tribute, choice1, choice2, 0, testG, handPos, &bonus, thisPlayer, testG.whoseTurn+1);
 
     discarded = 0;
     newCards = 0;
@@ -116,7 +117,8 @@ int main() {
     memcpy(&testG, &G, sizeof(struct gameState));
     choice1 = 0;
     choice2 = 0;
-    cardEffect(tribute, choice1, choice2, choice3, &testG, handpos, &bonus);
+
+        playTribute(tribute, choice1, choice2, 0, testG, handPos, &bonus, thisPlayer, testG.whoseTurn+1);
 
     discarded = 0;
     newCards = 0;
@@ -164,7 +166,8 @@ int main() {
     memcpy(&testG, &G, sizeof(struct gameState));
     choice1 = 0;
     choice2 = 0;
-    cardEffect(tribute, choice1, choice2, choice3, &testG, handpos, &bonus);
+
+        playTribute(tribute, choice1, choice2, 0, testG, handPos, &bonus, thisPlayer, testG.whoseTurn+1);
 
     discarded = 0;
     newCards = 0;
@@ -212,7 +215,8 @@ int main() {
     memcpy(&testG, &G, sizeof(struct gameState));
     choice1 = 0;
     choice2 = 0;
-    cardEffect(tribute, choice1, choice2, choice3, &testG, handpos, &bonus);
+
+        playTribute(tribute, choice1, choice2, 0, testG, handPos, &bonus, thisPlayer, testG.whoseTurn+1);
 
     discarded = 0;
     newCards = 0;
@@ -260,7 +264,9 @@ int main() {
     memcpy(&testG, &G, sizeof(struct gameState));
     choice1 = 0;
     choice2 = 0;
-    cardEffect(tribute, choice1, choice2, choice3, &testG, handpos, &bonus);
+
+
+        playTribute(tribute, choice1, choice2, 0, testG, handPos, &bonus, thisPlayer, testG.whoseTurn+1);
 
     discarded = 0;
     newCards = 0;
@@ -307,7 +313,8 @@ int main() {
     memcpy(&testG, &G, sizeof(struct gameState));
     choice1 = 0;
     choice2 = 0;
-    cardEffect(tribute, choice1, choice2, choice3, &testG, handpos, &bonus);
+
+    playTribute(tribute, choice1, choice2, 0, testG, handPos, &bonus, thisPlayer, testG.whoseTurn+1);
 
     discarded = 0;
     newCards = 2;
@@ -355,7 +362,8 @@ int main() {
     memcpy(&testG, &G, sizeof(struct gameState));
     choice1 = 0;
     choice2 = 0;
-    cardEffect(tribute, choice1, choice2, choice3, &testG, handpos, &bonus);
+
+    playTribute(tribute, choice1, choice2, 0, testG, handPos, &bonus, thisPlayer, testG.whoseTurn+1);
 
     discarded = 0;
     newCards = 2;
