@@ -1152,7 +1152,7 @@ int playAmbassador(int choice1, int choice2, int handPos, int currentPlayer, str
 int playMinion(int choice1, int choice2, struct gameState *state, int currentPlayer, int handPos) {
   int i;
   int j;
-  
+
   //+1 action
   state->numActions++;
 
@@ -1162,9 +1162,7 @@ int playMinion(int choice1, int choice2, struct gameState *state, int currentPla
   if (choice1)		//+2 coins
   {
     state->coins = state->coins + 2;
-  }
-
-  else if (choice2)		//discard hand, redraw 4, other players with 5+ cards discard hand and draw 4
+  }else if (choice2)		//discard hand, redraw 4, other players with 5+ cards discard hand and draw 4
   {
     //discard hand
     while(numHandCards(state) < 0) // was >. Will not end up discarding and will still draw 4.**************************** Bug
@@ -1280,7 +1278,7 @@ int discardCard(int handPos, int currentPlayer, struct gameState *state, int tra
   else
     {
       //replace discarded card with last card in hand
-      state->hand[currentPlayer][handPos] = state->hand[currentPlayer][ (state->handCount[currentPlayer] - 1)];
+      state->hand[currentPlayer][handPos] = state->hand[currentPlayer][state->handCount[currentPlayer] - 1];
       //set last card to -1
       state->hand[currentPlayer][state->handCount[currentPlayer] - 1] = -1;
       //reduce number of cards in hand
