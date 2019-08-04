@@ -64,7 +64,7 @@ int main() {
   	choice1 = 0;
     choice2 = 0;
 
-    playMinion(minion, choice1, choice2, 0, testG, handPos, &bonus, thisPlayer);
+    playMinion(minion, choice1, choice2, 0, &testG, handPos, &bonus, thisPlayer);
 
     discarded = 0;
     newCards = 0;
@@ -105,7 +105,7 @@ int main() {
   	choice1 = 0;
     choice2 = 1;
 
-  	playMinion(minion, choice1, choice2, 0, testG, handPos, &bonus, thisPlayer);
+  	playMinion(minion, choice1, choice2, 0, &testG, handPos, &bonus, thisPlayer);
 
     discarded = 5;
     newCards = 4;
@@ -145,7 +145,7 @@ int main() {
   	choice1 = 1;
     choice2 = 0;
 
-  	playMinion(minion, choice1, choice2, 0, testG, handPos, &bonus, thisPlayer);
+  	playMinion(minion, choice1, choice2, 0, &testG, handPos, &bonus, thisPlayer);
 
     discarded = 0;
     newCards = 0;
@@ -185,7 +185,7 @@ int main() {
   	choice1 = 1;
     choice2 = 1;
 
-    playMinion(minion, choice1, choice2, 0, testG, handPos, &bonus, thisPlayer);
+    playMinion(minion, choice1, choice2, 0, &testG, handPos, &bonus, thisPlayer);
 
     discarded = 0;
     newCards = 0;
