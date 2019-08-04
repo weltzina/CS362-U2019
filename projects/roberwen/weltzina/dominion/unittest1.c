@@ -63,6 +63,7 @@ int main() {
   	// copy the game state to a test case
   	memcpy(&testG, &G, sizeof(struct gameState));
   	choice1 = 0;
+    handPos = 0;
 
     playBaron(baron, choice1, 0, 0, &testG, handPos, &bonus, thisPlayer);
 
@@ -90,6 +91,7 @@ int main() {
     // copy the game state to a test case
     memcpy(&testG, &G, sizeof(struct gameState));
     choice1 = 1;
+    handPos = 0;
     playBaron(baron, choice1, 0, 0, &testG, handPos, &bonus, thisPlayer);
 
     gainedCards = 0;
@@ -154,8 +156,9 @@ int main() {
     // copy the game state to a test case
     memcpy(&testG, &G, sizeof(struct gameState));
     choice1 = 1;
-    printf("TEST FAILED. RUNAWAY PROGRAM.\n");
-    printf("\n");
+    handPos = 4;
+    //printf("TEST FAILED. RUNAWAY PROGRAM.\n");
+    //printf("\n");
 
     playBaron(baron, choice1, 0, 0, &testG, handPos, &bonus, thisPlayer);
 
@@ -193,6 +196,7 @@ int main() {
     // copy the game state to a test case
     memcpy(&testG, &G, sizeof(struct gameState));
     choice1 = 0;
+    handPos = 4;
     playBaron(baron, choice1, 0, 0, &testG, handPos, &bonus, thisPlayer);
 
     gainedCards = 1;
@@ -220,8 +224,9 @@ int main() {
     // copy the game state to a test case
     memcpy(&testG, &G, sizeof(struct gameState));
     choice1 = 1;
-    printf("TEST FAILED. RUNAWAY PROGRAM.\n");
-    printf("\n");
+    handPos = 4;
+    //printf("TEST FAILED. RUNAWAY PROGRAM.\n");
+    //printf("\n");
 
     playBaron(baron, choice1, 0, 0, &testG, handPos, &bonus, thisPlayer);
 
