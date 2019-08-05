@@ -25,6 +25,7 @@ int main() {
   int actionsPlayed = 0;
   int actionincrease = 0;
   int trashed = 0;
+  int handPos;
 
   int i, j, m;
   int handpos = 0, choice1 = 0, choice2 = 0, choice3 = 0, bonus = 0;
@@ -69,6 +70,7 @@ int main() {
     memcpy(&testG, &G, sizeof(struct gameState));
     choice1 = 2;
     choice2 = 5;
+    handPos = 0;
 
     playMine(mine, choice1, choice2, 0, &testG, handPos, &bonus, thisPlayer);
 
