@@ -8,7 +8,7 @@ char inputChar()
   char *alpha = {'[', '(', '{', ' ', 'a', 'x', '}', ')', ']', 'r', 's', 't', 'e', '9', '\0'};
 
     // TODO: rewrite this function
-    return alpha[(rand() % 15)];
+    return &alpha[(rand() % 15)];
 }
 
 char *inputString()
@@ -23,7 +23,7 @@ char *inputString()
       str2[i] = str[(rand()%15)];
       //result = str2;
     }
-    return &str2;
+    return *&str2;
 }
 
 void testme()
