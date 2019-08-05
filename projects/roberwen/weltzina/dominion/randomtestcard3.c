@@ -35,6 +35,7 @@ int checkPlayTribute(int currentPlayer, int nextPlayer, struct gameState *state)
   int players[pre.numPlayers];
   int r;
   int tributeRevealedCards[2] = {-1,-1};
+  int bonus = 0;
 
   for(int i = 0; i < 2; i++){
     if(pre.deckCount[nextPlayer] <= 0){
@@ -72,8 +73,7 @@ int checkPlayTribute(int currentPlayer, int nextPlayer, struct gameState *state)
     }
   }
 
-  r = playTribute(state->whoseTurn, state->whoseTurn+1, state);
-  r = playTribute(tribute, 0, 0, 0, testG, handPos, &bonus, currentPlayer, state->whoseTurn+1);
+  r = playTribute(tribute, 0, 0, 0, &testG, handPos, &bonus, currentPlayer, state->whoseTurn+1);
 
   if(!assertTrue(memcmp(&pre, state, sizeof(struct gameState)), 0)){
     printf("DiscardCount = %d, expected %d\n", state->discardCount[currentPlayer], pre.discardCount[currentPlayer]);

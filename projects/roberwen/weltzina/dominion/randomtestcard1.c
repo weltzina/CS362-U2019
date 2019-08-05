@@ -37,6 +37,7 @@ int checkPlayBaron(int choice1, struct gameState *state, int currentPlayer){
   int r;
   int card_not_discarded = 1;
   int infinite = 1;
+  int bonus = 0;
 
 //Testers assumption of how baronEffect should function. Assumes it does not effect discarding played baron card or reduces actions due to the play. Does not allow infinite loop as was current 7/28/2019
   if(choice1 > 0){
@@ -68,7 +69,7 @@ int checkPlayBaron(int choice1, struct gameState *state, int currentPlayer){
   pre.numBuys++;
 //if infinite loop fixed comment out if condition, leaving what is inside. Comment out ALL of else
 //  if(!infinite){
-    r = playBaron(baron, choice1, 0, 0, testG, handPos, &bonus, currentPlayer);
+    r = playBaron(baron, choice1, 0, 0, &testG, handPos, &bonus, currentPlayer);
 
     if(!assertTrue(memcmp(&pre, state, sizeof(struct gameState)), 0) || r != 0){
         printf("Estate SupplyCount = %d, expected %d\n", state->supplyCount[estate], pre.supplyCount[estate]);
