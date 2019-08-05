@@ -5,7 +5,7 @@
 
 char inputChar()
 {
-  char *alpha = {'[', '(', '{', ' ', 'a', 'x', '}', ')', ']', 'r', 's', 't', 'e', '9'};
+  char alpha[] = "[](){} axrste9";
 
   char result = alpha[(rand()%14)];
     // TODO: rewrite this function
@@ -14,6 +14,19 @@ char inputChar()
 
 char *inputString()
 {
+  int length = 5;
+  char charset[] = "[](){} axrste9";
+  char *randstr;
+  randstr = malloc(sizeof(char)*(length));
+
+  for(int n = 0; n < length-1; n++){
+    int key = rand() %(int)(sizeof (charset)-1);
+    randstr[n] = charset[key];
+  }
+  randstr[length] = '\0';
+
+  return randstr;
+/*
   char *str = {'[', '(', '{', ' ', 'a', 'x', '}', ')', ']', 'r', 's', 't', 'e', '9'};
   char str2[5];
   char *result;
@@ -24,7 +37,7 @@ char *inputString()
       str2[i] = str[(rand()%15)];
       //result = str2;
     }
-    return str2;
+    return str2;*/
 }
 
 void testme()
