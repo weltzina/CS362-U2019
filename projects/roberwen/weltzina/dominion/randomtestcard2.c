@@ -65,7 +65,7 @@ int checkPlayMinion(int choice1, int choice2, struct gameState *state, int curre
   }
   pre.numActions++;
 
-  r = playMinion(minion, choice1, choice2, 0, &state, handPos, &bonus, currentPlayer);
+  r = playMinion(minion, choice1, choice2, 0, state, handPos, &bonus, currentPlayer);
 
   if(!assertTrue(memcmp(&pre, state, sizeof(struct gameState)), 0)){
     printf("DiscardCount = %d, expected %d\n", state->discardCount[currentPlayer], pre.discardCount[currentPlayer]);

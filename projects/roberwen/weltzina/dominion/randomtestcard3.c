@@ -74,9 +74,9 @@ int checkPlayTribute(int currentPlayer, int nextPlayer, struct gameState *state)
   }
 
 
-    int handPos = floor(Random() * (state.handCount[currentPlayer]));
+    int handPos = floor(Random() * (state->handCount[currentPlayer]));
 
-  r = playTribute(tribute, 0, 0, 0, &state, handPos, &bonus, currentPlayer, state->whoseTurn+1);
+  r = playTribute(tribute, 0, 0, 0, state, handPos, &bonus, currentPlayer, state->whoseTurn+1);
 
   if(!assertTrue(memcmp(&pre, state, sizeof(struct gameState)), 0)){
     printf("DiscardCount = %d, expected %d\n", state->discardCount[currentPlayer], pre.discardCount[currentPlayer]);
