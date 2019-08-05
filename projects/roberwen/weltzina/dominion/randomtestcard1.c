@@ -70,7 +70,7 @@ int checkPlayBaron(int choice1, struct gameState *state, int currentPlayer){
 //if infinite loop fixed comment out if condition, leaving what is inside. Comment out ALL of else
 //  if(!infinite){
 
-  int handPos = floor(Random() * testG.handCount[currentPlayer]);
+  int handPos = floor(Random() * &testG.handCount[currentPlayer]);
 
     r = playBaron(baron, choice1, 0, 0, &testG, handPos, &bonus, currentPlayer);
 
