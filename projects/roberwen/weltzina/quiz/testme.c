@@ -14,7 +14,7 @@ char inputChar()
 
 char *inputString()
 {
-  int length = 5;
+  int length = 6;
   char charset[] = "rest";
   char *randstr;
   randstr = malloc(sizeof(char)*(length));
