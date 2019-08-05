@@ -8,7 +8,7 @@ char inputChar()
   char alpha[15] = {'[', '(', '{', ' ', 'a', 'x', '}', ')', ']', 'r', 's', 't', 'e', '9', '\0'};
 
     // TODO: rewrite this function
-    return alpha[rand() % 15];
+    return alpha[(rand() % 15)];
 }
 
 char *inputString()
@@ -20,7 +20,7 @@ char *inputString()
     // TODO: rewrite this function
     for(int i = 0; i < 6; i++){
       //str2 = null;
-      asprintf(&str2, "%s%s", str2, str[rand() % 15]);
+      str2[i] = str[(rand()%15)];
       //result = str2;
     }
     return str2;
