@@ -5,7 +5,7 @@
 
 char inputChar()
 {
-  char *alpha = {'[', '(', '{', ' ', 'a', 'x', '}', ')', ']', 'r', 's', 't', 'e', '9', '\0'};
+  char *alpha[] = {'[', '(', '{', ' ', 'a', 'x', '}', ')', ']', 'r', 's', 't', 'e', '9', '\0'};
 
     // TODO: rewrite this function
     return &alpha[(rand() % 15)];
