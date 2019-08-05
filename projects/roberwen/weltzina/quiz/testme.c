@@ -5,25 +5,26 @@
 
 char inputChar()
 {
-  char *alpha[] = {'[', '(', '{', ' ', 'a', 'x', '}', ')', ']', 'r', 's', 't', 'e', '9', '\0'};
+  char *alpha = {'[', '(', '{', ' ', 'a', 'x', '}', ')', ']', 'r', 's', 't', 'e', '9'};
 
+  char result = alpha[(rand()%14)];
     // TODO: rewrite this function
-    return &alpha[(rand() % 15)];
+    return result;
 }
 
 char *inputString()
 {
-  char *str = {"[", "(", "{", " ", "a", "x", "}", ")", "]", "r", "s", "t", "e", "9", "\0"};
-  char *str2;
+  char *str = {'[', '(', '{', ' ', 'a', 'x', '}', ')', ']', 'r', 's', 't', 'e', '9'};
+  char str2[5];
   char *result;
 
     // TODO: rewrite this function
-    for(int i = 0; i < 6; i++){
+    for(int i = 0; i < 5; i++){
       //str2 = null;
       str2[i] = str[(rand()%15)];
       //result = str2;
     }
-    return *&str2;
+    return str2;
 }
 
 void testme()
