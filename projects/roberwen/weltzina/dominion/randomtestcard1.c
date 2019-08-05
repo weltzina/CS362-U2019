@@ -74,7 +74,7 @@ int checkPlayBaron(int choice1, struct gameState *state, int currentPlayer){
 
     r = playBaron(baron, choice1, 0, 0, state, handPos, &bonus, currentPlayer);
 
-    if(!assertTrue(memcmp(&pre, state, sizeof(struct gameState)), 0) || r != 0){
+  /*  if(!assertTrue(memcmp(&pre, state, sizeof(struct gameState)), 0) || r != 0){
         printf("Estate SupplyCount = %d, expected %d\n", state->supplyCount[estate], pre.supplyCount[estate]);
         printf("DiscardCount = %d, expected %d\n", state->discardCount[state->whoseTurn], pre.discardCount[currentPlayer]);
         printf("Coins = %d, expected %d\n", state->coins, pre.coins);
