@@ -70,7 +70,7 @@ int main() {
     choice1 = 2;
     choice2 = 5;
 
-    playMine(mine, choice1, choice2, 0, testG, handPos, &bonus, thisPlayer);
+    playMine(mine, choice1, choice2, 0, &testG, handPos, &bonus, thisPlayer);
 
     discarded = 0;
     newCards = 0;
@@ -115,7 +115,7 @@ int main() {
     choice1 = 2;
     choice2 = 6;
 
-    playMine(mine, choice1, choice2, 0, testG, handPos, &bonus, thisPlayer);
+    playMine(mine, choice1, choice2, 0, &testG, handPos, &bonus, thisPlayer);
 
     discarded = 0;
     newCards = 0;
@@ -160,7 +160,7 @@ int main() {
     choice1 = 2;
     choice2 = 4;
 
-    playMine(mine, choice1, choice2, 0, testG, handPos, &bonus, thisPlayer);
+    playMine(mine, choice1, choice2, 0, &testG, handPos, &bonus, thisPlayer);
 
     discarded = 0;
     newCards = 0;
@@ -209,7 +209,7 @@ int main() {
     choice1 = 2;
     choice2 = 6;
 
-    playMine(mine, choice1, choice2, 0, testG, handPos, &bonus, thisPlayer);
+    playMine(mine, choice1, choice2, 0, &testG, handPos, &bonus, thisPlayer);
 
     discarded = 0;
     newCards = 0;
@@ -252,7 +252,7 @@ int main() {
     choice1 = 1;
     choice2 = 4;
 
-    playMine(mine, choice1, choice2, 0, testG, handPos, &bonus, thisPlayer);
+    playMine(mine, choice1, choice2, 0, &testG, handPos, &bonus, thisPlayer);
 
     discarded = 0;
     newCards = 0;
@@ -296,7 +296,7 @@ int main() {
     choice1 = 2;
     choice2 = 9;
 
-    playMine(mine, choice1, choice2, 0, testG, handPos, &bonus, thisPlayer);
+    playMine(mine, choice1, choice2, 0, &testG, handPos, &bonus, thisPlayer);
 
     discarded = 0;
     newCards = 0;

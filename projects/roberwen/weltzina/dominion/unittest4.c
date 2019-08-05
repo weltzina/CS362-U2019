@@ -69,7 +69,7 @@ int main() {
     choice1 = 0;
     choice2 = 0;
 
-        playTribute(tribute, choice1, choice2, 0, testG, handPos, &bonus, thisPlayer, testG.whoseTurn+1);
+        playTribute(tribute, choice1, choice2, 0, &testG, handPos, &bonus, thisPlayer, testG.whoseTurn+1);
 
     discarded = 0;
     newCards = 0;
@@ -118,7 +118,7 @@ int main() {
     choice1 = 0;
     choice2 = 0;
 
-        playTribute(tribute, choice1, choice2, 0, testG, handPos, &bonus, thisPlayer, testG.whoseTurn+1);
+        playTribute(tribute, choice1, choice2, 0, &testG, handPos, &bonus, thisPlayer, testG.whoseTurn+1);
 
     discarded = 0;
     newCards = 0;
@@ -167,7 +167,7 @@ int main() {
     choice1 = 0;
     choice2 = 0;
 
-        playTribute(tribute, choice1, choice2, 0, testG, handPos, &bonus, thisPlayer, testG.whoseTurn+1);
+        playTribute(tribute, choice1, choice2, 0, &testG, handPos, &bonus, thisPlayer, testG.whoseTurn+1);
 
     discarded = 0;
     newCards = 0;
@@ -216,7 +216,7 @@ int main() {
     choice1 = 0;
     choice2 = 0;
 
-        playTribute(tribute, choice1, choice2, 0, testG, handPos, &bonus, thisPlayer, testG.whoseTurn+1);
+        playTribute(tribute, choice1, choice2, 0, &testG, handPos, &bonus, thisPlayer, testG.whoseTurn+1);
 
     discarded = 0;
     newCards = 0;
@@ -266,7 +266,7 @@ int main() {
     choice2 = 0;
 
 
-        playTribute(tribute, choice1, choice2, 0, testG, handPos, &bonus, thisPlayer, testG.whoseTurn+1);
+        playTribute(tribute, choice1, choice2, 0, &testG, handPos, &bonus, thisPlayer, testG.whoseTurn+1);
 
     discarded = 0;
     newCards = 0;
@@ -314,7 +314,7 @@ int main() {
     choice1 = 0;
     choice2 = 0;
 
-    playTribute(tribute, choice1, choice2, 0, testG, handPos, &bonus, thisPlayer, testG.whoseTurn+1);
+    playTribute(tribute, choice1, choice2, 0, &testG, handPos, &bonus, thisPlayer, testG.whoseTurn+1);
 
     discarded = 0;
     newCards = 2;
@@ -363,7 +363,7 @@ int main() {
     choice1 = 0;
     choice2 = 0;
 
-    playTribute(tribute, choice1, choice2, 0, testG, handPos, &bonus, thisPlayer, testG.whoseTurn+1);
+    playTribute(tribute, choice1, choice2, 0, &testG, handPos, &bonus, thisPlayer, testG.whoseTurn+1);
 
     discarded = 0;
     newCards = 2;
