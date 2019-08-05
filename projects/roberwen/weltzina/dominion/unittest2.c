@@ -43,7 +43,7 @@ int main() {
     G.hand[thisPlayer][0] = minion;
     G.hand[thisPlayer][1] = copper;
     G.hand[thisPlayer][2] = duchy;
-    G.hand[thisPlayer][4] = estate;
+    G.hand[thisPlayer][4] = minion;
     G.hand[thisPlayer][3] = copper;
 
     G.hand[thisPlayer+1][0] = G.deck[thisPlayer+1][9];
@@ -64,7 +64,7 @@ int main() {
   	memcpy(&testG, &G, sizeof(struct gameState));
   	choice1 = 0;
     choice2 = 0;
-    handPos = 0;
+    handPos = 4;
 
     playMinion(minion, choice1, choice2, 0, &testG, handPos, &bonus, thisPlayer);
 
@@ -133,8 +133,8 @@ int main() {
     printf("Opponent state test--------------------------------\n");
     printf("hand count = %d, expected = %d\n", testG.handCount[thisPlayer+1], G.handCount[thisPlayer+1] - discarded + newCards);
     assertTrue(testG.handCount[thisPlayer+1], G.handCount[thisPlayer+1] - discarded + newCards);
-    printf("deck count = %d, expected = %d\n", testG.deckCount[thisPlayer+1], G.deckCount - newCards);
-  	assertTrue(testG.deckCount[thisPlayer+1], G.deckCount - newCards);
+    printf("deck count = %d, expected = %d\n", testG.deckCount[thisPlayer+1], G.deckCount[thisPlayer+1] - newCards);
+  	assertTrue(testG.deckCount[thisPlayer+1], G.deckCount[thisPlayer+1] - newCards);
     printf("discard count = %d, expected = %d\n", testG.discardCount[thisPlayer+1], G.discardCount[thisPlayer+1] + discarded);
     assertTrue(testG.discardCount[thisPlayer+1], G.discardCount[thisPlayer+1] + discarded);
     printf("\n");
