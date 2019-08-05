@@ -5,7 +5,7 @@
 
 char inputChar()
 {
-  char alpha[] = "[](){} axrste9";
+  char alpha[] = "[](){} ax";
 
   char result = alpha[(rand()%14)];
     // TODO: rewrite this function
@@ -15,7 +15,7 @@ char inputChar()
 char *inputString()
 {
   int length = 5;
-  char charset[] = "[](){} axrste9";
+  char charset[] = "rest";
   char *randstr;
   randstr = malloc(sizeof(char)*(length));
 
