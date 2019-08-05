@@ -24,6 +24,7 @@ int main() {
   int buyincrease = 1;
   int actionsPlayed = 0;
   int actionincrease = 0;
+  int handPos;
 
   int i, j, m;
   int handpos = 0, choice1 = 0, choice2 = 0, choice3 = 0, bonus = 0;
@@ -64,8 +65,9 @@ int main() {
     memcpy(&testG, &G, sizeof(struct gameState));
     choice1 = 0;
     choice2 = 0;
+    handPos = 0;
 
-    playAmbassador(ambassador, choice1, choice2, 0, testG, handPos, &bonus, thisPlayer);
+    playAmbassador(ambassador, choice1, choice2, 0, &testG, handPos, &bonus, thisPlayer);
 
     discarded = 0;
     newCards = 0;
@@ -108,7 +110,7 @@ int main() {
     choice1 = 0;
     choice2 = 1;
 
-    playAmbassador(ambassador, choice1, choice2, 0, testG, handPos, &bonus, thisPlayer);
+    playAmbassador(ambassador, choice1, choice2, 0, &testG, handPos, &bonus, thisPlayer);
 
     discarded = 0;
     newCards = 0;
@@ -152,7 +154,7 @@ int main() {
     choice1 = 3;
     choice2 = 0;
 
-    playAmbassador(ambassador, choice1, choice2, 0, testG, handPos, &bonus, thisPlayer);
+    playAmbassador(ambassador, choice1, choice2, 0, &testG, handPos, &bonus, thisPlayer);
 
     discarded = 0;
     newCards = 0;
@@ -196,7 +198,7 @@ int main() {
     choice1 = 3;
     choice2 = 1;
 
-    playAmbassador(ambassador, choice1, choice2, 0, testG, handPos, &bonus, thisPlayer);
+    playAmbassador(ambassador, choice1, choice2, 0, &testG, handPos, &bonus, thisPlayer);
 
     discarded = 0;
     newCards = 0;
@@ -240,7 +242,7 @@ int main() {
     choice1 = 3;
     choice2 = 2;
 
-    playAmbassador(ambassador, choice1, choice2, 0, testG, handPos, &bonus, thisPlayer);
+    playAmbassador(ambassador, choice1, choice2, 0, &testG, handPos, &bonus, thisPlayer);
 
     discarded = 0;
     newCards = 0;
@@ -287,7 +289,7 @@ int main() {
     choice1 = 3;
     choice2 = 2;
 
-    playAmbassador(ambassador, choice1, choice2, 0, testG, handPos, &bonus, thisPlayer);
+    playAmbassador(ambassador, choice1, choice2, 0, &testG, handPos, &bonus, thisPlayer);
 
     discarded = 0;
     newCards = 0;
@@ -331,7 +333,7 @@ int main() {
     choice1 = 3;
     choice2 = 4;
 
-    playAmbassador(ambassador, choice1, choice2, 0, testG, handPos, &bonus, thisPlayer);
+    playAmbassador(ambassador, choice1, choice2, 0, &testG, handPos, &bonus, thisPlayer);
 
     discarded = 0;
     newCards = 0;
