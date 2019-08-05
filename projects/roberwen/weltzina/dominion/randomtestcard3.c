@@ -74,7 +74,7 @@ int checkPlayTribute(int currentPlayer, int nextPlayer, struct gameState *state)
   }
 
 
-    int handPos = floor(Random() * &testG.handCount[currentPlayer]);
+    int handPos = floor(Random() * (testG.handCount[currentPlayer]));
 
   r = playTribute(tribute, 0, 0, 0, &testG, handPos, &bonus, currentPlayer, state->whoseTurn+1);
 
